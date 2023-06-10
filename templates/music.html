@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <title></title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="CSS/style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@500&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playball&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,500&display=swap" rel="stylesheet">
+
+<style>
+ 
+ .navbar-container {
+  text-align: center; 
+  font-family: 'Lora', serif; 
+}
+
+.navbar-container ul {
+  margin: 0;
+  padding: 0;
+  text-align: right;
+  display: inline-block;
+  
+}
+
+.navbar-container ul li {
+  display: inline-block;
+  font-size: 25px;
+  font-family: 'Lora', serif;
+  color: black;
+}
+
+.navbar-container ul li a {
+  color: darkolivegreen;
+  text-decoration: none;
+  display: inline-block;  
+  padding: 10px;
+  transition: color 0.5s;
+}
+
+.navbar-container ul li .underline {
+  height: 3px;
+  background-color: transparent;
+  width: 0%;
+  transition: width 0.2s, background-color 0.5s;
+  margin: 0 auto;
+}
+
+.navbar-container ul li.active-link .underline {
+  width: 100%;
+  background-color: #e5ccc9;
+}
+
+.navbar-container ul li:hover .underline {
+  background-color: #e5ccc9;
+  width: 100%;
+}
+
+.navbar-container ul li:active a {
+  transition: none;
+  color: rgba(255,255,255,0.76);
+}
+
+.navbar-container ul li:active .underline {
+  transition: none;
+  background-color: rgba(255,255,255,0.76);
+} 
+
+	.f{
+		font-family: 'Playball', cursive;
+		color: #843f5b;
+		font-size: 70px;
+    margin-top: 40px;
+    text-align: center;
+	}
+
+
+body{
+	    font-family: 'Zilla Slab', serif;
+	    font-size: 20px;
+      color: dark;
+      margin: 0;
+      padding: 0;
+      height: 100%; 
+ 
+      background-repeat: no-repeat; 
+      background-attachment: fixed;
+      background-size: 1530px;
+  
+}
+ 
+
+.container{
+  margin-left: 400px;
+}
+
+.btn {
+  background-color: white; /* Green */
+  border: none;
+  color: #90EE90;
+  padding: 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 25px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.button {
+  background-color:#fff0f5; /* Green */
+  border:none;
+  border-radius: 8px;
+  font-family: 'Zilla Slab', serif;
+  color: #915c83;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  margin: 4px 2px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+}
+
+.button1:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-gap: 20px;
+  margin-left: 40px;
+}
+
+.m{
+	font-family: 'Zilla Slab', serif;
+    font-size: 25px;
+    color:white;
+ }
+
+     
+.decor{
+  margin-left: 25px;
+}
+
+.f1{
+      font-family: 'Zilla Slab', serif;
+      font-size: 50px;
+      color: dark;
+      margin-left: 90px;
+      margin-top: 100px;
+}
+
+</style>	
+</head>
+
+<body>
+  <div class="navbar-container">
+    <ul>
+      <li class="nav-link">
+        <a href="/dashboard">Home</a>
+        <div class="underline"></div>
+      </li>
+      <li class="nav-link">
+        <a href="/activity">Challenges</a>
+        <div class="underline"></div>
+      </li>
+      <li class="nav-link">
+        <a href="/feedback">Feedback</a>
+        <div class="underline"></div>
+      </li>
+      <li class="nav-link">
+        <a href="/logout">Logout</a>
+        <div class="underline"></div>
+      </li>
+    </ul>
+  </div>
+  
+ <header><div class="f"><b>Music and Chill</b></div> </header>
+
+<section class="my-5">
+<div class="container">
+  <div class="row">
+
+    <img src="/static/images/popp.jpeg" class="img-fluid aboutimg" width="300" height="300">
+    <div class="f1"><button id="myButton1" class="button button1"><b>POP</b></button></div>
+
+     <script type="text/javascript">
+        document.getElementById("myButton1").onclick = function () {
+        location.href = "/pop";
+      };
+     </script>
+     
+  </div>  
+</div>
+</section>  
+
+<br>
+
+<section class="my-5">
+<div class="container">
+  <div class="row">
+
+    <img src="/static/images/christmass.jpeg" class="img-fluid aboutimg" width="300" height="300">
+    <div class="f1"><button id="myButton2" class="button button1"><b>Christmas</b></button></div>
+    <script type="text/javascript">
+        document.getElementById("myButton2").onclick = function () {
+        location.href = "/christmas";
+      };
+     </script>
+      
+  </div>  
+</div>
+</section> 
+
+<br>
+
+<section class="my-5">
+<div class="container">
+  <div class="row">
+
+    <img src="/static/images/disneyp.jpeg" class="img-fluid aboutimg" width="300" height="300">
+    <div class="f1"><button id="myButton3" class="button button1"><b>Disney</b></button></div>
+      <script type="text/javascript">
+        document.getElementById("myButton3").onclick = function () {
+        location.href = "/disney";
+      };
+     </script>
+  </div>  
+</div>
+</section> 
+
+<br>
+
+<section class="my-5">
+<div class="container">
+  <div class="row">
+
+    <img src="/static/images/sour.jpeg" class="img-fluid aboutimg" width="300" height="300">
+    <div class="f1"><button id="myButton4" class="button button1"><b>Sour</b></button></div>
+     <script type="text/javascript">
+        document.getElementById("myButton4").onclick = function () {
+        location.href = "/sour";
+      };
+     </script>
+  </div>  
+</div>
+</section> 
+
+<br>
+
+<section class="my-5">
+<div class="container">
+  <div class="row">
+
+    <img src="/static/images/bolly.jpeg" class="img-fluid aboutimg" width="300" height="300">
+    <div class="f1"><button id="myButton6" class="button button1"><b>Bollywood Hits</b></button></div>
+    <script type="text/javascript">
+        document.getElementById("myButton6").onclick = function () {
+        location.href = "/bollywood";
+      };
+     </script> 
+  </div>  
+</div>
+</section> 
+
+<section class="my-5">
+<div class="container">
+  <div class="row">
+
+    <img src="/static/images/worship.jpeg" class="img-fluid aboutimg" width="300" height="300">
+    <div class="f1"><button id="myButton5" class="button button1"><b>Worship</b></button></div>
+    <script type="text/javascript">
+        document.getElementById("myButton5").onclick = function () {
+        location.href = "/worship";
+      };
+     </script> 
+  </div>  
+</div>
+</section>
+
+<section class="my-5">
+<div class="container">
+  <div class="row">
+
+    <img src="/static/images/radio.jpg" class="img-fluid aboutimg" width="310" height="310">
+    <div class="f1"><button id="ida8" class="button button1"><b>Radio Garden</b></button></div><br>
+    <script type="text/javascript">
+        document.getElementById("ida8").onclick = function () {
+        location.href = "http://radio.garden/visit/navi-mumbai/8O2FDh_1";
+      };
+    </script>
+  </div>  
+</div>
+</section>  
+
+</body>
+
+<script>
+  $('.nav-link').on('click', function() {
+  $('.active-link').removeClass('active-link');
+  $(this).addClass('active-link');
+});
+</script>
+
+</html>  

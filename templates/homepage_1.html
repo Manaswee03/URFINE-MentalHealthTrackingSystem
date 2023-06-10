@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>UrFine</title>
+        <script src="https://kit.fontawesome.com/972df6eb1d.js" crossorigin="anonymous"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,500&display=swap" rel="stylesheet">
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Charmonman:wght@700&family=Lily+Script+One&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    </head>
+    <style>
+
+/* Box sizing fix */
+* {
+  box-sizing: border-box;
+}
+
+*,
+::after,
+::before {
+  box-sizing: inherit;
+}
+
+
+html {
+  font-size: 100%;
+  --primary-color: #1e3932; /* SB Green */
+  --secondary-color: #eba272; /* SB Orange */
+  --primary-highlight: #00754a; /* SB Light Green */
+}
+
+body {
+  font-family: var(--primary-font);
+  padding: 0;
+  margin: 0;
+}
+
+body section:first-child {
+  margin-top: 124px;
+}
+
+/* For use with locking scroll on mobile nav menu open */
+.overflow-hidden {
+  overflow: hidden;
+}
+
+section {
+  margin: 2.5rem auto;
+}
+
+h1,
+h2 {
+  font-size: 4rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  line-height: 1.2;
+}
+
+ul {
+  padding: 0;
+}
+
+a {
+  transition: 0.25s ease-in;
+}
+
+
+/* Button styling for links */
+.button {
+  padding: 7px 16px;
+  border: 1.75px solid #666;
+  border-radius: 30px;
+  transition: 0.25s ease-in;
+  font-size: 1.5rem;
+  font-family: 'Lora', serif;
+  color: #000;
+}
+
+.button:hover {
+  background: var(--primary-color);
+  color: #fff;
+  border: 1.75px solid var(--primary-color);
+}
+
+.button-dark {
+  background: #000;
+  color: #fff;
+}
+
+.button-light {
+  color: #fff;
+  border: 1px solid #fff;
+  box-shadow: 0 3px 5px #222;
+}
+
+.button-light:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+
+.hidden {
+  display: none !important;
+}
+
+.block-link {
+  display: block;
+  color: var(--primary-color);
+}
+
+.block {
+  display: block !important;
+}
+
+.flex {
+  display: flex;
+}
+
+.column {
+  flex-flow: column;
+}
+
+.text-block-padding {
+  padding: 3rem 2rem;
+}
+
+/* Adds outline effect to special highlighted text */
+.stroke {
+  color: #d4e9e2;
+  text-shadow: -1px -1px 0 var(--primary-color), 1px -1px 0 var(--primary-color),
+    -1px 1px 0 var(--primary-color), 1px 1px 0 var(--primary-color);
+}
+
+.secondary-color {
+  color: var(--secondary-color);
+}
+
+.rotate-180 {
+  transform: rotate(180deg);
+}
+
+/********** Nav Styles **********/
+
+nav {
+  background: linear-gradient(-45deg,white, #ffe4e1, white, white);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  padding: 0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 2px 2px rgba(0, 0, 0, 0.06),
+    0 0 2px rgba(0, 0, 0, 0.07);
+  z-index: 99;
+}
+
+.nav-links {
+  padding: 20px 4%;
+}
+
+.nav-links ul {
+  margin: 0;
+}
+
+.nav-main-links ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav li {
+  list-style-type: none;
+}
+
+nav a {
+  color: #000;
+  display: inline-block;
+}
+
+.fa-2x {
+  font-size: 1.3rem !important;
+}
+
+.topnav button {
+  border: none;
+  background: none;
+  padding: 0;
+  color: #868686;
+  width: 36px;
+  height: 36px;
+  transition: 0.5s ease-in;
+}
+
+.topnav button:hover {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+}
+
+.logo {
+  background: var(--primary-color);
+  color: #fff;
+  border: 1px solid var(--primary-color);
+
+}
+ .logo-image{
+    width: 75px;
+    height: 75px;
+    border-radius: 10%;
+    overflow: hidden;
+    margin-top: -10px;
+}
+
+.nav-location {
+  margin-right: 10px;
+  display: flex;
+  gap: 7px;
+}
+
+@-webkit-keyframes slide-in-right {
+  0% {
+    -webkit-transform: translateX(1000px);
+    transform: translateX(1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-in-right {
+  0% {
+    -webkit-transform: translateX(1000px);
+    transform: translateX(1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/********** Desktop Nav **********/
+
+.desktop-nav-item {
+  display: none;
+  font-size: 0.9rem;
+}
+
+.desktop-nav-item:hover {
+  color: var(--primary-highlight);
+  border-bottom: 1px solid var(--primary-highlight);
+}
+
+.nav-secondary-links {
+  display: none;
+}
+
+.nav-secondary-links > ul {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+
+.nav-secondary-links a {
+  text-decoration: none;
+}
+
+.nav-secondary-links a:hover {
+  border-bottom: 1px solid var(--primary-highlight);
+}
+
+@media only screen and (min-width: 850px) {
+  .nav-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .nav-main-links ul {
+    justify-content: start;
+    gap: 25px;
+  }
+  .nav-secondary-links {
+    display: block;
+  }
+  .hamburger-menu {
+    display: none;
+  }
+  .mobile-nav-menu {
+    display: none !important;
+  }
+  .desktop-nav-item {
+    display: block;
+    text-transform: uppercase;
+    font-weight: 900;
+    text-decoration: none;
+  }
+}
+
+/********** Main Content **********/
+
+main {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+/* General card styles */
+.card-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.card-item > p {
+  font-size: 1.2rem;
+  line-height: 1.7;
+}
+
+/* Primary CTA section */
+.primary-cta-slogan {
+  background-color: #d4e9e2;
+  font-size: 2rem;
+}
+
+.primary-cta {
+  background-color: #1e3932;
+  color: #fff;
+}
+
+.primary-cta h2 {
+  font-size: 4.25rem;
+  line-height: 1;
+}
+
+/* Holiday CTA section */
+
+.holiday-cta {
+  background-color: #d4e9e2;
+  color: var(--primary-color);
+}
+
+.holiday-cta a {
+  color: var(--primary-color);
+}
+
+.holiday-cta a:hover {
+  color: var(--primary-color);
+  background: rgba(0, 0, 0, 0.1);
+}
+
+/* Shared card styles */
+
+.card-figure {
+  height: 70vh;
+  width: 100%;
+  margin: 0;
+  position: relative;
+}
+
+.card-image {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-caption {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: var(--primary-color);
+  opacity: 0.9;
+  color: #fff;
+  padding: 1rem 0;
+}
+
+.card-caption a {
+  color: #fff;
+}
+
+.card-caption a:hover {
+  color: dodgerblue;
+}
+
+/* Featured product CTA section */
+
+.featured-product-cta {
+  background-color: #007042;
+  color: #fff;
+}
+
+/* Notice */
+
+.notice {
+  text-align: center;
+  margin: 0 auto;
+  width: 80% !important;
+}
+
+.notice > h3 {
+  margin-bottom: 19.2px;
+}
+.home {
+    width: 100%;
+    height: 140vh;
+    background-image: url("/static/images/bg2.png");
+    background-position: center top;
+  background-size:cover;
+  
+}
+
+.g{
+   font-family: 'Charmonman', cursive;
+   margin-left: 200px;
+   font-size: 40px;
+   color:#843f5b;
+ }
+.l{
+  font-size: 25px;
+  font-family: 'Lora', serif;
+  color: #1e3932;
+}
+
+.l1{
+  font-size: 25px;
+  font-family: 'Lora', serif;
+  color: white;
+}
+@media only screen and (min-width: 850px) {
+  .card-container {
+    display: flex;
+  }
+  .card-item {
+    width: 50%;
+  }
+  .card-item > p {
+    max-width: 80%;
+  }
+  .footer-links {
+    font-size: 0.8rem;
+  }
+  .footer-links i {
+    display: none;
+  }
+  .footer-links > ul {
+    display: flex;
+    justify-content: space-between;
+  }
+  .footer-links > ul > li {
+    width: calc(100% / 5);
+    padding: 0.25rem;
+  }
+  .about-hidden,
+  .careers-hidden,
+  .social-impact-hidden,
+  .business-partners-hidden,
+  .order-hidden {
+    display: block !important;
+  }
+  .supplemental-links {
+    flex-flow: row;
+    gap: 25px;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  html {
+    font-size: 0.8rem;
+  }
+}
+
+
+
+    /* footer section start */
+*{
+  -webkit-box-sizing:border-box;
+  -moz-box-sizing:border-box;
+  -o-box-sizing:border-box;
+  -ms-box-sizing:border-box;
+  box-sizing:border-box;
+}
+body{
+  font-size:14px;
+  background: #fff;
+  max-width:1920px;
+  margin:0 auto;
+  overflow-x:hidden;
+  font-family: poppins;
+}
+
+#footer{
+  background: #f7f7f7;
+    padding: 3rem;
+  /* padding-top: 5rem; */
+  padding-top: 7rem;
+    padding-bottom: 80px;
+  background-image: url(https://arena.km.ua/wp-content/uploads/3538533.jpg);
+}
+#footer2{
+  background: #f7f7f7;
+    padding: 3rem;
+    margin-top: 0px;
+  /* padding-top: 5rem; */
+  padding-top: 7rem;
+    padding-bottom: 80px;
+  background-image: url(../images/cards/v748-toon-111.png);
+}
+
+
+li{
+  list-style: none;
+}
+
+a{
+  text-decoration:none;
+}
+
+    
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+    color: #2f3044;
+    font-weight: 500;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+}
+
+    
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -10px;
+    margin-right: -10px;
+}
+    
+.col-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding-left: 10px;
+    padding-right: 10px;
+    position: relative;
+    width: 100%;  
+}
+
+    
+.d-flex {
+  display: flex!important;
+}   
+.flex-column {
+    flex-direction: column!important;
+}
+    
+
+.bgi-position-y-top {
+    background-position-y: top;
+}
+.bgi-position-x-center {
+    background-position-x: center;
+}
+.bgi-no-repeat {
+    background-repeat: no-repeat;
+}
+.bgi-size-cover {
+    background-size: cover;
+}
+    
+    
+.h-150px {
+    height: 150px!important;
+}
+  
+    
+.font-size-4 {
+    font-size: 1.8rem!important;
+}
+.font-size-3 {
+    font-size: 1.4rem!important;
+}
+
+
+
+.block-dark {
+  background-color: #0d151e;
+}
+.dark-top-curved-bg {
+  background-image: url('https://keenthemes.com/images/misc/curve-dark-top-bg.png');
+}   
+
+.text-muted, .text-muted i {
+  color: #b5b5c3!important;
+}   
+.text-dark-60 {
+  color: #7e8299!important;
+}   
+.page_speed_560018307 {
+  border-top: 1px solid #152231;
+}   
+.h-20px {
+  height: 20px!important;
+}   
+.mr-2, .mx-2 {
+  margin-right: 0.5rem!important;
+}
+.rounded-sm {
+  border-radius: 0.25rem!important;
+} 
+
+.w-20px {
+  width: 20px!important;
+} 
+.mr-4, .mx-4 {
+    margin-right: 1rem!important;
+}
+    
+    
+
+@media (min-width: 992px)
+{
+  .col-lg {
+    flex-basis: 0;
+    flex-grow: 1;
+    max-width: 100%;
+  } 
+  .pb-lg-3, .py-lg-3 {
+      padding-bottom: 0.75rem!important;
+  } 
+  .h-lg-225px {
+    height: 225px!important;
+  } 
+}
+
+    </style>
+    <body>
+        <header>
+            <!-- Top Navigation -->
+            <nav>
+              <div class="nav-links">
+                <div class="nav-main-links">
+                  <ul class="topnav">
+                    <!-- Main Logo -->
+                    <li>
+                  
+                      <div class="logo-image">
+            <img src="/static/images/logo3.png" class="img-fluid">
+                    </li>
+                   
+                   
+                  </ul>
+                </div>
+                <div class="nav-secondary-links">
+                  <ul>
+                    <li class="nav-location">
+                    
+                     
+                    </li>
+                    <li>
+                      <button class="button" onclick="l()">Sign In</button>
+                    </li>
+                    <script>
+                      function l() {
+                      window.open("/login");
+                      }
+                    </script>
+                    <li>
+                      <button class="button button-dark" onclick="t()">Start Test</button>
+                    </li>
+                    <script>
+                      function t() {
+                      window.open("/quiz1");
+                      }
+                    </script>
+                  </ul>
+                </div>
+              </div>
+             
+              </div>
+            </nav>
+          </header>
+        
+          <!-- Main Content -->
+           <section class="home">
+    </section>
+    <main>
+      <br>
+     <p class="g">"Beauty in things exists in the mind which contemplates them."</p>
+     <br>
+            <section class="primary-cta card-container">
+              <div class="primary-cta-slogan card-item">
+                <h2>
+                <span class="secondary-color" style="font-size:80px ;">It's </span><br/><span class="stroke" style="font-size:80px ;">Okay</span>
+              </h2>
+              </div>
+              <div class="primary-cta card-item text-block-padding column">
+               <div class="l1">
+                <p>It's okay to make mistake</p>
+                <p>It's okay to have bad days</p>
+                <p>It's okay to do what's best for you</p>
+                <p>It's okay to be yourself</p>
+              </div>
+            </p>
+              </div>
+            </section>
+            <section class="holiday-cta card-container">
+              <div class="holiday-cta-image card-item">
+                <figure class="card-figure">
+                  <img class="card-image"  img src="/static/images/pq.webp">
+                  </figcaption>
+                </figure>
+              </div>
+              <div class="holiday-cta card-item text-block-padding column">
+                <div class="l">
+                <h2><b>Your mental health is more important than</b></h2><br>
+                <p>Someone else's perception of you</p>
+                <p>Your To-do list</p>
+                <p>Your job title</p>
+              </div>
+                
+              </div>
+            </section>
+  
+          </main>
+        
+          <hr/>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+    <footer class="footer block-dark mt-n15 mt-lg-n30">
+
+    <div class="h-150px h-lg-225px bgi-no-repeat bgi-position-x-center bgi-position-y-top bgi-size-cover dark-top-curved-bg"></div>
+
+    </div>
+
+    <div class="page_speed_247610277"></div>
+
+    <div class="container py-5 py-lg-10">
+      <div class="d-flex flex-column flex-md-row align-items-center justify-content-center justify-content-md-between">
+        <div class="d-flex align-items-center mr-md-2 order-2 order-md-1">
+          <span class="l1">
+           ©2022. | Designed By: Manaswee, Natasha, Ulka, Anuj | All rights reserved. </a>
+          </span>
+
+        </div>
+
+        <div class="d-flex flex-column flex-md-row align-items-center justify-content-center order-1 order-md-2 mb-5 mb-md-0">
+          
+
+          <div class="ml-4">
+            <img src="https://developer6669.com/Projects/assets/images/icons/credit/paypal.svg" data-lazy-src="https://developer6669.com/Projects/assets/images/icons/credit/paypal.svg" alt="" class="h-20px mr-2 rounded-sm loaded">
+
+            <img src="https://developer6669.com/Projects/assets/images/icons/credit/visa.svg" data-lazy-src="https://keenthemes.com/images/payment-methods/light/visa.svg" alt="" class="h-20px mr-2 rounded-sm loaded">
+
+            <img src="https://developer6669.com/Projects/assets/images/icons/credit/mastercard.svg" data-lazy-src="https://developer6669.com/Projects/assets/images/icons/credit/mastercard.svg" alt="" class="h-20px mr-2 rounded-sm loaded">
+
+            <img src="https://developer6669.com/Projects/assets/images/icons/credit/americanexpress.svg" data-lazy-src="https://developer6669.com/Projects/assets/images/icons/credit/americanexpress.svg" alt="" class="h-20px rounded-sm loaded">
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> 
+    <!-- footer copy right section end -->
+
+
+
+    </body>
+
+</html>

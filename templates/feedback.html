@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Feedback</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet"integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+  
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <style>
+    *{
+    padding: 0;
+    margin: 0;
+    }
+    #myForm{
+    margin-bottom: 10px;
+	font-size: 18px;
+	font-weight: bold;
+    }
+    body {
+  background: black;
+    font-family: 'Lora', serif;
+}
+.btn {
+  background-color:#fdbcb4; /* Green */
+  border: none;
+  color: white;
+  padding: 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 25px;
+  width: 140px;
+  margin-left: 35%;
+  cursor: pointer;
+}
+img {
+  width: 100%;
+  border-bottom-left-radius: 10px;
+  border-top-left-radius: 10px;
+  display: block;
+}
+a {
+  margin-left: 30px;
+  color: #dea5a4;
+  font-weight: 600;
+}
+a:hover {
+  margin-left: 30px;
+  color: #dea5a4;
+}
+.modernForm {
+  max-width: 1200px;
+  display: flex;
+  margin: 100px auto;
+  background-color: #fff;
+  border-radius: 10px;
+}
+.imageSection {
+  flex-basis: 50%;
+  position: relative;
+  color: white;
+}
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(159, 32, 114, 0.507);
+  border-bottom-left-radius: 10px;
+  border-top-left-radius: 10px;
+  z-index: 0;
+}
+.textInside,
+.service {
+  position: absolute;
+}
+.textInside {
+  bottom: 200px;
+  right: 120px;
+}
+.tagLine {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+.price {
+  font-size: 2rem;
+  font-weight: 700;
+}
+.service {
+  bottom: 30px;
+  right: 50px;
+}
+.service p {
+  font-weight: 700;
+}
+.contactForm {
+  flex-basis: 45%;
+  margin: auto;
+  color: #555;
+  padding-left: 30px;
+}
+.contactForm h1 {
+  padding: 15px 0;
+}
+
+input[type="submit"]:hover {
+  background-color: #2fa1fd;
+}
+
+@media only screen and (max-width: 768px) {
+  .modernForm {
+    flex-wrap: wrap;
+  }
+  .imageSection,
+  .contactForm {
+    flex-basis: 100%;
+  }
+  .overlay,
+  img {
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+  .contactForm {
+    padding-right: 30px;
+  }
+}
+.result{
+    margin-left: 45%;
+}
+.result1{
+    margin-left: 30%;
+}
+.result2{
+    margin-left: 17%;
+}
+
+.rate {
+    float: left;
+    height: 46px;
+    padding: 0 10px;
+}
+.rate:not(:checked) > input {
+    position:absolute;
+    top:-9999px;
+}
+.rate:not(:checked) > label {
+    float:right;
+    width:1em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:30px;
+    color:#ccc;
+}
+.rate:not(:checked) > label:before {
+    content: '★ ';
+}
+.rate > input:checked ~ label {
+    color: #ffc700;    
+}
+.rate:not(:checked) > label:hover,
+.rate:not(:checked) > label:hover ~ label {
+    color: #deb217;  
+}
+.rate > input:checked + label:hover,
+.rate > input:checked + label:hover ~ label,
+.rate > input:checked ~ label:hover,
+.rate > input:checked ~ label:hover ~ label,
+.rate > label:hover ~ input:checked ~ label {
+    color: #c59b08;
+}
+
+.navbar-container {
+  text-align: center;  
+}
+
+.navbar-container ul {
+  margin: 0;
+  padding: 0;
+  text-align: right;
+  display: inline-block;
+  
+}
+
+.navbar-container ul li {
+  display: inline-block;
+  font-size: 25px;
+  font-family: 'Lora', serif;
+  color: black;
+}
+
+.navbar-container ul li a {
+  color: darkolivegreen;
+  text-decoration: none;
+  display: inline-block;  
+  padding: 10px;
+  transition: color 0.5s;
+}
+
+.navbar-container ul li .underline {
+  height: 3px;
+  background-color: transparent;
+  width: 0%;
+  transition: width 0.2s, background-color 0.5s;
+  margin: 0 auto;
+}
+
+.navbar-container ul li.active-link .underline {
+  width: 100%;
+  background-color: #e5ccc9;
+}
+
+.navbar-container ul li:hover .underline {
+  background-color: #e5ccc9;
+  width: 100%;
+}
+
+.navbar-container ul li:active a {
+  transition: none;
+  color: rgba(255,255,255,0.76);
+}
+
+.navbar-container ul li:active .underline {
+  transition: none;
+  background-color: rgba(255,255,255,0.76);
+} 
+
+    </style>
+</head>
+
+<body>
+  <div class="navbar-container">
+    <ul>
+      <li class="nav-link">
+        <a href="/dashboard">Home</a>
+        <div class="underline"></div>
+      </li>
+      <li class="nav-link">
+        <a href="/activity">Challenges</a>
+        <div class="underline"></div>
+      </li>
+      <li class="nav-link active-link">
+        <a href="#">Feedback</a>
+        <div class="underline"></div>
+      </li>
+      <li class="nav-link">
+        <a href="/logout">Logout</a>
+        <div class="underline"></div>
+      </li>
+    </ul>
+  </div>
+    <div class="modernForm">
+        <div class="imageSection">
+          <div class="image">
+            <div class="overlay"></div>
+            <img src="https://media.istockphoto.com/id/1195082130/vector/electronic-document-management.jpg?s=612x612&w=0&k=20&c=YNbXwa32Iax8DQrXoIBUbxeNUtkR4uiyXuK7poS0034=" alt="pexels-yuri-manei-2272854">
+          </div>
+          <div class="textInside">
+              <h1>Thanks for Visiting!!</h1>
+              <p class="tagLine">Here’s a tab to share your reviews..</p>
+            </div>
+        </div>
+        <div class="contactForm"><br>
+          <h1>Tell us about your Experience..</h1><br>
+
+          <form id="myForm" action="/feed" method="post">
+			<label><b>How do you rate your overall experience?</b></label><br>
+			<div class="rate">
+			<input type="radio" id="star5" name="ratings" value="5">
+			<label for="star5" title="text">5 stars</label>
+			<input type="radio" id="star4" name="ratings" value="4">
+			<label for="star4" title="text">4 stars</label>
+			<input type="radio" id="star3" name="ratings" value="3">
+			<label for="star3" title="text">3 stars</label>
+			<input type="radio" id="star2" name="ratings" value="2">
+			<label for="star2" title="text">2 stars</label>
+			<input type="radio" id="star1" name="ratings" value="1">
+			<label for="star1" title="text">1 star</label>
+			</div>
+		
+			<br><br>
+		
+			<label for="comments"><b>Comments:</b></label><br>
+			<textarea class="form-control" type="textarea" name="comments" id="comments" placeholder="Your Comments" maxxlength="6000" rows="7"></textarea>
+		
+			<br><br>
+			
+			<div class="row">
+			<div class="col-sm-6 form-group">        
+			<label for="name">Your Name:</label>
+			<input type="text" class="form-control" id="name" name="name" required>
+			</div>
+			<div class="col-sm-6 form-group">
+			<label for="email">Email:</label>
+			<input type="email" class="form-control" id="email" name="email" required>
+			</div>
+			</div><br>
+			<input type="submit" class="btn" value="Post">
+          </form>  
+        </div>
+      </div>
+
+</body>
+
+</html>

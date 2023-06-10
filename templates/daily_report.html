@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <title>Daily Records</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@500&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,500&display=swap" rel="stylesheet">
+
+  <style type="text/css">
+    body{
+      background-color: #faf0e6;
+    }
+
+    .t{
+      padding-left:25%;
+      padding-right: 25%;
+      padding-top:5%;
+    }
+
+    p{
+      font-family:Georgia, Times, 'Times New Roman', serif;
+      font-size: 25px;
+    }
+
+
+.table-wrapper {
+	 max-width: 900px;
+	 margin: 30px auto 100px;
+	 box-shadow: 20px 30px 40px rgba(0, 0, 0, 0.2);
+}
+ table {
+	 display: block;
+	 width: 100%;
+	 position: relative;
+	 margin-top: 50px;
+	 color: black;
+	 border-collapse: collapse;
+	 font-family:Georgia, Times, 'Times New Roman', serif;
+   align-items: center;
+}
+
+ table thead, table tbody, table thead th {
+	 display: block;
+}
+ table th, table td {
+	 height: 110px;
+   align-items: center;
+	 box-sizing: border-box;
+	 overflow: hidden;
+	 min-width: 130px;
+	 font-size: 18px;
+}
+
+ table thead {
+	 float: left;
+}
+ table thead tr th {
+	 white-space: nowrap;
+	 border-bottom: none;
+	 border-right: none;
+	 background-color: #f0f0f0;
+	 padding-left: 20px;
+	 font-weight: bold;
+   align-items: center;
+}
+ table thead tr th:first-child {
+	 white-space: nowrap;
+	 height: 60px;
+	 padding: 20px 40px;
+	 background: none;
+}
+ table thead tr th:nth-child(even) {
+	 background-color: #d8d8d8;
+}
+ table tbody {
+	 width: auto;
+	 position: relative;
+	 overflow-x: auto;
+}
+ table tbody tr {
+	 display: table-cell;
+}
+ table tbody tr td {
+	 display: block;
+	 text-align: center;
+	 border-bottom: 1px solid #e6e4e4;
+	 border-right: 1px solid #e6e4e4;
+}
+ table tbody tr td:first-child {
+	 border-top: 1px solid transparent;
+	 white-space: nowrap;
+	 height: 60px;
+	 padding: 20px 40px;
+	 color: white;
+	 text-transform: uppercase;
+	 font-size: 18px;
+	 letter-spacing: 1px;
+}
+ table tbody tr td:nth-child(even) {
+	 background: #f8f8f8;
+	 border-right: 1px solid #e6e4e4;
+}
+/* Colored Columns Loop */
+ table tbody tr:nth-child(1) td:first-child:nth-child(odd) {
+	 background-color: #1ebd9c;
+	 border-bottom: 1px solid #1ebd9c;
+	 border-right: 1px solid #1ebd9c;
+}
+ table tbody tr:nth-child(1) td:nth-child(odd) {
+	 background-color: #b4f3e6;
+	 border-bottom: 1px solid #b4f3e6;
+	 border-right: 1px solid #b4f3e6;
+}
+ table tbody tr:nth-child(1) td:nth-child(even) {
+	 background-color: #88ecd7;
+	 border-bottom: 1px solid #88ecd7;
+	 border-right: 1px solid #88ecd7;
+}
+ table tbody tr:nth-child(2) td:first-child:nth-child(odd) {
+	 background-color: #e87e21;
+	 border-bottom: 1px solid #e87e21;
+	 border-right: 1px solid #e87e21;
+}
+ table tbody tr:nth-child(2) td:nth-child(odd) {
+	 background-color: #fbe9da;
+	 border-bottom: 1px solid #fbe9da;
+	 border-right: 1px solid #fbe9da;
+}
+ table tbody tr:nth-child(2) td:nth-child(even) {
+	 background-color: #f6cfac;
+	 border-bottom: 1px solid #f6cfac;
+	 border-right: 1px solid #f6cfac;
+}
+ table tbody tr:nth-child(3) td:first-child:nth-child(odd) {
+	 background-color: #a5c72b;
+	 border-bottom: 1px solid #a5c72b;
+	 border-right: 1px solid #a5c72b;
+}
+ table tbody tr:nth-child(3) td:nth-child(odd) {
+	 background-color: #ebf4ca;
+	 border-bottom: 1px solid #ebf4ca;
+	 border-right: 1px solid #ebf4ca;
+}
+ table tbody tr:nth-child(3) td:nth-child(even) {
+	 background-color: #daeba0;
+	 border-bottom: 1px solid #daeba0;
+	 border-right: 1px solid #daeba0;
+}
+ table tbody tr:nth-child(4) td:first-child:nth-child(odd) {
+	 background-color: #745bc8;
+	 border-bottom: 1px solid #745bc8;
+	 border-right: 1px solid #745bc8;
+}
+ table tbody tr:nth-child(4) td:nth-child(odd) {
+	 background-color: #f5f4fb;
+	 border-bottom: 1px solid #f5f4fb;
+	 border-right: 1px solid #f5f4fb;
+}
+ table tbody tr:nth-child(4) td:nth-child(even) {
+	 background-color: #d5ceee;
+	 border-bottom: 1px solid #d5ceee;
+	 border-right: 1px solid #d5ceee;
+}
+ table tbody tr:nth-child(5) td:first-child:nth-child(odd) {
+	 background-color: #2e97de;
+	 border-bottom: 1px solid #2e97de;
+	 border-right: 1px solid #2e97de;
+}
+ table tbody tr:nth-child(5) td:nth-child(odd) {
+	 background-color: #deeffa;
+	 border-bottom: 1px solid #deeffa;
+	 border-right: 1px solid #deeffa;
+}
+ table tbody tr:nth-child(5) td:nth-child(even) {
+	 background-color: #b2d9f3;
+	 border-bottom: 1px solid #b2d9f3;
+	 border-right: 1px solid #b2d9f3;
+}
+ table tbody tr:nth-child(6) td:first-child:nth-child(odd) {
+	 background-color: #334a5f;
+	 border-bottom: 1px solid #334a5f;
+	 border-right: 1px solid #334a5f;
+}
+ table tbody tr:nth-child(6) td:nth-child(odd) {
+	 background-color: #97b0c7;
+	 border-bottom: 1px solid #97b0c7;
+	 border-right: 1px solid #97b0c7;
+}
+ table tbody tr:nth-child(6) td:nth-child(even) {
+	 background-color: #7697b5;
+	 border-bottom: 1px solid #7697b5;
+	 border-right: 1px solid #7697b5;
+}
+ table tbody tr:nth-child(1) td:first-child:nth-child(odd) {
+	 background-color: #1ebd9c;
+	 border-bottom: 1px solid #1ebd9c;
+	 border-right: 1px solid #1ebd9c;
+}
+ table tbody tr:nth-child(1) td:nth-child(odd) {
+	 background-color: #b4f3e6;
+	 border-bottom: 1px solid #b4f3e6;
+	 border-right: 1px solid #b4f3e6;
+}
+ table tbody tr:nth-child(1) td:nth-child(even) {
+	 background-color: #88ecd7;
+	 border-bottom: 1px solid #88ecd7;
+	 border-right: 1px solid #88ecd7;
+}
+ table tbody tr:nth-child(2) td:first-child:nth-child(odd) {
+	 background-color: #e87e21;
+	 border-bottom: 1px solid #e87e21;
+	 border-right: 1px solid #e87e21;
+}
+ table tbody tr:nth-child(2) td:nth-child(odd) {
+	 background-color: #fbe9da;
+	 border-bottom: 1px solid #fbe9da;
+	 border-right: 1px solid #fbe9da;
+}
+ table tbody tr:nth-child(2) td:nth-child(even) {
+	 background-color: #f6cfac;
+	 border-bottom: 1px solid #f6cfac;
+	 border-right: 1px solid #f6cfac;
+}
+ table tbody tr:nth-child(3) td:first-child:nth-child(odd) {
+	 background-color: #a5c72b;
+	 border-bottom: 1px solid #a5c72b;
+	 border-right: 1px solid #a5c72b;
+}
+ table tbody tr:nth-child(3) td:nth-child(odd) {
+	 background-color: #ebf4ca;
+	 border-bottom: 1px solid #ebf4ca;
+	 border-right: 1px solid #ebf4ca;
+}
+ table tbody tr:nth-child(3) td:nth-child(even) {
+	 background-color: #daeba0;
+	 border-bottom: 1px solid #daeba0;
+	 border-right: 1px solid #daeba0;
+}
+ table tbody tr:nth-child(4) td:first-child:nth-child(odd) {
+	 background-color: #745bc8;
+	 border-bottom: 1px solid #745bc8;
+	 border-right: 1px solid #745bc8;
+}
+ table tbody tr:nth-child(4) td:nth-child(odd) {
+	 background-color: #f5f4fb;
+	 border-bottom: 1px solid #f5f4fb;
+	 border-right: 1px solid #f5f4fb;
+}
+ table tbody tr:nth-child(4) td:nth-child(even) {
+	 background-color: #d5ceee;
+	 border-bottom: 1px solid #d5ceee;
+	 border-right: 1px solid #d5ceee;
+}
+ table tbody tr:nth-child(5) td:first-child:nth-child(odd) {
+	 background-color: #2e97de;
+	 border-bottom: 1px solid #2e97de;
+	 border-right: 1px solid #2e97de;
+}
+ table tbody tr:nth-child(5) td:nth-child(odd) {
+	 background-color: #deeffa;
+	 border-bottom: 1px solid #deeffa;
+	 border-right: 1px solid #deeffa;
+}
+ table tbody tr:nth-child(5) td:nth-child(even) {
+	 background-color: #b2d9f3;
+	 border-bottom: 1px solid #b2d9f3;
+	 border-right: 1px solid #b2d9f3;
+}
+ table tbody tr:nth-child(6) td:first-child:nth-child(odd) {
+	 background-color: #334a5f;
+	 border-bottom: 1px solid #334a5f;
+	 border-right: 1px solid #334a5f;
+}
+ table tbody tr:nth-child(6) td:nth-child(odd) {
+	 background-color: #97b0c7;
+	 border-bottom: 1px solid #97b0c7;
+	 border-right: 1px solid #97b0c7;
+}
+ table tbody tr:nth-child(6) td:nth-child(even) {
+	 background-color: #7697b5;
+	 border-bottom: 1px solid #7697b5;
+	 border-right: 1px solid #7697b5;
+}
+ #wrapper {
+	 width: 600px;
+	 margin: 0 auto;
+	 margin-top: 15%;
+}
+
+.navbar-container {
+  text-align: center; 
+  font-family: 'Lora', serif; 
+}
+
+.navbar-container ul {
+  margin: 0;
+  padding: 0;
+  text-align: right;
+  display: inline-block;
+  
+}
+
+.navbar-container ul li {
+  display: inline-block;
+  font-size: 25px;
+  font-family: 'Lora', serif;
+  color: black;
+}
+
+.navbar-container ul li a {
+  color: darkolivegreen;
+  text-decoration: none;
+  display: inline-block;  
+  padding: 10px;
+  transition: color 0.5s;
+}
+
+.navbar-container ul li .underline {
+  height: 3px;
+  background-color: transparent;
+  width: 0%;
+  transition: width 0.2s, background-color 0.5s;
+  margin: 0 auto;
+}
+
+.navbar-container ul li.active-link .underline {
+  width: 100%;
+  background-color: #e5ccc9;
+}
+
+.navbar-container ul li:hover .underline {
+  background-color: #e5ccc9;
+  width: 100%;
+}
+
+.navbar-container ul li:active a {
+  transition: none;
+  color: rgba(255,255,255,0.76);
+}
+
+.navbar-container ul li:active .underline {
+  transition: none;
+  background-color: rgba(255,255,255,0.76);
+}
+
+.btn {
+  background-color:rgba(26, 188, 156, 0.3); /* Green */
+  border: none;
+  color: white;
+  padding: 5px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 22px;
+  width: 250px;
+  margin-left: 40%;
+  cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+  <div class="navbar-container">
+    <ul>
+      <li class="nav-link">
+        <a href="/dashboard">Home</a>
+        <div class="underline"></div>
+      </li>
+      <li class="nav-link">
+        <a href="/tasks">Challenges</a>
+        <div class="underline"></div>
+      </li>
+      <li class="nav-link active-link">
+        <a href="/#">Daily Insights</a>
+        <div class="underline"></div>
+      </li>
+      <li class="nav-link">
+        <a href="/feedback">Feedback</a>
+        <div class="underline"></div>
+      </li>
+    </ul>
+  </div>
+<section class="t"> 
+  <p>Have a look at your Daily Records..</p> 
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Day</th>
+      <th>Emotion</th>
+      <th>Score</th>
+      <th>Time Taken</th>
+    </tr>
+  </thead>
+   <tbody>
+    {% for item in data %}
+               <tr>
+               <td>Day {{item[0]}}</td>
+               <td>{{item[1]}}</td>
+               <td>{{item[2]}} %</td>
+               <td>{{item[3]}} mins</td>
+               </tr>
+    {% endfor %}           
+   </tbody>
+</table>
+<br><br>
+<button class="btn" id="myButton" style="display:none;">View Final Result</button>
+<br><br>
+<script>
+  window.onload = function() {
+    var table = document.getElementsByTagName('table')[0];
+    if (table.rows.length >= 4) {
+      document.getElementById('myButton').style.display = 'block';
+    }
+  }
+</script>
+<script type="text/javascript">
+  document.getElementById("myButton").onclick = function () {
+  location.href = "/final_report";
+};
+</script>
+</section>
+
+</body>
+</html>   

@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,500&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+  integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<style>
+
+  .data{
+    display: none;
+  }
+ 
+  body {
+    font-family: Segoe UI;
+    margin: 0;
+    padding: 0;
+    background: #f7f5ff;
+    margin: 0 120px;
+    font-family: 'Roboto', Arial;
+  }
+
+  root:scrollbar {
+    width: 10px;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+  }
+
+  /*  -----------   NAVBAR   ----------- */
+  .navbar {
+    width: 100%;
+    height: 50px;
+    margin-top: 40px;
+    margin-bottom: 50px;
+    font-family: 'Lora', serif;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .head {
+    font-size: 30px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+
+  .nav {
+    display: flex;
+    align-items: center;
+    gap: 100px;
+  }
+
+  .nav a {
+    color: black;
+    font-size: 25px;
+    font-style: italic;
+
+  }
+
+  .nav .contact {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 130px;
+    height: 50px;
+
+
+    border: 1px solid black;
+    border-radius: 12px;
+    transition: 0.7s;
+  }
+
+  .nav a:hover {
+    border-bottom: 2px solid black;
+    border-top: 2px solid black;
+  }
+
+  .nav .contact:hover {
+    background: #f9d8ea;
+    border: 1px dashed black;
+  }
+
+  /*  -----------   MAİN   ----------- */
+  /*  İNFO CARD  */
+
+  .info-card {
+    width: 1300px;
+    height: 450px;
+    margin: 0 auto;
+    margin-bottom: 50PX;
+
+    background: #f9d8ea;
+    border-radius: 20px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .info-text-ctn {
+    width: 500px;
+    height: 300px;
+    /* background: #eee; */
+    margin-left: 100px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .info-head {
+    width: 100%;
+    height: auto;
+  }
+
+  .info-head h1 {
+    font-size: 50px;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    font-family:Georgia, Times, 'Times New Roman', serif;
+  }
+
+  .info-text {
+    width: 100%;
+    height: auto;
+  }
+
+  .info-text p {
+    font-size: 17px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: rgb(58, 58, 58);
+  }
+
+  .info-buton {
+    text-align: left;
+
+  }
+
+  .info-buton button {
+    border: none;
+    padding: 15px 47px;
+    border-radius: 5px;
+    background: #9b83e2;
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+    transition: 0.4s;
+  }
+
+  .info-buton1 {
+    text-align: left;
+
+  }
+
+  .info-buton1 button {
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+    transition: 0.4s;
+  }
+
+  .info-image {
+    width: 600px;
+    height: 600px;
+    align-items: center;
+    margin-top: 10%;
+  }
+
+  .info-image img {
+    width: 500px;
+    height: 500px;
+  }
+
+  /*  CATEGORİES  */
+
+  .categories-container {
+    width: 1300px;
+    height: 400px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+
+    border-radius: 20px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .categorie-name {
+    width: 120px;
+    height: 100%;
+
+    border-radius: 20px;
+    background: #f9d8ea;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .categorie-name h1 {
+    transform: rotate(-90deg);
+    font-size: 40px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  }
+
+  .categories {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 20px;
+  }
+
+  .categorie-grid {
+    display: flex;
+    gap: 40px;
+  }
+
+  .categorie-col {
+    border-radius: 20px;
+    background: #eee;
+    flex-grow: 1;
+    height: 180px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  #col-one {
+    background: #aac6fc;
+  }
+
+  #col-two {
+    background: #7fd7c2;
+  }
+
+  #col-tree {
+    background: #f5e048;
+  }
+
+  #col-four {
+    background: #efbed3;
+  }
+
+  .categorie-image-wrapper {
+    width: 120px;
+    height: 120px;
+  }
+
+  .categorie-image-wrapper img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .categories-text-ctn {
+    height: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .ctg-head h2 {
+    font-size: 25px;
+  }
+
+  .ctg-text p {
+    font-size: 17px;
+    font-family: Cambria, Cochin, Georgia, 'Times New Roman', Times, serif;
+    color: rgb(58, 58, 58);
+    line-height: 1.4;
+  }
+</style>
+
+<body>
+  <nav class="navbar">
+    <div class="head">
+      <h1>UrFine</h1>
+    </div>
+    <div class="nav">
+      <a href="#">Home</a>
+      <a href="/activity">Quizzes</a>
+      <a href="/feedback">Feedback</a>
+      <a href="/daily_report">Daily Insights</a>
+      <a href="/logout" class="contact">Logout</a>
+    </div>
+  </nav>
+
+  <!-- -----------   MAİN   -----------  -->
+  <!-- İNFO CARD -->
+  <div class="info-card">
+    <div class="info-text-ctn">
+      <div class="info-head">
+       <h1>Welcome back<br>{{g.user}}..</h1>
+      </div>
+      <div data-onsuccess="onSignIn"></div>
+      <div class="data">
+        <p>Name</p>
+        <p id="name" class="alert alert-success"></p>
+        <p>Profile</p>
+        <img id="image" class="rounded-circle" width="100" height="100">
+        <p>Email</p>
+        <p id="email"></p>
+        <button type="button" class="btn btn-danger" onclick="signout();">Sign Out</button>
+      </div>
+
+
+
+      <div class="info-text">
+        <p>Asking for help is the first step.. <br>
+          You are more precious to <br>
+          this world, than you'll ever know...<br>
+          <b>#Mental Health Matters</b>
+        </p>
+      </div>
+      <div class="info-buton">
+        <button onclick="i()">Learn More</button>
+        <script>
+          function i() {
+            window.open("https://www.who.int/news-room/fact-sheets/detail/mental-health-strengthening-our-response");
+          }
+        </script>
+      </div>
+    </div>
+    <div class="info-image">
+      <img src="static/images/dash1.png" height="600" alt="">
+    </div>
+  </div>
+
+  <!-- CATEGORİES -->
+  <div class="categories-container">
+    <div class="categorie-name">
+      <h1>Activities</h1>
+    </div>
+    <div class="categories">
+      <div class="categorie-grid">
+        <div class="categorie-col" id="col-one">
+          <div class="categorie-image-wrapper">
+            <img src="/static/images/books.png" alt="">
+          </div>
+          <div class="categories-text-ctn">
+            <div class="ctg-head">
+              <h2>E-books</h2>
+            </div>
+            <div class="ctg-text">
+              <p> The More that you read, <br>
+                the More things you will Know.<br>
+              <div class="info-buton1">
+                <button onclick="b()" style="background:#f5e048;">View Now</button>
+              </div>
+              <script>
+                function b() {
+                  window.open("/books");
+                }
+              </script>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="categorie-col" id="col-two">
+          <div class="categorie-image-wrapper">
+            <img src="static/images/diary.png" alt="">
+          </div>
+          <div class="categories-text-ctn">
+            <div class="ctg-head">
+              <h2>My Diary</h2>
+            </div>
+            <div class="ctg-text">
+              <p> Memory...is the diary that we all <br>
+                carry about with us..<br>
+              <div class="info-buton1">
+                <button onclick="d()" style="background:#9b83e2;">View Now</button>
+              </div>
+              <script>
+                function d() {
+                  window.open("/mydiary");
+                }
+              </script>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="categorie-grid">
+        <div class="categorie-col" id="col-tree">
+          <div class="categorie-image-wrapper">
+            <img src="/static/images/meditation.png" alt="">
+          </div>
+          <div class="categories-text-ctn">
+            <div class="ctg-head">
+              <h2>Meditation</h2>
+            </div>
+            <div class="ctg-text">
+              <p>Calmness of mind is a <br>
+                Beautiful Jewel of wisdom....<br>
+              <div class="info-buton1">
+                <button onclick="e()" style="background:#efbed3;">View Now</button>
+              </div>
+              <script>
+                function e() {
+                  window.open("/exercise");
+                }
+              </script>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="categorie-col" id="col-four">
+          <div class="categorie-image-wrapper">
+            <img src="/static/images/music.png" alt="">
+          </div>
+          <div class="categories-text-ctn">
+            <div class="ctg-head">
+              <h2>Music</h2>
+            </div>
+            <div class="ctg-text">
+              <p> Music in the soul, <br>
+                can be heard by the universe.. <br>
+              <div class="info-buton1">
+                <button onclick="m()" style="background:#7fd7c2;">View Now</button>
+              </div>
+              <script>
+                function m() {
+                  window.open("/music");
+                }
+              </script>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function onSignIn(googleUser){
+      var profile = googleUser.getBasicProfile();
+      $("#name").text(profile.getName());
+      $("#email").text(profile.getEmail());
+      $("#image").attr('src',profile.getImageUrl()); 
+      $(".data").css("display","block");
+    }
+
+    function signOut(){
+      var auth2 = gapi.auth2.getAuthInstance();
+      auth2.signOut().then(function (){
+        console.log('User signed Out..');
+      });
+    }
+  </script>
+
+</body>
+
+</html>

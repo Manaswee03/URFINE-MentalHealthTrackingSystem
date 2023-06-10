@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<head>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,500&display=swap" rel="stylesheet">
+	<style>
+body {
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+  background-image: url(https://cdn.wallpapersafari.com/89/4/E2HnYv.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top;
+  opacity :0.95;
+  margin-top: 150px;
+}
+
+#main-container {
+  display: flex;
+  margin: auto;
+  justify-content: space-between;
+  width: 70%;
+  height: 80vh;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+background: #D3959B;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #BFE6BA, #D3959B);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #BFE6BA, #D3959B); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  border-radius: 10px;
+  box-shadow: 2px 8px 8px lightgray;
+  overflow: hidden;
+}
+#music-player {
+  display: flex;
+  justify-content: center;
+  width: 70%;
+  height: 300px;
+  border-radius: 10px;
+}
+.music-card {
+  width: 80%;
+  height: auto;
+  text-align: center;
+  display: block;
+  padding: 20px;
+}
+.song-name {
+  margin: 0;
+  text-align: center;
+  color: #2e2b2b;
+}
+.player-image {
+  width: 50%;
+  height: auto;
+  border-radius: 10px;
+}
+.music-resume {
+  width: 100%;
+  height: 5px;
+  margin-top: 15px;
+  background-color: blue;
+  border-radius: 5px;
+  cursor: pointer;
+}
+#progress-wrapper {
+  width: 100%;
+  height: 5px;
+  background-color: rgb(168, 168, 207);
+  margin-top: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+#progress {
+  width: 0%;
+  height: 5px;
+  background-color: rgb(15, 77, 116);
+}
+.play-btn {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  align-items: center;
+}
+.player-icon {
+  color: violet;
+  font-size: 18px;
+  cursor: pointer;
+  margin: 0 10px 0 10px;
+}
+.player-icon:hover {
+  color: darkorchid;
+}
+.play-icon-btn {
+  font-size: 30px;
+}
+#music-playlist {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-left: 1px solid lightgray;
+  overflow-y: scroll;
+  margin-top: 15px;
+}
+.music-card-list {
+  border-bottom: 1px solid lightgray;
+  margin: 10px;
+  cursor: pointer;
+  display: flex;
+  color: gray;
+  align-items: center;
+  padding-bottom: 10px;
+}
+.music-card-list:hover {
+  color: #2e2b2b;
+}
+.music-image {
+  text-align: center;
+  width: 65px;
+  height: 65px;
+  border-radius: 10px;
+}
+.singer-name {
+  font-size: 15px;
+  margin: 0 0 0 10px;
+}
+.music-name {
+  font-size: 16px;
+  margin: 0 0 10px 10px;
+}
+.music-details {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+#music-playlist::-webkit-scrollbar-track {
+  background-color: lightgray;
+}
+
+#music-playlist::-webkit-scrollbar {
+  width: 5px;
+  background-color: #f5f5f5;
+}
+
+#music-playlist::-webkit-scrollbar-thumb {
+  background-color: #2e2b2b;
+  border: 2px solid #555555;
+}
+
+.navbar-container {
+  text-align: center; 
+  font-family: 'Lora', serif; 
+}
+
+.navbar-container ul {
+  margin: 0;
+  padding: 0;
+  text-align: right;
+  display: inline-block;
+  
+}
+
+.navbar-container ul li {
+  display: inline-block;
+  font-size: 25px;
+  font-family: 'Lora', serif;
+  color: black;
+}
+
+.navbar-container ul li a {
+  color: darkolivegreen;
+  text-decoration: none;
+  display: inline-block;  
+  padding: 10px;
+  transition: color 0.5s;
+}
+
+.navbar-container ul li .underline {
+  height: 3px;
+  background-color: transparent;
+  width: 0%;
+  transition: width 0.2s, background-color 0.5s;
+  margin: 0 auto;
+}
+
+.navbar-container ul li.active-link .underline {
+  width: 100%;
+  background-color: #e5ccc9;
+}
+
+.navbar-container ul li:hover .underline {
+  background-color: #e5ccc9;
+  width: 100%;
+}
+
+.navbar-container ul li:active a {
+  transition: none;
+  color: rgba(255,255,255,0.76);
+}
+
+.navbar-container ul li:active .underline {
+  transition: none;
+  background-color: rgba(255,255,255,0.76);
+}   
+ </style>
+  </head>
+  <body>
+ <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Music Player</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/7c2bcac2cf.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <div class="navbar-container">
+    <ul>
+      <li class="nav-link">
+        <a href="/dashboard">Home</a>
+        <div class="underline"></div>
+      </li>
+      <li class="nav-link">
+        <a href="/activity">Challenges</a>
+        <div class="underline"></div>
+      </li>
+      <li class="nav-link">
+        <a href="/feedback">Feedback</a>
+        <div class="underline"></div>
+      </li>
+      <li class="nav-link">
+        <a href="/logout">Logout</a>
+        <div class="underline"></div>
+      </li>
+    </ul>
+  </div>
+
+    <div id="main-container">
+
+        <div id="music-player">
+           
+
+        </div>
+
+
+        <div id="music-playlist">
+
+        </div>
+
+    </div>
+    <script src="./script.js"></script>
+</body>
+
+<script>
+var mainContainer = document.getElementById("main-container");
+var musicPlayer = document.getElementById("music-player")
+var musicPlayList = document.getElementById("music-playlist")
+
+var responceData;
+var xhttp = new XMLHttpRequest()
+xhttp.open('GET', "https://5dd1894f15bbc2001448d28e.mockapi.io/playlist", true);
+xhttp.onreadystatechange = function () {
+
+    if (this.readyState === 4) {
+        responceData = JSON.parse(this.responseText)
+
+        for (var i = 0; i < responceData.length; i++) {
+            musicPlayList.appendChild(createMusicCardList(responceData[i], i))
+        }
+        musicPlayer.appendChild(createMusicPlayer(responceData[0], 0))
+
+    }
+}
+xhttp.send()
+
+function createMusicPlayer(data, i) {
+    var musicCard = document.createElement("div")
+    musicCard.className = "music-card"
+    musicPlayer.appendChild(musicCard)
+    var audioTrack = document.createElement("audio")
+    audioTrack.id = "play-audio"
+    audioTrack.src = data.file
+    musicCard.appendChild(audioTrack)
+    var playerImage = document.createElement("img")
+    playerImage.className = "player-image";
+    playerImage.src = data.albumCover;
+    musicCard.appendChild(playerImage)
+    var progressWrapper = document.createElement("div")
+    progressWrapper.id = "progress-wrapper"
+    progressWrapper.addEventListener("mousedown", function (event) {
+        var clickedPosition = event.clientX - event.target.offsetLeft;
+        audioTrack.currentTime = (clickedPosition / event.target.offsetWidth) * audioTrack.duration - 60;
+
+    }, false)
+    var progress = document.createElement("div")
+    progress.id = "progress"
+    progressWrapper.appendChild(progress)
+    musicCard.appendChild(progressWrapper)
+    var musicIcons = document.createElement("div")
+    musicIcons.className = "play-btn"
+    musicCard.appendChild(musicIcons)
+    var randomPlayBtn = document.createElement("i")
+    randomPlayBtn.className = "fas fa-random";
+    randomPlayBtn.classList.add("player-icon")
+    randomPlayBtn.onclick = function () {
+        var randomSong = Math.floor((Math.random() * responceData.length) + 1);
+        if (i == 00 || i < responceData.length) {
+            i = randomSong;
+            handleForwardBackwordList([i])
+        }
+
+    }
+    musicIcons.appendChild(randomPlayBtn)
+    var backwordPlayBtn = document.createElement("i")
+    backwordPlayBtn.className = "fas fa-step-backward"
+    backwordPlayBtn.classList.add("player-icon")
+    backwordPlayBtn.onclick = function () {
+        if (i > 0 && i < responceData.length - 1) {
+            i--
+            handleForwardBackwordList([i])
+        } else {
+            i = responceData.length - 1
+            handleForwardBackwordList([i])
+        }
+
+
+    }
+    musicIcons.appendChild(backwordPlayBtn)
+    var playBtn = document.createElement("i")
+    playBtn.className = "far fa-play-circle"
+    playBtn.classList.add("player-icon")
+    playBtn.classList.add("play-icon-btn")
+    playBtn.id = "play-btn-id"
+    playBtn.onclick = function () {
+        pauseBtn.style.display = "inline-block"
+        playBtn.style.display = "none"
+        // audioTrack.paused ? audioTrack.play() : audioTrack.pause();
+        audioTrack.play()
+        audioTrack.ontimeupdate = function () {
+            var progressInPercent = (audioTrack.currentTime / audioTrack.duration) * 100;
+            progress.style.width = progressInPercent + '%';
+        }
+    }
+    var pauseBtn = document.createElement("i")
+    pauseBtn.className = "far fa-pause-circle"
+    pauseBtn.classList.add("player-icon")
+    pauseBtn.classList.add("play-icon-btn")
+    pauseBtn.style.display = "none"
+    pauseBtn.id = "pause-btn-id"
+    musicIcons.appendChild(playBtn)
+    pauseBtn.onclick = function () {
+        pauseBtn.style.display = "none"
+        playBtn.style.display = "inline-block"
+        audioTrack.pause();
+    }
+    musicIcons.appendChild(pauseBtn)
+    var forwardPlayBtn = document.createElement("i")
+    forwardPlayBtn.className = "fas fa-step-forward"
+    forwardPlayBtn.classList.add("player-icon")
+
+    forwardPlayBtn.onclick = function () {
+        if (i < responceData.length - 1) {
+            i++;
+            handleForwardBackwordList([i])
+        } else {
+            i = 0;
+            handleForwardBackwordList([i])
+        }
+
+    }
+
+    musicIcons.appendChild(forwardPlayBtn)
+    var restartMusicBtn = document.createElement("i")
+    restartMusicBtn.className = "fas fa-history"
+    restartMusicBtn.classList.add("player-icon")
+    restartMusicBtn.onclick = function () {
+        audioTrack.currentTime = 0;
+    }
+    musicIcons.appendChild(restartMusicBtn)
+    var musicDetails = document.createElement("div")
+    musicCard.appendChild(musicDetails)
+    var musicName = document.createElement("h3")
+    musicName.className = "song-name"
+    musicName.innerHTML = data.track
+    musicDetails.appendChild(musicName)
+    var musicSinger = document.createElement("p")
+    musicSinger.className = "singer-name";
+    musicSinger.innerHTML = data.artist
+    musicDetails.appendChild(musicSinger)
+
+    function handleForwardBackwordList() {
+        audioTrack.src = ""
+        audioTrack.src = responceData[i].file
+        audioTrack.currentTime = 0
+        playerImage.src = ''
+        playerImage.src = responceData[i].albumCover
+        musicName.innerHTML = ''
+        musicName.innerHTML = responceData[i].track
+        musicSinger.innerHTML = ''
+        musicSinger.innerHTML = responceData[i].artist
+        pauseBtn.style.display = "inline-block"
+        playBtn.style.display = "none"
+        audioTrack.play()
+        audioTrack.ontimeupdate = function () {
+            var progressInPercent = (audioTrack.currentTime / audioTrack.duration) * 100;
+            progress.style.width = progressInPercent + '%';
+        }
+    }
+
+    return musicCard;
+}
+
+
+function createMusicCardList(data, i) {
+    var musicCardlist = document.createElement("div")
+    musicCardlist.className = "music-card-list"
+
+    musicCardlist.onclick = function () {
+        musicPlayer.innerHTML = '';
+        musicPlayer.appendChild(createMusicPlayer(responceData[i], i))
+        var playAudio = document.getElementById("play-audio")
+        playAudio.play();
+
+        var musicPauseBtn = document.getElementById("pause-btn-id")
+        musicPauseBtn.style.display = "inline-block"
+        var musicPlayBtn = document.getElementById("play-btn-id")
+        musicPlayBtn.style.display = "none"
+        var progresBar = document.getElementById("progress")
+        playAudio.ontimeupdate = function () {
+            var progressInPercent = (playAudio.currentTime / playAudio.duration) * 100;
+            progresBar.style.width = progressInPercent + '%';
+        }
+
+    }
+    var musicImage = document.createElement("img")
+    musicImage.src = data.albumCover
+    musicImage.className = "music-image"
+    musicCardlist.appendChild(musicImage)
+    var musicDetails = document.createElement("div")
+    musicDetails.className = "music-details"
+    musicCardlist.appendChild(musicDetails)
+    var musicName = document.createElement("h5")
+    musicName.className = "music-name"
+    musicName.innerHTML = data.track
+    musicDetails.appendChild(musicName)
+    var artistName = document.createElement("p")
+    artistName.className = "singer-name"
+    artistName.innerHTML = data.artist;
+    musicDetails.appendChild(artistName)
+
+    return musicCardlist;
+}
+
+
+</script>
+</body>
+</html>

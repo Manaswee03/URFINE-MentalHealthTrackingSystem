@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="CSS/style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Suez+One&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@500&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,500&display=swap" rel="stylesheet">
+
+<style type="text/css">
+
+  
+ .navbar-container {
+  text-align: center; 
+  font-family: 'Lora', serif; 
+}
+
+.navbar-container ul {
+  margin: 0;
+  padding: 0;
+  text-align: right;
+  display: inline-block;
+  
+}
+
+.navbar-container ul li {
+  display: inline-block;
+  font-size: 25px;
+  font-family: 'Lora', serif;
+  color: black;
+}
+
+.navbar-container ul li a {
+  color: darkolivegreen;
+  text-decoration: none;
+  display: inline-block;  
+  padding: 10px;
+  transition: color 0.5s;
+}
+
+.navbar-container ul li .underline {
+  height: 3px;
+  background-color: transparent;
+  width: 0%;
+  transition: width 0.2s, background-color 0.5s;
+  margin: 0 auto;
+}
+
+.navbar-container ul li.active-link .underline {
+  width: 100%;
+  background-color: #e5ccc9;
+}
+
+.navbar-container ul li:hover .underline {
+  background-color: #e5ccc9;
+  width: 100%;
+}
+
+.navbar-container ul li:active a {
+  transition: none;
+  color: rgba(255,255,255,0.76);
+}
+
+.navbar-container ul li:active .underline {
+  transition: none;
+  background-color: rgba(255,255,255,0.76);
+} 
+  
+  body {
+  font-family: 'Zilla Slab', serif;
+  font-size: 30px;
+}
+
+  .f{
+    font-family: 'Suez One', serif;
+    color: #843f5b;
+    font-size: 70px;
+    margin-top: 40px;
+    text-align: center;
+  }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  align-items: center;
+  grid-gap: 40px;
+}
+
+.f1{
+    font-family: 'Merriweather', serif;
+    color: #614051;
+    font-size: 40px;
+    margin-top: 40px;
+    margin-left: 40px;
+}
+
+</style>  
+</head>
+
+<body>    
+
+  <div class="navbar-container">
+    <ul>
+      <li class="nav-link">
+        <a href="/dashboard">Home</a>
+        <div class="underline"></div>
+      </li>
+      <li class="nav-link">
+        <a href="/activity">Challenges</a>
+        <div class="underline"></div>
+      </li>
+      <li class="nav-link">
+        <a href="/feedback">Feedback</a>
+        <div class="underline"></div>
+      </li>
+      <li class="nav-link">
+        <a href="/logout">Logout</a>
+        <div class="underline"></div>
+      </li>
+    </ul>
+  </div>
+   <header><div class="f">Exercises</div> </header>
+
+   <u style="color: #800080;"><p class="f1"><b>Breathing Exercises</b></p></u>
+
+   <div class="grid">
+
+   <video width="420" height="345" controls> <source src="/static/images/Ex1.mp4"></video>
+
+   <video width="420" height="345" controls> <source src="/static/images/Ex2.mp4"></video>
+   
+   <video width="420" height="345" controls> <source src="/static/images/Ex3.mp4"></video>
+
+   </div>
+   
+   <div class="grid">
+
+   <p>2 mins Breathe Bubble</p>
+   <p>Belly Breathing: Mindfulness for Children</p>
+   <p>Balloon Breaths/Belly Breaths</p>
+
+   </div>
+   
+<br>
+
+   <div class="grid">  
+
+   <video width="420" height="345" controls> <source src="/static/images/Ex20.mp4"></video>
+
+   <video width="420" height="345" controls> <source src="/static/images/Ex19.mp4"></video>
+   
+   <video width="420" height="345" controls> <source src="/static/images/Ex18.mp4"></video> 
+
+   </div>
+
+   <div class="grid">
+
+   <p>Box Breathing Techniques</p>
+   <p>Proning-Exercise to Increase Oxygen level</p>
+   <p>Basic Yoga Techniques</p>
+
+   </div>
+   
+   <br>
+
+   <u style="color: #800080;"><p class="f1"><b>Meditation</b></p></u>
+
+   <div class="grid">
+
+   <video width="420" height="345" controls> <source src="/static/images/M1.mp4"></video>
+
+   <video width="420" height="345" controls> <source src="/static/images/M2.mp4"></video>
+   
+   <video width="420" height="345" controls> <source src="/static/images/M3.mp4"></video>
+
+   </div>
+   
+   <div class="grid"> 
+
+   <p>Focus with this Mini Meditation</p>
+   <p>Mini Meditation-Lets Go of Stress</p>
+   <p>Tree Guided Meditation for Kids</p>
+
+   </div>
+
+   <div class="grid">
+
+   <video width="420" height="345" controls> <source src="/static/images/M18.mp4"></video>
+
+   <video width="420" height="345" controls> <source src="/static/images/M20.mp4"></video>
+   
+   <video width="420" height="345" controls> <source src="/static/images/M19.mp4"></video>
+
+   </div>
+
+   <div class="grid"> 
+
+   <p>Meditation to Calm Young Minds</p>
+   <p>Meditation-The Hole in the Road</p>
+   <p>Guide to Meditation</p>
+
+   </div>
+   <br><br>
+   </body>
+</html>

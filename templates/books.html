@@ -1,0 +1,1410 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <title></title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="CSS/style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@500&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Suez+One&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,500&display=swap" rel="stylesheet">
+</head>
+
+<style>
+  
+.navbar-container {
+  text-align: center; 
+  font-family: 'Lora', serif; 
+}
+
+.navbar-container ul {
+  margin: 0;
+  padding: 0;
+  text-align: right;
+  display: inline-block;
+  
+}
+
+.navbar-container ul li {
+  display: inline-block;
+  font-size: 25px;
+  font-family: 'Lora', serif;
+  color: black;
+}
+
+.navbar-container ul li a {
+  color: darkolivegreen;
+  text-decoration: none;
+  display: inline-block;  
+  padding: 10px;
+  transition: color 0.5s;
+}
+
+.navbar-container ul li .underline {
+  height: 3px;
+  background-color: transparent;
+  width: 0%;
+  transition: width 0.2s, background-color 0.5s;
+  margin: 0 auto;
+}
+
+.navbar-container ul li.active-link .underline {
+  width: 100%;
+  background-color: #e5ccc9;
+}
+
+.navbar-container ul li:hover .underline {
+  background-color: #e5ccc9;
+  width: 100%;
+}
+
+.navbar-container ul li:active a {
+  transition: none;
+  color: rgba(255,255,255,0.76);
+}
+
+.navbar-container ul li:active .underline {
+  transition: none;
+  background-color: rgba(255,255,255,0.76);
+} 
+
+	.f{
+		font-family: 'Merriweather', serif;
+		color: #843f5b;
+		font-size: 40px;
+    margin-top: 40px;
+    margin-left: 40px;
+	}
+
+body{
+	  font-family: 'Zilla Slab', serif;
+	  font-size: 20px;
+    color: dark;    
+}
+
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  align-items: center;
+  grid-gap: 30px;
+}
+.button2{
+  cursor: pointer;
+  border-radius: 25px;
+  border: 1px solid: dark;
+  padding: 2px;
+  width: 300px;
+  height: 400px;
+}
+
+
+.card:hover{
+     transform: scale(1.05);
+     box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+}
+
+.container{
+  margin-left: 50px;
+}
+
+.f1{
+    font-family: 'Zilla Slab', serif;
+    color: #614051;
+    font-size: 40px;
+    margin-top: 40px;
+    margin-left: 40px;
+}
+
+.btn {
+  background-color: #90EE90; /* Green */
+  border: none;
+  color: white;
+  padding: 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 25px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.button {
+  background-color:#b48395; /* Green */
+  border:none;
+  border-radius: 8px;
+  font-family: 'Zilla Slab', serif;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  margin: 4px 2px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+}
+
+.button1:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.grid1 {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-gap: 20px;
+  margin-left: 140px; 
+}
+
+.grid2 {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-gap: 20px;
+  margin-left: 220px; 
+}
+.a{
+  color: #9370DB;
+}
+
+  .f3{
+    font-family: 'Suez One', serif;
+    color: #843f5b;
+    font-size: 70px;
+    margin-top: 40px;
+    text-align: center;
+  }
+
+</style>
+
+<body>
+  <div class="navbar-container">
+    <ul>
+      <li class="nav-link">
+        <a href="/dashboard">Home</a>
+        <div class="underline"></div>
+      </li>
+      <li class="nav-link">
+        <a href="/activity">Quizzes</a>
+        <div class="underline"></div>
+      </li>
+      <li class="nav-link">
+        <a href="/feedback">Feedback</a>
+        <div class="underline"></div>
+      </li>
+      <li class="nav-link">
+        <a href="/logout">Logout</a>
+        <div class="underline"></div>
+      </li>
+    </ul>
+  </div>
+
+  <header><div class="f3"><b>E-Books</b></div></header>
+ 
+<section class="my-5">
+
+<div class="grid1">
+<button class="button button1"><a href="#action">Adventure</a></button>
+<button class="button button1"><a href="#child">Children</a></button>
+<button class="button button1"><a href="#bio">Biography</a></button>
+<button class="button button1"><a href="#fantasy">Fantasy</a></button>
+<button class="button button1"><a href="#classic">Classic</a></button>
+<button class="button button1"><a href="#scifi">Sci-Fi</a></button>
+</div><br>
+<div class="grid2">
+<button class="button button1"><a href="#fiction">Fiction</a></button>
+<button class="button button1"><a href="#horror">Horror</a></button>
+<button class="button button1"><a href="#mystery">Mystery</a></button>
+<button class="button button1"><a href="#self">Self Help</a></button>
+<button class="button button1"><a href="#short">Tales</a></button>
+</div>
+
+
+
+<div id="action">
+<u style="color: #800080;"><p class="f1"><b>Action and Adventure</b></p></u>
+<div class="grid">
+
+      <div class="button1">
+       <button onclick="document.getElementById('id01').style.display='block'"
+class="w3-button" >  <img src="/static/images/books/stardust.jpg" height="400" width="300" ></button>
+</div>
+<!-- The Modal -->
+<div id="id01" class="w3-modal">
+    <div class="w3-modal-content">
+      <div class="modal-header" style="background-color:#9370DB">
+        
+          <div class="m"><div class="modal-title"><b>Book Summary</b></div></div>
+              <span onclick="document.getElementById('id01').style.display='none'" 
+                class="w3-button w3-display-topright">&times;</span>
+        </div>
+      <br>
+      <div class="w3-container"> 
+        <p> The book begins with Dunstan Thorn engaging in a brief romance with a woman of the Faerie kingdom, Una, which results in the birth of his half-Faerie son, Tristran.
+
+Eighteen years later, Tristran goes in search of a fallen star in the Faerie kingdom, as a way to win the hand in marriage of his love, Victoria. He finds the star, who is actually a woman known as Yvaine. He keeps her captive to return her to Victoria, unbeknown of the fact that she is hunted by the Witch-Queen too, who wants her heart in exchange for everlasting youth.
+
+Along their journey, they encounter any things, such as a fight between a lion and a unicorn over a golden crown, an interaction with Pan, the spirit of the forest and the captain of an airship, all the while avoiding being killed by the Witch Queen.Towards the end of the journey, the two develop feelings for each other. Tristran realizes that Victoria has become engaged to another. However, he realizes that he is in love with Yvaine, and she with him.
+
+He then realizes that Una is alive and she reveals who she is to him, as well as the fact that he is the last male heir of Stormhold and is the King. Yvaine gives Tristran her heart, and as such the Witch-Queen ages and loses her youth. Tristran and Yvaine marry and rule the Kingdom of Stormhold. </p>
+        <br>
+                <p><a href="/static/images/books/stardust.pdf" target="_blank"><b>Read the book</b></a>.</p>
+  
+      </div>
+    </div>
+ </div>
+      
+
+ <div class="button1">
+  <button onclick="document.getElementById('id02').style.display='block'"
+class="w3-button" >  <img src="/static/images/books/black tulip.jpg" height="400" width="300"></button>
+</div>
+<!-- The Modal -->
+<div id="id02" class="w3-modal">
+    <div class="w3-modal-content">
+      <div class="modal-header" style="background-color:#9370DB">
+        
+          <div class="m"><div class="modal-title"><b>Book Summary</b></div></div>
+              <span onclick="document.getElementById('id02').style.display='none'" 
+                class="w3-button w3-display-topright">&times;</span>
+        </div>
+      <br>
+      <div class="w3-container"> 
+        <p> The Black Tulip, by Alexandre Dumas, is a work of historical fiction that mixes actual events in the Netherlands in the 17th century with fictional characters and events. The first third of the novel provides a thorough explanation of Dutch politics and culture—a stark difference from many of Dumas' other works, which launch into breakneck action from the very first page. Midway through the novel, the plot adopts the fast-paced style for which Dumas is well-known, and does not let up until the very end.</p>
+        <br><br>
+                <p><a href="/static/images/books/black tulip.pdf" target="_blank"><b>Read the book</b></a>.</p>
+  
+      </div>
+    </div>
+ </div>
+      
+
+<div class="button1">
+       <button onclick="document.getElementById('id03').style.display='block'"
+class="w3-button" ><img src="/static/images/books/shadow.jpeg" height="400" width="300"></button>
+</div>
+<!-- The Modal -->
+<div id="id03" class="w3-modal">
+    <div class="w3-modal-content">
+      <div class="modal-header" style="background-color:#9370DB">
+        
+          <div class="m"><div class="modal-title"><b>Book Summary</b></div></div>
+              <span onclick="document.getElementById('id03').style.display='none'" 
+                class="w3-button w3-display-topright">&times;</span>
+        </div>
+      
+      <div class="w3-container"> 
+        <br>
+      <p>The Shadow Fold, a swathe of impenetrable darkness crawling with monsters that feast on human flesh, is slowly destroying the once-great nation of Ravka.
+
+Alina, a pale, lonely orphan, discovers a unique power that thrusts her into the lavish world of the kingdom’s magical elite—the Grisha. Could she be the key to unravelling the dark fabric of the Shadow Fold and setting Ravka free?
+
+The Darkling, a creature of seductive charm and terrifying power, is the leader of the Grisha. If Alina is to fulfill her destiny, she must discover how to unlock her gift and face up to her danger.
+
+But what of Mal, Alina’s childhood best friend? As Alina contemplates her dazzling new future, why can't she ever quite forget him?</p>  
+              
+              <br>
+                <p><a href="/static/images/books/Shadow and Bone.pdf" target="_blank"><b>Read the book</b></a></p>
+  
+      </div>
+    </div>
+ </div>
+      
+
+     
+
+
+      <div class="button1">
+  <button onclick="document.getElementById('id04').style.display='block'"
+class="w3-button" >  <img src="/static/images/books/journey to the centre.jpg" height="400" width="300"></button>
+</div>
+<!-- The Modal -->
+<div id="id04" class="w3-modal">
+    <div class="w3-modal-content">
+      <div class="modal-header" style="background-color:#9370DB">
+        
+          <div class="m"><div class="modal-title"><b>Book Summary</b></div></div>
+              <span onclick="document.getElementById('id04').style.display='none'" 
+                class="w3-button w3-display-topright">&times;</span>
+        </div>
+      <br>
+      <div class="w3-container"> 
+        <p> In Jules Verne's JOURNEY TO THE CENTER OF THE EARTH, a geology professor, Otto Lidenbrock, and his nephew Axel discover and decode an ancient document that purports to show that a dormant volcano holds a secret entrance to a series of caverns leading to a subterranean world at the earth's center. In the name of scientific discovery, they follow the instructions and undertake a hazardous journey deep within the earth, where they find creatures and plants from earlier epochs. In the end, their journey back to the surface of the earth is just as harrowing as the trip down.  </p>
+        <br><br>
+                <p><a href="/static/images/books/a journey to the centre.pdf" target="_blank"><b>Read the book</b></a>.</p>
+  
+      </div>
+    </div>
+ </div>
+
+     <div class="button1">
+  <button onclick="document.getElementById('id05').style.display='block'"
+class="w3-button" >  <img src="/static/images/books/around the world in 80 days.jpg" height="400" width="300"></button>
+</div>
+<!-- The Modal -->
+<div id="id05" class="w3-modal">
+    <div class="w3-modal-content">
+      <div class="modal-header" style="background-color:#9370DB">
+        
+          <div class="m"><div class="modal-title"><b>Book Summary</b></div></div>
+              <span onclick="document.getElementById('id05').style.display='none'" 
+                class="w3-button w3-display-topright">&times;</span>
+        </div>
+      <br>
+      <div class="w3-container"> 
+        <p> The story begins at England. We are introduced to Fogg, a very precise man who regularly goes to the Reform Club every evening. At one such visit to the club to play cards, he gets into a conversation with his fellow card players as to whether it is possible to go around the world in eighty days. He believes that it is and is challenged to complete the adventure. This is the beginning of the entire plot and from then on we see how Fogg goes around the world and we witness the amazing adventures that he has with his companions. The main plot is based on Fogg’s travels, while other such plots merely support the central theme Fix, the detective follows Fogg all over. He believes that Fogg is the bank robber who has robbed a great sum from the bank of England. He puts obstacles in Fogg’s path just so that he can arrest him whenever he gets the warrant from England. The suspicion that Fogg might be a clever gentleman robber is the sub-theme of the book and the author makes the reader also suspicious. Passepartout too wonders whether his master might be a robber though in his heart he has ample trust in Fogg’s integrity. The plot moves ahead with Fogg striving through various obstacles to reach London in time. He goes through Brindisi, Suez, Bombay, Calcutta, Hong Kong, Yokohama, San Francisco, New York and finally Liverpool. Fix arrests Fogg at Liverpool and this delays our hero. He thinks that he has missed the deadline and hasn't reached London in time when in reality he reached a full day earlier. Thus Fogg wins the wager and in the course of his travels, finds himself a worthy charming, beautiful wife too.
+</p>
+        <br>
+    <p><a href="/static/images/books/around the world in eighty days.pdf" target="_blank"><b>Read the book</b></a>.</p>
+  
+      </div>
+    </div>
+ </div>
+
+     <div class="button1">
+  <button onclick="document.getElementById('id06').style.display='block'"
+class="w3-button" >  <img src="/static/images/books/harry.jpeg" height="400" width="300"></button>
+</div>
+<!-- The Modal -->
+<div id="id06" class="w3-modal">
+    <div class="w3-modal-content">
+      <div class="modal-header" style="background-color:#9370DB">
+        
+          <div class="m"><div class="modal-title"><b>Book Summary</b></div></div>
+              <span onclick="document.getElementById('id06').style.display='none'" 
+                class="w3-button w3-display-topright">&times;</span>
+        </div>
+      <br>
+      <div class="w3-container"> 
+        <p> Based on an original new story by J.K. Rowling, Jack Thorne and John Tiffany, a new play by Jack Thorne, Harry Potter and the Cursed Child is the eighth story in the Harry Potter series and the first official Harry Potter story to be presented on stage. The play will receive its world premiere in London’s West End on July 30, 2016.
+
+It was always difficult being Harry Potter and it isn’t much easier now that he is an overworked employee of the Ministry of Magic, a husband and father of three school-age children.
+
+While Harry grapples with a past that refuses to stay where it belongs, his youngest son Albus must struggle with the weight of a family legacy he never wanted. As past and present fuse ominously, both father and son learn the uncomfortable truth: sometimes, darkness comes from unexpected places. </p>
+        <br>
+                <p><a href="/static/images/books/Harry Potter.pdf" target="_blank"><b>Read the book</b></a>.</p>
+ 
+      </div>
+    </div>
+ </div>
+</div>
+</div>
+<br>
+
+<div id="child">
+  <u style="color: #800080;"><p class="f1"><b>Children and Teen</b></p></u>
+  <div class="grid"> 
+
+       <div class="button1">
+       <button onclick="document.getElementById('id07').style.display='block'"
+class="w3-button" >  <img src="/static/images/books/alice in wonderland.jpg" height="400" width="300" ></button>
+</div>
+<!-- The Modal -->
+<div id="id07" class="w3-modal">
+    <div class="w3-modal-content">
+      <div class="modal-header" style="background-color:#9370DB">
+        
+          <div class="m"><div class="modal-title"><b>Book Summary</b></div></div>
+              <span onclick="document.getElementById('id07').style.display='none'" 
+                class="w3-button w3-display-topright">&times;</span>
+        </div>
+      <br>
+      <div class="w3-container"> 
+        <p> Alice's Adventures in Wonderland (commonly shortened to Alice in Wonderland) is an 1865 novel written by English mathematician Charles Lutwidge Dodgson under the pseudonym Lewis Carroll. It tells of a girl named Alice falling through a rabbit hole into a fantasy world populated by peculiar, anthropomorphic creatures. The tale plays with logic, giving the story lasting popularity with adults as well as with children. It is considered to be one of the best examples of the literary nonsense genre. Its narrative course and structure, characters and imagery have been enormously influential in both popular culture and literature, especially in the fantasy genre.
+</p>
+        <br>
+                <p><a href="/static/images/books/alice.pdf" target="_blank"><b>Read the book</b></a>.</p>
+  
+      </div>
+    </div>
+ </div>
+
+       <div class="button1">
+       <button onclick="document.getElementById('id08').style.display='block'"
+class="w3-button" >  <img src="/static/images/books/heidi.jpg" height="400" width="300" ></button>
+</div>
+<!-- The Modal -->
+<div id="id08" class="w3-modal">
+    <div class="w3-modal-content">
+      <div class="modal-header" style="background-color:#9370DB">
+        
+          <div class="m"><div class="modal-title"><b>Book Summary</b></div></div>
+              <span onclick="document.getElementById('id08').style.display='none'" 
+                class="w3-button w3-display-topright">&times;</span>
+        </div>
+      <br>
+      <div class="w3-container"> 
+        <p>The story is about an orphan girl, Heidi, who has been sent to live with a lonely, angry man at the top of a mountain in the Swiss Alps. This man is her grandfather. Heidi had been previously living with her Aunt Dete, but now Dete has been appointed to a job in Frankfurt. There is no way she is going to turn down this job to look after Heidi; she has to go. Surprisingly, Heidi's grandfather turns out to be welcoming and loving and lets Heidi stay in his mountain home, which she adores. </p>
+      
+        <br>
+                <p><a href="/static/images/books/heidi.pdf" target="_blank"><b>Read the book</b></a>.</p>
+  
+
+      </div>
+    </div>
+ </div>
+      <div class="button1">
+       <button onclick="document.getElementById('id09').style.display='block'"
+class="w3-button" >  <img src="/static/images/books/pied piper.jpg" height="400" width="300" ></button>
+</div>
+<!-- The Modal -->
+<div id="id09" class="w3-modal">
+    <div class="w3-modal-content">
+      <div class="modal-header" style="background-color:#9370DB">
+        
+          <div class="m"><div class="modal-title"><b>Book Summary</b></div></div>
+              <span onclick="document.getElementById('id09').style.display='none'" 
+                class="w3-button w3-display-topright">&times;</span>
+        </div>
+      <br>
+      <div class="w3-container"> 
+        <p> Robert Browning's famous verse retelling of the medieval legend of the Pied Piper is renowned for its humor and vivid wordplay. When the selfish townspeople of Hamelin refuse to pay the piper for spiriting away the hordes of rats that had plagued them, he exacts his revenge by luring away their greatest treasure, the children of the town.
+
+Excerpt from The Pied Piper of Hamelin
+The Pied Piper of Hamelin.
+I.
+Hamelin Town's in Brunswick,
+By famous Hanover city;
+The river Weser, deep and wide,
+Washes its wall on the southern side;
+A pleasanter spot you never spied;
+But, when begins my ditty,
+Almost five hundred years ago,
+To see the townsfolk suffer so
+From vermin, was a pity.</p>
+        <br>
+                <p><a href="/static/images/books/pied piper.pdf" target="_blank"><b>Read the book</b></a>.</p>
+      </div>
+    </div>
+ </div>
+
+       <div class="button1">
+       <button onclick="document.getElementById('id10').style.display='block'"
+class="w3-button" >  <img src="/static/images/books/hamlet.jpg" height="400" width="300" ></button>
+</div>
+<!-- The Modal -->
+<div id="id10" class="w3-modal">
+    <div class="w3-modal-content">
+      <div class="modal-header" style="background-color:#9370DB">
+        
+          <div class="m"><div class="modal-title"><b>Book Summary</b></div></div>
+              <span onclick="document.getElementById('id10').style.display='none'" 
+                class="w3-button w3-display-topright">&times;</span>
+        </div>
+      <br>
+      <div class="w3-container"> 
+        <p> Among Shakespeare's plays, "Hamlet" is considered by many his masterpiece. Among actors, the role of Hamlet, Prince of Denmark, is considered the jewel in the crown of a triumphant theatrical career. Now Kenneth Branagh plays the leading role and co-directs a brillant ensemble performance. Three generations of legendary leading actors, many of whom first assembled for the Oscar-winning film "Henry V", gather here to perform the rarely heard complete version of the play. This clear, subtly nuanced, stunning dramatization, presented by The Renaissance Theatre Company in association with "Bbc" Broadcasting, features such luminaries as Sir John Gielgud, Derek Jacobi, Emma Thompson and Christopher Ravenscroft. It combines a full cast with stirring music and sound effects to bring this magnificent Shakespearen classic vividly to life. Revealing new riches with each listening, this production of "Hamlet" is an invaluable aid for students, teachers and all true lovers of Shakespeare - a recording to be treasured for decades to come.</p>
+        <br>
+                <p><a href="/static/images/books/hamlet.pdf" target="_blank"><b>Read the book</b></a>.</p>
+ 
+      </div>
+    </div>
+ </div>
+
+       <div class="button1">
+       <button onclick="document.getElementById('id11').style.display='block'"
+class="w3-button" >  <img src="/static/images/books/peterpan.jpg" height="400" width="300" ></button>
+</div>
+<!-- The Modal -->
+<div id="id11" class="w3-modal">
+    <div class="w3-modal-content">
+      <div class="modal-header" style="background-color:#9370DB">
+        
+          <div class="m"><div class="modal-title"><b>Book Summary</b></div></div>
+              <span onclick="document.getElementById('id11').style.display='none'" 
+                class="w3-button w3-display-topright">&times;</span>
+        </div>
+      <br>
+      <div class="w3-container"> 
+        <p> J. M. Barrie’s classic work Peter Pan (1904) tells the story of the Darling children’s journey to the magical islands of Neverland with Peter Pan, an adventurous young boy who refuses to grow up. The omniscient narrator—who addresses the audience in the first person—introduces the Darling family, which includes Mr. and Mrs. Darling; their three children, Wendy, John, and Michael; and a dog named Nana. The family resides in London, where the children share a nursery. In the present, Wendy tells Mrs. Darling about a boy named Peter Pan, who visits her dreams from a place called Neverland.
+
+</p>
+        <br>
+                <p><a href="/static/images/books/peterpan.pdf" target="_blank"><b>Read the book</b></a>.</p>
+  
+      </div>
+    </div>
+ </div>
+
+       <div class="button1">
+       <button onclick="document.getElementById('id12').style.display='block'"
+class="w3-button" >  <img src="/static/images/books/princess nobody.jpg" height="400" width="300" ></button>
+</div>
+<!-- The Modal -->
+<div id="id12" class="w3-modal">
+    <div class="w3-modal-content">
+      <div class="modal-header" style="background-color:#9370DB">
+        
+          <div class="m"><div class="modal-title"><b>Book Summary</b></div></div>
+              <span onclick="document.getElementById('id12').style.display='none'" 
+                class="w3-button w3-display-topright">&times;</span>
+        </div>
+      <br>
+      <div class="w3-container"> 
+        <p> The story of Prince Comical and his adventure for the diminutive princess without a name.  </p>
+        <br>
+                <p><a href="/static/images/books/princess nobody.pdf" target="_blank"><b>Read the book</b></a>.</p>
+  
+      </div>
+    </div>
+ </div> 
+  </div>    
+</div>
+<br>
+
+
+<div id="bio">
+<u style="color: #800080;"><p class="f1"><b>Biography</b></p></u>
+<div class="grid">   
+
+       <div class="button1">
+       <button onclick="document.getElementById('id13').style.display='block'"
+class="w3-button" >  <img src="/static/images/books/priyanka chopra.jpg" height="400" width="300" ></button>
+</div>
+<!-- The Modal -->
+<div id="id13" class="w3-modal">
+    <div class="w3-modal-content">
+      <div class="modal-header" style="background-color:#9370DB">
+        
+          <div class="m"><div class="modal-title"><b>Book Summary</b></div></div>
+              <span onclick="document.getElementById('id13').style.display='none'" 
+                class="w3-button w3-display-topright">&times;</span>
+        </div>
+      <br>
+      <div class="w3-container"> 
+        <p> A remarkable life story rooted in two different worlds, Unfinished offers insights into Priyanka Chopra Jonas’s childhood in India; her formative teenage years in the United States; and her return to India, where against all odds as a newcomer to the pageant world, she won the national and international beauty competitions that launched her global acting career. Whether reflecting on her nomadic early years or the challenges she has faced as she has doggedly pursued her calling, Priyanka shares her challenges and triumphs with warmth and honesty. The result is a book that is philosophical, sassy, inspiring, bold, and rebellious. Just like the author herself.
+
+From her dual-continent twenty-year-long career as an actor and producer to her work as a UNICEF Goodwill Ambassador, from losing her beloved father to cancer to marrying Nick Jonas, Priyanka Chopra Jonas’s story will inspire a generation around the world to gather their courage, embrace their ambition, and commit to the hard work of following their dreams.</p>
+        <br>
+                <p><a href="/static/images/books/priyanka.pdf" target="_blank"><b>Read the book</b></a>.</p>
+  
+      </div>
+    </div>
+ </div>
+
+       <div class="button1">
+       <button onclick="document.getElementById('id14').style.display='block'"
+class="w3-button" >  <img src="/static/images/books/diary of young girl.jpg" height="400" width="300" ></button>
+</div>
+<!-- The Modal -->
+<div id="id14" class="w3-modal">
+    <div class="w3-modal-content">
+      <div class="modal-header" style="background-color:#9370DB">
+        
+          <div class="m"><div class="modal-title"><b>Book Summary</b></div></div>
+              <span onclick="document.getElementById('id14').style.display='none'" 
+                class="w3-button w3-display-topright">&times;</span>
+        </div>
+      <br>
+      <div class="w3-container"> 
+        <p> Anne Frank: The Diary Of A Young Girl is the real diary of a teenage girl that begins on Anne’s 13th birthday (12 June 1942) when she gets a diary. It tells the story of her family who live in Frankfurt, Germany and suddenly have to go into hiding as a result of Hitler and the Nazi Party’s treatment of Jews in Europe during the second world war. They escape to Amsterdam where they go into hiding with other Jews. The diary ends suddenly on 1 August 1944.
+
+There are many important messages in this book, but the most important message is that all people have the right to live in freedom. Anne’s story shows us that just because people may be a different religion or race, doesn’t mean that they should be treated differently. The terrible treatment of Jewish people during the war has shown this. Her diary shows us things that people don’t think about now, for example how every day the people in hiding worried about maybe being found and punished. </p>
+        <br>
+                <p><a href="/static/images/books/diary.pdf" target="_blank"><b>Read the book</b></a>.</p>
+  
+      </div>
+    </div>
+ </div>
+
+       <div class="button1">
+       <button onclick="document.getElementById('id15').style.display='block'"
+class="w3-button" >  <img src="/static/images/books/michelle obama.jpg" height="400" width="300" ></button>
+</div>
+<!-- The Modal -->
+<div id="id15" class="w3-modal">
+    <div class="w3-modal-content">
+      <div class="modal-header" style="background-color:#9370DB">
+        
+          <div class="m"><div class="modal-title"><b>Book Summary</b></div></div>
+              <span onclick="document.getElementById('id15').style.display='none'" 
+                class="w3-button w3-display-topright">&times;</span>
+        </div>
+      <br>
+      <div class="w3-container"> 
+        <p> In a life filled with meaning and accomplishment, Michelle Obama has emerged as one of the most iconic and compelling women of our era. As First Lady of the United States of America - the first African-American to serve in that role - she helped create the most welcoming and inclusive White House in history, while also establishing herself as a powerful advocate for women and girls in the U.S. and around the world, dramatically changing the ways that families pursue healthier and more active lives, and standing with her husband as he led America through some of its most harrowing moments. Along the way, she showed us a few dance moves, crushed Carpool Karaoke, and raised two down-to-earth daughters under an unforgiving media glare.
+
+In her memoir, a work of deep reflection and mesmerizing storytelling, Michelle Obama invites readers into her world, chronicling the experiences that have shaped her - from her childhood on the South Side of Chicago to her years as an executive balancing the demands of motherhood and work, to her time spent at the world's most famous address. With unerring honesty and lively wit, she describes her triumphs and her disappointments, both public and private, telling her full story as she has lived it - in her own words and on her own terms. Warm, wise, and revelatory, Becoming is the deeply personal reckoning of a woman of soul and substance who has steadily defied expectations - and whose story inspires us to do the same. </p>
+        <br>
+                <p><a href="/static/images/books/michelle obama.pdf" target="_blank"><b>Read the book</b></a>.</p>
+  
+      </div>
+    </div>
+ </div>
+
+        <div class="button1">
+       <button onclick="document.getElementById('id16').style.display='block'"
+class="w3-button" >  <img src="/static/images/books/american pioneer.jpg" height="400" width="300" ></button>
+</div>
+<!-- The Modal -->
+<div id="id16" class="w3-modal">
+    <div class="w3-modal-content">
+      <div class="modal-header" style="background-color:#9370DB">
+        
+          <div class="m"><div class="modal-title"><b>Book Summary</b></div></div>
+              <span onclick="document.getElementById('id16').style.display='none'" 
+                class="w3-button w3-display-topright">&times;</span>
+        </div>
+      <br>
+      <div class="w3-container"> 
+        <p> The story takes place on the rapidly advancing frontier of New York State and features an elderly Leatherstocking (Natty Bumppo), Judge Marmaduke Temple of Templeton (whose life parallels that of the author's father Judge William Cooper), and Elizabeth Temple (based on the author's sister, Hannah Cooper), daughter of the fictional Templeton. The story begins with an argument between the judge and Leatherstocking over who killed a buck.
+
+Through their discussion, Cooper reviews many of the changes to New York's Lake Otsego and its area: questions of environmental stewardship, conservation, and use prevail. Leatherstocking and his closest friend, the Mohican Indian Chingachgook, begin to compete with the Temples for the loyalties of a mysterious young visitor, a "young hunter" known as Oliver Edwards. The latter eventually marries Elizabeth Temple. Chingachgook dies, representing European-American fears for the race of "dying Indians", who appear to be displaced by settlers. Natty vanishes into the sunset.</p>
+        <br>
+                <p><a href="/static/images/books/american pioneer.pdf" target="_blank"><b>Read the book</b></a>.</p>
+  
+      </div>
+    </div>
+ </div>
+
+      <div class="button1">
+       <button onclick="document.getElementById('id17').style.display='block'"
+class="w3-button" >  <img src="/static/images/books/wings of fire.jpg" height="400" width="300" ></button>
+</div>
+<!-- The Modal -->
+<div id="id17" class="w3-modal">
+    <div class="w3-modal-content">
+      <div class="modal-header" style="background-color:#9370DB">
+        
+          <div class="m"><div class="modal-title"><b>Book Summary</b></div></div>
+              <span onclick="document.getElementById('id17').style.display='none'" 
+                class="w3-button w3-display-topright">&times;</span>
+        </div>
+      <br>
+      <div class="w3-container"> 
+        <p> Wings of Fire is the autobiography of former Indian president and eminent scientist Late APJ Kalam. The book is co-written by Arun Tiwari.
+
+A man of humble beginnings and simple life, he carried an unusual mix of spiritual convictions with man spirit of scientific enquiry. Born in Rameswaram, Tamil Nadu (1931), young Muslim boy catapulted his fortunes to be called the ‘Missile Man’ of India. Dr Kalam’s took the reins at Defence Research and Development Organization (DRDO) and the Indian Space Research Organization (ISRO) and inspired generations through some of the most innovative, and breathtaking scientific feats of independent India.His expertise in rocket science and space technology has propelled India to become a shining example for young nations wanting to stamp their knowledge and skills not just over the globe but the vastness of our Universe.
+The book starts with a homage to his parents and in particular to his mother Kalam named ‘My mother’.  </p>
+        <br>
+                <p><a href="/static/images/books/wings of fire.pdf" target="_blank"><b>Read the book</b></a>.</p>
+  
+      </div>
+    </div>
+ </div>
+
+       <div class="button1">
+       <button onclick="document.getElementById('id18').style.display='block'"
+class="w3-button" >  <img src="/static/images/books/gandhi.jpeg" height="400" width="300" ></button>
+</div>
+<!-- The Modal -->
+<div id="id18" class="w3-modal">
+    <div class="w3-modal-content">
+      <div class="modal-header" style="background-color:#9370DB">
+        
+          <div class="m"><div class="modal-title"><b>Book Summary</b></div></div>
+              <span onclick="document.getElementById('id18').style.display='none'" 
+                class="w3-button w3-display-topright">&times;</span>
+        </div>
+      <br>
+      <div class="w3-container"> 
+        <p> The Story of My Experiments with Truth (Gujarati: Satya Na Prayogo athva Atmakatha, lit. 'Experiments with Truth or Autobiography') is the autobiography of Mohandas K. Gandhi, covering his life from early childhood through to 1921. It was written in weekly installments and published in his journal Navjivan from 1925 to 1929. Its English translation also appeared in installments in his other journal Young India.[1] It was initiated at the insistence of Swami Anand and other close co-workers of Gandhi, who encouraged him to explain the background of his public campaigns. In 1998, the book was designated as one of the "100 Best Spiritual Books of the 20th Century" by a committee of global spiritual and religious authorities.[2]
+
+Starting with his birth and parentage, Gandhi has given reminiscences of childhood, child marriage, relation with his wife and parents, experiences at the school, his study tour to London, efforts to be like the English gentleman, experiments in dietetics, his going to South Africa, his experiences of colour prejudice, his quest for dharma, social work in Africa, return to India, his slow and steady work for political awakening and social activities.[3] The book ends abruptly after a discussion of the Nagpur session of the Congress in 1915.</p>
+        <br>
+                <p><a href="/static/images/books/gandhi.pdf" target="_blank"><b>Read the book</b></a>.</p>
+  
+      </div>
+    </div>
+ </div>
+
+</div>
+</div>      
+<br>
+
+
+<div id="fantasy">
+<u style="color: #800080;"><p class="f1"><b>Fantasy</b></p></u>
+<div class="grid">    
+
+      <div class="button1">
+       <button onclick="document.getElementById('id19').style.display='block'"
+class="w3-button" >  <img src="/static/images/books/nightland.jpg" height="400" width="300" ></button>
+</div>
+<!-- The Modal -->
+<div id="id19" class="w3-modal">
+    <div class="w3-modal-content">
+      <div class="modal-header" style="background-color:#9370DB">
+        
+          <div class="m"><div class="modal-title"><b>Book Summary</b></div></div>
+              <span onclick="document.getElementById('id19').style.display='none'" 
+                class="w3-button w3-display-topright">&times;</span>
+        </div>
+      <br>
+      <div class="w3-container"> 
+        <p> The Sun has gone out: the Earth is lit only by the glow of residual vulcanism. The last few millions of the human race are gathered together in a gigantic metal pyramid, the Last Redoubt, under siege from unknown forces and Powers outside in the dark. These are held back by a Circle of energy, known as the "air clog," powered from the Earth's internal energy. For millennia, vast living shapes - the Watchers - have waited in the darkness near the pyramid: it is thought they are waiting for the inevitable time when the Circle's power finally weakens and dies. Other living things have been seen in the darkness beyond, some of unknown origins, and others that may once have been human.
+
+To leave the protection of the Circle means almost certain death, or worse, but as the story commences, the narrator establishes mind contact with an inhabitant of another, forgotten, Redoubt, and sets off into the darkness to find her.</p>
+        <br>
+                <p><a href="/static/images/books/nightland.pdf" target="_blank"><b>Read the book</b></a>.</p>
+  
+      </div>
+    </div>
+ </div>
+
+
+      <div class="button1">
+       <button onclick="document.getElementById('id20').style.display='block'"
+class="w3-button" >  <img src="/static/images/books/wizard of oz.jpg" height="400" width="300" ></button>
+</div>
+<!-- The Modal -->
+<div id="id20" class="w3-modal">
+    <div class="w3-modal-content">
+      <div class="modal-header" style="background-color:#9370DB">
+        
+          <div class="m"><div class="modal-title"><b>Book Summary</b></div></div>
+              <span onclick="document.getElementById('id20').style.display='none'" 
+                class="w3-button w3-display-topright">&times;</span>
+        </div>
+      <br>
+      <div class="w3-container"> 
+        <p> The Wonderful Wizard of Oz is an American children's novel written by author L. Frank Baum and illustrated by W. W. Denslow, originally published by the George M. Hill Company in May 1900. It has since seen several reprints, most often under the title The Wizard of Oz, which is the title of the popular 1902 Broadway musical adaptation as well as the iconic 1939 live-action film.
+
+The story chronicles the adventures of a young farm girl named Dorothy in the magical Land of Oz after she and her pet dog Toto are swept away from their home in Kansas by a cyclone. The book is one of the best-known stories in American literature and has been widely translated. The Library of Congress has declared it "America's greatest and best-loved homegrown fairytale." Its groundbreaking success, and that of the Broadway musical adapted from the novel led Baum to write thirteen additional Oz books that serve as official sequels to the first story.</p>
+        <br>
+                <p><a href="/static/images/books/oz.pdf" target="_blank"><b>Read the book</b></a>.</p>
+  
+      </div>
+    </div>
+ </div>
+
+
+   <div class="button1">
+       <button onclick="document.getElementById('id21').style.display='block'"
+class="w3-button" >  <img src="/static/images/books/king in yellow.jpg" height="400" width="300" ></button>
+</div>
+<!-- The Modal -->
+<div id="id21" class="w3-modal">
+    <div class="w3-modal-content">
+      <div class="modal-header" style="background-color:#9370DB">
+        
+          <div class="m"><div class="modal-title"><b>Book Summary</b></div></div>
+              <span onclick="document.getElementById('id21').style.display='none'" 
+                class="w3-button w3-display-topright">&times;</span>
+        </div>
+      <br>
+      <div class="w3-container"> 
+        <p> Set in a totalitarian American of the not-too-distant future where a young man named Hildred Castaigne has undergone severe changes in personality due to a head injury sustained after falling from his mount. Committed to an asylum, he comes across a censored play titled “The King in Yellow” which supposed has the power to drive people made. Ultimately, Hildred become a recluse obsessing over archaic texts with the help of one Mr. Wilde. Mr. Wilde fancies himself the titular Repairer of Reputations in his role as the phantom puppetmaster controlling a global conspiracy. With the help of Mr. Wilde, Hildred is convinced that he will ultimately take his rightful place as the last king of "The Imperial Dynasty of America.”</p>
+        <br>
+                <p><a href="/static/images/books/king.pdf" target="_blank"><b>Read the book</b></a>.</p>
+  
+      </div>
+    </div>
+ </div>
+
+
+</div>
+</div>
+<br>
+
+
+<div id="classic">
+<u style="color: #800080;"><p class="f1"><b>Classic</b></p></u>
+<div class="grid">        
+       <div class="button1">
+       <button onclick="document.getElementById('id22').style.display='block'"
+class="w3-button" >  <img src="/static/images/books/oedipus.jpg" height="400" width="300" ></button>
+</div>
+<!-- The Modal -->
+<div id="id22" class="w3-modal">
+    <div class="w3-modal-content">
+      <div class="modal-header" style="background-color:#9370DB">
+        
+          <div class="m"><div class="modal-title"><b>Book Summary</b></div></div>
+              <span onclick="document.getElementById('id22').style.display='none'" 
+                class="w3-button w3-display-topright">&times;</span>
+        </div>
+      <br>
+      <div class="w3-container"> 
+        <p> “Oedipus the King” (Gr: “Oidipous Tyrannos”; Lat: “Oedipus Rex”) is a tragedy by the ancient Greek playwright Sophocles, first performed in about 429 BCE. It was the second of Sophocles‘ three Theban plays to be produced, but it comes first in the internal chronology (followed by “Oedipus at Colonus” and then “Antigone”).
+
+
+It follows the story of King Oedipus of Thebes as he discovers that he has unwittingly killed his own father, Laius, and married his own mother, Jocasta. Over the centuries, it has come to be regarded by many as the Greek tragedy par excellence and certainly as the summit of Sophocles’ achievements.
+
+
+</p>
+        <br>
+                <p><a href="/static/images/books/oedipus.pdf" target="_blank"><b>Read the book</b></a>.</p>
+  
+      </div>
+    </div>
+ </div>
+
+      <div class="button1">
+       <button onclick="document.getElementById('id23').style.display='block'"
+class="w3-button" >  <img src="/static/images/books/merchant of venice.jpg" height="400" width="300" ></button>
+</div>
+<!-- The Modal -->
+<div id="id23" class="w3-modal">
+    <div class="w3-modal-content">
+      <div class="modal-header" style="background-color:#9370DB">
+        
+          <div class="m"><div class="modal-title"><b>Book Summary</b></div></div>
+              <span onclick="document.getElementById('id23').style.display='none'" 
+                class="w3-button w3-display-topright">&times;</span>
+        </div>
+      <br>
+      <div class="w3-container"> 
+        <p>In this lively comedy of love and money in sixteenth-century Venice, Bassanio wants to impress the wealthy heiress Portia but lacks the necessary funds. He turns to his merchant friend, Antonio, who is forced to borrow from Shylock, a Jewish moneylender. When Antonio's business falters, repayment becomes impossible--and by the terms of the loan agreement, Shylock is able to demand a pound of Antonio's flesh. Portia cleverly intervenes, and all ends well (except of course for Shylock).  </p>
+        <br>
+                <p><a href="/static/images/books/venice.pdf" target="_blank"><b>Read the book</b></a>.</p>
+  
+      </div>
+    </div>
+ </div>
+
+      <div class="button1">
+       <button onclick="document.getElementById('id24').style.display='block'"
+class="w3-button" >  <img src="/static/images/books/sonnets.jpg" height="400" width="300" ></button>
+</div>
+<!-- The Modal -->
+<div id="id24" class="w3-modal">
+    <div class="w3-modal-content">
+      <div class="modal-header" style="background-color:#9370DB">
+        
+          <div class="m"><div class="modal-title"><b>Book Summary</b></div></div>
+              <span onclick="document.getElementById('id24').style.display='none'" 
+                class="w3-button w3-display-topright">&times;</span>
+        </div>
+      <br>
+      <div class="w3-container"> 
+        <p>A sonnet is a fourteen-line lyric poem, traditionally written in iambic pentameter—that is, in lines ten syllables long, with accents falling on every second syllable, as in: “Shall I compare thee to a summer’s day?” The sonnet form first became popular during the Italian Renaissance, when the poet Petrarch published a sequence of love sonnets addressed to an idealized woman named Laura. Taking firm hold among Italian poets, the sonnet spread throughout Europe to England, where, after its initial Renaissance, “Petrarchan” incarnation faded, the form enjoyed a number of revivals and periods of renewed interest. In Elizabethan England—the era during which Shakespeare’s sonnets were written—the sonnet was the form of choice for lyric poets, particularly lyric poets seeking to engage with traditional themes of love and romance. (In addition to Shakespeare’s monumental sequence, the Astrophel and Stella sequence by Sir Philip Sydney stands as one of the most important sonnet sequences of this period.) Sonnets were also written during the height of classical English verse, by Dryden and Pope, among others, and written again during the heyday of English Romanticism, when Wordsworth, Shelley, and particularly John Keats created wonderful sonnets. </p>
+        <br>
+                <p><a href="/static/images/books/sonnets.pdf" target="_blank"><b>Read the book</b></a>.</p>
+  
+      </div>
+    </div>
+ </div>
+
+</div>
+</div>
+<br>
+
+
+<div id="scifi">
+<u style="color: #800080;"><p class="f1"><b>Science Fiction</b></p></u>
+<div class="grid"> 
+       <div class="button1">
+       <button onclick="document.getElementById('id25').style.display='block'"
+class="w3-button" >  <img src="/static/images/books/Princess_of_Mars_.jpg" height="400" width="300" ></button>
+</div>
+<!-- The Modal -->
+<div id="id25" class="w3-modal">
+    <div class="w3-modal-content">
+      <div class="modal-header" style="background-color:#9370DB">
+        
+          <div class="m"><div class="modal-title"><b>Book Summary</b></div></div>
+              <span onclick="document.getElementById('id25').style.display='none'" 
+                class="w3-button w3-display-topright">&times;</span>
+        </div>
+      <br>
+      <div class="w3-container"> 
+        <p> A Princess of Mars is a science fiction novel by Edgar Rice Burroughs, forms the first part of his Mars Trilogy, and follows the adventures of American Confederate captain John Carter on the planet Mars as he attempts to rescue the Martian Princess Dejah. When the novel begins, John has traveled to Arizona after the Civil War with fellow Confederate veteran James Powell. When James is killed by Indians, John seeks refuge in a cave – but a strange gas knocks him out and when he awakens, he is on the planet Mars.
+
+Because of the gravity of Mars, John has immense strength he did not have on Earth. He encounters a race of green Martians, as well as Tars Tarkas, the second-in-command of his particular Martian tribe. Because John proves himself in combat with the Martians, he is given respect and standing among the Martians tribe. When the Martians attack a Heliumite expedition they believe to be martial, they capture a Heliumite human princess named Dejah Thoris. Dejah makes the case her expedition was to benefit all Martians, and the green Martians must make friendships with other races. John quickly falls in love with Dejah, and the two become very close.</p>
+        <br>
+                <p><a href="/static/images/books/princess of mars.pdf" target="_blank"><b>Read the book</b></a>.</p>
+  
+      </div>
+    </div>
+ </div>
+
+      <div class="button1">
+       <button onclick="document.getElementById('id26').style.display='block'"
+class="w3-button" >  <img src="/static/images/books/time machine.jpg" height="400" width="300" ></button>
+</div>
+<!-- The Modal -->
+<div id="id26" class="w3-modal">
+    <div class="w3-modal-content">
+      <div class="modal-header" style="background-color:#9370DB">
+        
+          <div class="m"><div class="modal-title"><b>Book Summary</b></div></div>
+              <span onclick="document.getElementById('id26').style.display='none'" 
+                class="w3-button w3-display-topright">&times;</span>
+        </div>
+      <br> 
+      <div class="w3-container"> 
+        <p> The Time Machine, H. G. Wells’s first novel, is a “scientific romance” that inverts the nineteenth-century belief in evolution as progress. The story follows a Victorian scientist, who claims that he has invented a device that enables him to travel through time, and has visited the future, arriving in the year 802,701 in what had once been London. There, he finds the future race, or, more accurately, races, because the human species has “evolved” into two distinct forms. Above ground live the Eloi—gentle, fairy-like, childish creatures, whose existence appears to be free of struggle. However, another race of beings exists—the Morlocks, underground dwellers who, once subservient, now prey on the feeble, defenseless Eloi. By setting the action nearly a million years in the future, Wells was illustrating the Darwinian model of evolution by natural selection, “fast-forwarding” through the slow process of changes to species, the physical world, and the solar system.
+
+</p>
+        <br>
+                <p><a href="/static/images/books/timemachine.pdf" target="_blank"><b>Read the book</b></a>.</p>
+  
+      </div>
+    </div>
+ </div>
+
+      <div class="button1">
+       <button onclick="document.getElementById('id27').style.display='block'"
+class="w3-button" >  <img src="/static/images/books/war of worlds.jpg" height="400" width="300" ></button>
+</div>
+<!-- The Modal -->
+<div id="id27" class="w3-modal">
+    <div class="w3-modal-content">
+      <div class="modal-header" style="background-color:#9370DB">
+        
+          <div class="m"><div class="modal-title"><b>Book Summary</b></div></div>
+              <span onclick="document.getElementById('id27').style.display='none'" 
+                class="w3-button w3-display-topright">&times;</span>
+        </div>
+      <br>
+      <div class="w3-container"> 
+        <p>The War of the Worlds chronicles the events of a Martian invasion as experienced by an unidentified male narrator and his brother. The story begins a few years before the invasion. During the astronomical opposition of 1894, when Mars is closer to Earth than usual, several observatories spot flashes of light on the surface of Mars. The narrator witnesses one of these flashes through a telescope at an observatory in Ottershaw, Surrey, England. He immediately alerts his companion, Ogilvy, “the well-known astronomer.” Ogilvy quickly dismisses the idea that the flashes are an indication of life on Mars. He assures the narrator that “[t]he chances against anything manlike on Mars are a million to one.” The flashes continue unexplained for several nights. </p>
+        <br>
+                <p><a href="/static/images/books/war of worlds.pdf" target="_blank"><b>Read the book</b></a>.</p>
+  
+      </div>
+    </div>
+ </div>
+
+</div>
+</div>
+<br>
+
+<div id="fiction">
+<u style="color: #800080;"><p class="f1"><b>Young Adult Fiction</b></p></u>
+<div class="grid">   
+
+      <div class="button1">
+       <button onclick="document.getElementById('id28').style.display='block'"
+class="w3-button" >  <img src="/static/images/books/fault in our stars.jpg" height="400" width="300" ></button>
+</div>
+<!-- The Modal -->
+<div id="id28" class="w3-modal">
+    <div class="w3-modal-content">
+      <div class="modal-header" style="background-color:#9370DB">
+        
+          <div class="m"><div class="modal-title"><b>Book Summary</b></div></div>
+              <span onclick="document.getElementById('id28').style.display='none'" 
+                class="w3-button w3-display-topright">&times;</span>
+        </div>
+      <br>
+      <div class="w3-container"> 
+        <p> The Fault In Our Stars is a fabulous book about a young teenage girl who has been diagnosed with lung cancer and attends a cancer support group.
+
+Hazel is 16 and is reluctant to go to the support group, but she soon realises that it was a good idea. Hazel meets a young boy named Augustus Waters. He is charming and witty. Augustus has had osteosarcoma, a rare form of bone cancer, but has recently had the all clear.
+
+Hazel and Augustus embark on a roller coaster ride of emotions, including love, sadness and romance, while searching for the author of their favourite book. They travel to Amsterdam in search of Peter Van Houten the author of An Imperial Affliction. While on their trip Augustus breaks some heartbreaking news to Hazel and both of their worlds fall apart around them.</p>
+        <br>
+                <p><a href="/static/images/books/fault.pdf" target="_blank"><b>Read the book</b></a>.</p>
+  
+      </div>
+    </div>
+ </div>
+
+      <div class="button1">
+       <button onclick="document.getElementById('id29').style.display='block'"
+class="w3-button" >  <img src="/static/images/books/breaking point.jpg" height="400" width="300" ></button>
+</div>
+<!-- The Modal -->
+<div id="id29" class="w3-modal">
+    <div class="w3-modal-content">
+      <div class="modal-header" style="background-color:#9370DB">
+        
+          <div class="m"><div class="modal-title"><b>Book Summary</b></div></div>
+              <span onclick="document.getElementById('id29').style.display='none'" 
+                class="w3-button w3-display-topright">&times;</span>
+        </div>
+      <br>
+      <div class="w3-container"> 
+        <p> Paul Richmond moves from homeschooling to a fancy private school, Gate-Brickell Christian, after his lieutenant colonel father has an affair and divorces his teacher-mother. On his first day at Gate, he meets a girl named Binky and a boy named Charlie Good.
+
+Without Binky, life would be pretty terrible for Paul. The kids at school look down on him because his mother works in the office there. Thanks to his father, Paul looks down on her too. His father, busy with a new wife and baby, ignores his calls and finally tells him to go away. He feels responsible for being a surrogate man of the house for his mother, who is clingy and insecure. This is far too much pressure for Paul, and only drives him away from confiding in his mother about anything happening in his life. Binky knows the score from way back, and knows it wasn’t that much easier on David Blanco, son of the school janitor. When David’s dog is found killed, the school population tacitly blames David, because it’s easier than figuring out which one of the children of privilege is the corrupt one.
+
+In the midst of all this, Charlie Good starts asking things of Paul. If there is an uppercrust at the upper crust school, Charlie is it. He seems, in many ways, to be nearly as lonely as Paul. His father pushes him to be a tennis overachiever, and his mother is barely present. Charlie’s method of blowing off steam is a little harmless vandalism. After a fight with his mother, Paul, tortured by feelings of rejection at the hands of his father, is exhilarated by his night of petty theft and mailbox smashing.
+
+Suddenly, however, it doesn’t seem so harmless when Charlie asks Paul to break into the school and change his grade. Paul starts to get the idea that Charlie is manipulative… but he has yet to find out how manipulative. </p>
+        <br>
+                <p><a href="/static/images/books/breaking point.pdf" target="_blank"><b>Read the book</b></a>.</p>
+  
+      </div>
+    </div>
+ </div>
+
+      <div class="button1">
+       <button onclick="document.getElementById('id30').style.display='block'"
+class="w3-button" >  <img src="/static/images/books/red queen.jpg" height="400" width="300" ></button>
+</div>
+<!-- The Modal -->
+<div id="id30" class="w3-modal">
+    <div class="w3-modal-content">
+      <div class="modal-header" style="background-color:#9370DB">
+        
+          <div class="m"><div class="modal-title"><b>Book Summary</b></div></div>
+              <span onclick="document.getElementById('id30').style.display='none'" 
+                class="w3-button w3-display-topright">&times;</span>
+        </div>
+      <br>
+      <div class="w3-container"> 
+        <p> This is a world divided by blood—red or silver. The Reds are commoners, ruled by a Silver elite in possession of god-like superpowers. And to Mare Barrow, a seventeen-year-old Red girl from the poverty-stricken Stilts, it seems like nothing will ever change. That is until she finds herself working in the Silver Palace. Here, surrounded by the people she hates the most, Mare discovers that, despite her red blood, she possesses a deadly power of her own. One that threatens to destroy the balance of power. Fearful of Mare's potential, the Silvers hide her in plain view, declaring her a long-lost Silver princess, now engaged to a Silver prince. Despite knowing that one misstep would mean her death, Mare works silently to help the Red Guard, a militant resistance group, and bring down the Silver regime. But this is a world of betrayal and lies, and Mare has entered a dangerous dance—Reds against Silvers, prince against prince, and Mare against her own heart.</p>
+        <br>
+                <p><a href="/static/images/books/red queen.pdf" target="_blank"><b>Read the book</b></a>.</p>
+  
+      </div>
+    </div>
+ </div>
+</div> 
+</div>
+<br>  
+
+<div id= "horror">
+<u style="color: #800080;"><p class="f1"><b>Horror</b></p></u>
+<div class="grid">       
+      <div class="button1">
+       <button onclick="document.getElementById('id31').style.display='block'"
+class="w3-button" >  <img src="/static/images/books/birdbox.jpg" height="400" width="300" ></button>
+</div>
+<!-- The Modal -->
+<div id="id31" class="w3-modal">
+    <div class="w3-modal-content">
+      <div class="modal-header" style="background-color:#9370DB">
+        
+          <div class="m"><div class="modal-title"><b>Book Summary</b></div></div>
+              <span onclick="document.getElementById('id31').style.display='none'" 
+                class="w3-button w3-display-topright">&times;</span>
+        </div>
+      <br>
+      <div class="w3-container"> 
+        <p> Four young siblings. An ancient evil that has been waiting billions of years for its opportunity to reign over the earth. Oscar, Esteban, Manny and Isabel are as different as brothers and sisters can be. They argue, and the brothers even fight, but their unquestioned love for each other is about to be tested in unimaginable ways. The Birdbox has finally been opened after many centuries. Can they work together to overcome the darkness housed in The Birdbox in time to save themselves and their family? In time to save humanity itself?</p>
+        <br>
+                <p><a href="/static/images/books/birdbox.pdf" target="_blank"><b>Read the book</b></a>.</p>
+  
+      </div>
+    </div>
+ </div>
+
+    <div class="button1">
+       <button onclick="document.getElementById('id32').style.display='block'"
+class="w3-button" >  <img src="/static/images/books/vampyre.jpg" height="400" width="300" ></button>
+</div>
+<!-- The Modal -->
+<div id="id32" class="w3-modal">
+    <div class="w3-modal-content">
+      <div class="modal-header" style="background-color:#9370DB">
+        
+          <div class="m"><div class="modal-title"><b>Book Summary</b></div></div>
+              <span onclick="document.getElementById('id32').style.display='none'" 
+                class="w3-button w3-display-topright">&times;</span>
+        </div>
+      <br>
+      <div class="w3-container"> 
+        <p> The beginning of The Vampyre reveals that two newcomers begin appearing at London parties. One, Lord Ruthven, likes to stare gravely at any bare skin that comes into view. Although unnerving, Ruthven fascinates everyone because of the eerie intensity of his gaze and his strange appearance. Lord Ruthven, though remarkably handsome, is alarmingly pale. Like Ruthven, the second newcomer, Aubrey, is quite attractive, but unlike Ruthven, Aubrey is joyful, always viewing the best in everyone. Still, despite their differences, the two men decide to tour Europe together.</p>
+        <br>
+                <p><a href="/static/images/books/vampyre.pdf" target="_blank"><b>Read the book</b></a>.</p>
+  
+      </div>
+    </div>
+ </div>
+
+       <div class="button1">
+       <button onclick="document.getElementById('id33').style.display='block'"
+class="w3-button" >  <img src="/static/images/books/mexican gothic.jpg" height="400" width="300" ></button>
+</div>
+<!-- The Modal -->
+<div id="id33" class="w3-modal">
+    <div class="w3-modal-content">
+      <div class="modal-header" style="background-color:#9370DB">
+        
+          <div class="m"><div class="modal-title"><b>Book Summary</b></div></div>
+              <span onclick="document.getElementById('id33').style.display='none'" 
+                class="w3-button w3-display-topright">&times;</span>
+        </div>
+      <br>
+      <div class="w3-container"> 
+        <p> After receiving a frantic letter from her newly-wed cousin begging for someone to save her from a mysterious doom, Noemí Taboada heads to High Place, a distant house in the Mexican countryside. She’s not sure what she will find—her cousin’s husband, a handsome Englishman, is a stranger, and Noemí knows little about the region.
+
+Noemí is also an unlikely rescuer: She’s a glamorous debutante, and her chic gowns and perfect red lipstick are more suited for cocktail parties than amateur sleuthing. But she’s also tough and smart, with an indomitable will, and she is not afraid: Not of her cousin’s new husband, who is both menacing and alluring; not of his father, the ancient patriarch who seems to be fascinated by Noemí; and not even of the house itself, which begins to invade Noemí’s dreams with visions of blood and doom.
+
+Her only ally in this inhospitable abode is the family’s youngest son. Shy and gentle, he seems to want to help Noemí, but might also be hiding dark knowledge of his family’s past. For there are many secrets behind the walls of High Place. The family’s once colossal wealth and faded mining empire kept them from prying eyes, but as Noemí digs deeper she unearths stories of violence and madness.
+
+And Noemí, mesmerized by the terrifying yet seductive world of High Place, may soon find it impossible to ever leave this enigmatic house behind.</p>
+        <br>
+                <p><a href="/static/images/books/mexican gothic.pdf" target="_blank"><b>Read the book</b></a>.</p>
+  
+      </div>
+    </div>
+ </div>
+
+</div> 
+</div>
+
+<br>
+
+<div id="mystery">
+<u style="color: #800080;"><p class="f1"><b>Mystery and Thriller</b></p></u>
+<div class="grid">       
+      <div class="button1">
+       <button onclick="document.getElementById('id34').style.display='block'"
+class="w3-button" >  <img src="/static/images/books/whiteroom.jpg" height="400" width="300" ></button>
+</div>
+<!-- The Modal -->
+<div id="id34" class="w3-modal">
+    <div class="w3-modal-content">
+      <div class="modal-header" style="background-color:#9370DB">
+        
+          <div class="m"><div class="modal-title"><b>Book Summary</b></div></div>
+              <span onclick="document.getElementById('id34').style.display='none'" 
+                class="w3-button w3-display-topright">&times;</span>
+        </div>
+      <br>
+      <div class="w3-container"> 
+        <p>At the close of the Victorian Era, society still expected middle-class women to be “the angels of the house,” even as a select few strived to become something more. In this time of change, Emeline Evans dreamed of becoming a nurse. But when her father dies unexpectedly, Emeline sacrifices her ambitions and rescues her family from destitution by marrying John Dorr, a reserved lawyer who can provide for her family.
+
+John moves Emeline to the remote Missouri town of Labellum and into an unusual house where her sorrow and uneasiness edge toward madness. Furniture twists and turns before her eyes, people stare out at her from empty rooms, and the house itself conspires against her. The doctor diagnoses hysteria, but the treatment merely reinforces the house’s grip on her mind.
+
+Emeline only finds solace after pursuing an opportunity to serve the poor as an unlicensed nurse. Yet in order to bring comfort to the needy she must secretly defy her husband, whose employer viciously hunts down and prosecutes unlicensed practitioners. Although women are no longer burned at the stake in 1900, disobedience is a symptom of psychological defect, and hysterical women must be controlled.
+
+A novel of madness and secrets, A White Room presents a fantastical glimpse into the forgotten cult of domesticity, where one’s own home could become a prison and a woman has to be willing to risk everything to be free.
+
+Based on historical trends of the era and inspired by the classic Victorian novels The Yellow Wallpaper, The Secret Garden, and Wuthering Heights, author Stephanie Carroll has taken women's empowerment in fiction to an all new level in this inspiring debut.
+-
+A White Room was featured as a Notable Page Turner in Shelf Unbound Magazine and named 2013's Best Cross-Genre Title by USA Book News.
+
+To read behind the scenes material about "A White Room" and learn about future books by Stephanie Carroll in addition to giveaways, freebees, and how to become a test reader, visit http://www.stephaniecarroll.net and sign up for the VIP Reader newsletter. </p>
+        <br>
+                <p><a href="/static/images/books/white room.pdf" target="_blank"><b>Read the book</b></a>.</p>
+  
+      </div>
+    </div>
+ </div>
+
+       <div class="button1">
+       <button onclick="document.getElementById('id35').style.display='block'"
+class="w3-button" >  <img src="/static/images/books/black water tales.jpg" height="400" width="300" ></button>
+</div>
+<!-- The Modal -->
+<div id="id35" class="w3-modal">
+    <div class="w3-modal-content">
+      <div class="modal-header" style="background-color:#9370DB">
+        
+          <div class="m"><div class="modal-title"><b>Book Summary</b></div></div>
+              <span onclick="document.getElementById('id35').style.display='none'" 
+                class="w3-button w3-display-topright">&times;</span>
+        </div>
+      <br>
+      <div class="w3-container"> 
+        <p> It's midnight when Regina Dean she receives a harrowing phone call. On the other end of the line a scratchy voice whispers, "They found her, Regina...they found her." Over the phone Regina learns that the corpse of her best friend, Lola Rusher, has been found and she must return to her, Godforsaken, hometown of Black Water for the funeral of the beloved girl who disappeared when they were both only sixteen years old. Regina returns to Black Water and is reunited with a cast of old friends. Soon Regina realizes that the details revealed with the discovery of Lola's corpse do not make sense, especially the fact that Lola's body was dug up on the land of their childhood piano teacher. Determined to lay Lola to rest, Regina launches her own investigation, but someone in Black Water warns Regina to STOP DIGGING. She is thrown into a race to solve the mystery before she loses her mind or meets Lola's fate. Though Regina's hometown is a fun house of disturbing characters and distorted images, the truth about what happened to Lola Rusher will be revealed along with a most unexpected and perverse secret that threatens to expose everyone in Black Water. Everyone knows something, but no one knows everything...  </p>
+        <br>
+                <p><a href="/static/images/books/black water.pdf" target="_blank"><b>Read the book</b></a>.</p>
+  
+      </div>
+    </div>
+ </div>
+  <div class="button1">
+       <button onclick="document.getElementById('id36').style.display='block'"
+class="w3-button" >  <img src="/static/images/books/sherlock.jpg" height="400" width="300" ></button>
+</div>
+<!-- The Modal -->
+<div id="id36" class="w3-modal">
+    <div class="w3-modal-content">
+      <div class="modal-header" style="background-color:#9370DB">
+        
+          <div class="m"><div class="modal-title"><b>Book Summary</b></div></div>
+              <span onclick="document.getElementById('id36').style.display='none'" 
+                class="w3-button w3-display-topright">&times;</span>
+        </div>
+      <br>
+      <div class="w3-container"> 
+        <p>n this, the final collection of Sherlock Holmes adventures, the intrepid detective and his faithful companion Dr Watson examine and solve twelve cases that puzzle clients, baffle the police and provide readers with the thrill of the chase.
+
+These mysteries - involving an illustrious client and a Sussex vampire; the problems of Thor Bridge and of the Lions Mane; a creeping man and the three-gabled house - all test the bravery of Dr Watson and the brilliant mind of Mr Sherlock Homes, the greatest detective we have ever known.</p>
+        <br>
+                <p><a href="/static/images/books/sherlock.pdf" target="_blank"><b>Read the book</b></a>.</p>
+  
+      </div>
+    </div>
+ </div>
+
+</div> 
+</div>
+<br>
+
+<div id ="self">
+<u style="color: #800080;"><p class="f1"><b>Self Help</b></p></u>
+<div class="grid">       
+       <div class="button1">
+       <button onclick="document.getElementById('id37').style.display='block'"
+class="w3-button" >  <img src="/static/images/books/one skill.jpg" height="400" width="300" ></button>
+</div>
+<!-- The Modal -->
+<div id="id37" class="w3-modal">
+    <div class="w3-modal-content">
+      <div class="modal-header" style="background-color:#9370DB">
+        
+          <div class="m"><div class="modal-title"><b>Book Summary</b></div></div>
+              <span onclick="document.getElementById('id37').style.display='none'" 
+                class="w3-button w3-display-topright">&times;</span>
+        </div>
+      <br>
+      <div class="w3-container"> 
+        <p> It’s about learning the skill of letting go, and how that will help you with every problem in your life. From stress to procrastination to habit change to loss and much more.
+
+It’s an amazing skill, and the better I get at it, the better I am at life, the happier I am.</p>
+        <br>
+                <p><a href="/static/images/books/oneskill.pdf" target="_blank"><b>Read the book</b></a>.</p>
+  
+      </div>
+    </div>
+ </div>
+
+       <div class="button1">
+       <button onclick="document.getElementById('id38').style.display='block'"
+class="w3-button" >  <img src="/static/images/books/think like monk.jpg" height="400" width="300" ></button>
+</div>
+<!-- The Modal -->
+<div id="id38" class="w3-modal">
+    <div class="w3-modal-content">
+      <div class="modal-header" style="background-color:#9370DB">
+        
+          <div class="m"><div class="modal-title"><b>Book Summary</b></div></div>
+              <span onclick="document.getElementById('id38').style.display='none'"
+                class="w3-button w3-display-topright">&times;</span>
+        </div>
+      <br>
+      <div class="w3-container"> 
+        <p> Jay Shetty, social media superstar and host of the #1 podcast On Purpose, distills the timeless wisdom he learned as a monk into practical steps anyone can take every day to live a less anxious, more meaningful life.
+
+When you think like a monk, you’ll understand:
+- How to overcome negativity
+- How to stop overthinking
+- Why comparison kills love
+- How to use your fear
+- Why you can’t find happiness by looking for it
+- How to learn from everyone you meet
+- Why you are not your thoughts
+- How to find your purpose
+- Why kindness is crucial to success
+- And much more...
+
+In this inspiring, empowering book, Shetty draws on his time as a monk to show us how we can clear the roadblocks to our potential and power. Combining ancient wisdom and his own rich experiences in the ashram, Think Like a Monk reveals how to overcome negative thoughts and habits, and access the calm and purpose that lie within all of us. He transforms abstract lessons into advice and exercises we can all apply to reduce stress, improve relationships, and give the gifts we find in ourselves to the world. Shetty proves that everyone can—and should—think like a monk </p>
+        <br>
+                <p><a href="/static/images/books/monk.pdf" target="_blank"><b>Read the book</b></a>.</p>
+  
+      </div>
+    </div>
+ </div>
+
+      <div class="button1">
+       <button onclick="document.getElementById('id39').style.display='block'"
+class="w3-button" >  <img src="/static/images/books/big magic.jpg" height="400" width="300" ></button>
+</div>
+<!-- The Modal -->
+<div id="id39" class="w3-modal">
+    <div class="w3-modal-content">
+      <div class="modal-header" style="background-color:#9370DB">
+        
+          <div class="m"><div class="modal-title"><b>Book Summary</b></div></div>
+              <span onclick="document.getElementById('id39').style.display='none'" 
+                class="w3-button w3-display-topright">&times;</span>
+        </div>
+      <br>
+      <div class="w3-container"> 
+        <p> Readers of all ages and walks of life have drawn inspiration and empowerment from Elizabeth Gilbert’s books for years. Gilbert offers insights into the mysterious nature of inspiration. She asks us to embrace our curiosity and let go of needless suffering. She shows us how to tackle what we most love, and how to face down what we most fear. She discusses the attitudes, approaches, and habits we need in order to live our most creative lives. Balancing between soulful spirituality and cheerful pragmatism, Gilbert encourages us to uncover the “strange jewels” that are hidden within each of us. Whether we are looking to write a book, make art, find new ways to address challenges in our work, embark on a dream long deferred, or simply infuse our everyday lives with more mindfulness and passion, Big Magic cracks open a world of wonder and joy. </p>
+        <br>
+                <p><a href="/static/images/books/magic.pdf" target="_blank"><b>Read the book</b></a>.</p>
+  
+      </div>
+    </div>
+ </div>
+
+</div> 
+</div>
+<br>
+
+<div id="short">
+<u style="color: #800080;"><p class="f1"><b>Short Stories</b></p></u>
+<div class="grid">       
+      <div class="button1">
+       <button onclick="document.getElementById('id40').style.display='block'"
+class="w3-button" >  <img src="/static/images/books/last leaf1.jpeg" height="400" width="300" ></button>
+</div>
+<!-- The Modal -->
+<div id="id40" class="w3-modal">
+    <div class="w3-modal-content">
+      <div class="modal-header" style="background-color:#9370DB">
+        
+          <div class="m"><div class="modal-title"><b>Book Summary</b></div></div>
+              <span onclick="document.getElementById('id40').style.display='none'"
+                class="w3-button w3-display-topright">&times;</span>
+        </div>
+      <br>
+      <div class="w3-container"> 
+        <p> Sue and Johnsy are two girlfriends who live together in New York City. When Johnsy becomes sick one winter, she makes up her mind to die when the last leaf falls from the ivy plant growing outside her window. Sue would do anything to help her friend get well, but she is a poor artist. As the winter wind blows and the rain falls, there seems no way to stop the last leaf from falling. </p>
+        <br>
+                <p><a href="/static/images/books/leaf.pdf" target="_blank"><b>Read the book</b></a>.</p>
+  
+      </div>
+    </div>
+ </div>
+
+      <div class="button1">
+       <button onclick="document.getElementById('id41').style.display='block'"
+class="w3-button" >  <img src="/static/images/books/christmas.jpeg" height="400" width="300" ></button>
+</div>
+<!-- The Modal -->
+<div id="id41" class="w3-modal">
+    <div class="w3-modal-content">
+      <div class="modal-header" style="background-color:#9370DB">
+        
+          <div class="m"><div class="modal-title"><b>Book Summary</b></div></div>
+              <span onclick="document.getElementById('id41').style.display='none'"
+                class="w3-button w3-display-topright">&times;</span>
+        </div>
+      <br>
+      <div class="w3-container"> 
+        <p> Charles Dickens is just great, this is just a short little note about how we change as we get older and how Christmas becomes more for others and less about ourselves as we get older.</p>
+        <br>
+                <p><a href="/static/images/books/christmas.pdf" target="_blank"><b>Read the book</b></a>.</p>
+  
+      </div>
+    </div>
+ </div>
+
+     <div class="button1">
+       <button onclick="document.getElementById('id42').style.display='block'"
+class="w3-button" >  <img src="/static/images/books/gift of magic.jpg" height="400" width="300" ></button>
+</div>
+<!-- The Modal -->
+<div id="id42" class="w3-modal">
+    <div class="w3-modal-content">
+      <div class="modal-header" style="background-color:#9370DB">
+        
+          <div class="m"><div class="modal-title"><b>Book Summary</b></div></div>
+              <span onclick="document.getElementById('id42').style.display='none'"
+                class="w3-button w3-display-topright">&times;</span>
+        </div>
+      <br>
+      <div class="w3-container"> 
+        <p> One dollar and eighty-seven cents is all the money Della has in the world to buy her beloved a Christmas present. She has nothing to sell except her only treasure--her long, beautiful brown hair. Set in New York at the turn of the twentieth century, this classic piece of American literature tells the story of a young couple and the sacrifices each must make to buy the other a gift. Beautiful, delicate watercolors by award-winning illustrator Lisbeth Zwerger add new poignancy and charm to this simple tale about the rewards of unselfish love.  </p>
+        <br>
+                <p><a href="/static/images/books/gift.pdf" target="_blank"><b>Read the book</b></a>.</p>
+  
+      </div>
+    </div>
+ </div>
+
+</div> 
+</div>
+<br>
+
+</div>
+
+</section>
+
+
+
+</body>
+</html>

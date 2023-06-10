@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Meditation</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,500&display=swap" rel="stylesheet">
+</head>
+<style>
+	/* just for codepen display */
+body {
+	font-family: "Open Sans", sans-serif;
+	margin: 0;
+	box-sizing: border-box;
+	font-size: 15px;
+	line-height: 1.5;
+	color: #333;
+}
+h1, h2, h3, h4, h5 {
+	line-height: 1.2;
+	font-weight: 300;
+	margin: 1em 0 .5em 0;
+}
+h1 { font-size: 38px; }
+h2 { font-size: 30px; }
+h3 { font-size: 26.25px; }
+h4 { font-size: 22.5px; }
+h5 { font-size: 18.75px; }
+p { margin: 0 0 1rem 0; }
+ul, ol { margin: 0 0 1rem 0; padding: 0 0 0 1rem; }
+a:link, a:visited { color: cornflowerblue; }
+a:hover, a:active { color: midnightblue; }
+img { max-width: 100%; }
+.aks-container {
+  width: 90vw;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.aks-page-description {
+  padding: 20px 0;
+  border-bottom: 1px solid #ddd;
+}
+.aks-page-description h1 {
+  margin: 0 0 5px 0;
+  text-transform: uppercase;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+.aks-page-description p {
+  margin-bottom: 0;
+}
+section.aks-container {
+  padding: 40px 0 50px 0;
+}
+section.aks-container h2 {
+  margin-top: 0;
+}
+
+.navbar-container {
+  text-align: center; 
+  font-family: 'Lora', serif; 
+}
+
+.navbar-container ul {
+  margin: 0;
+  padding: 0;
+  text-align: right;
+  display: inline-block;
+  
+}
+
+.navbar-container ul li {
+  display: inline-block;
+  font-size: 25px;
+  font-family: 'Lora', serif;
+  color: black;
+}
+
+.navbar-container ul li a {
+  color: darkolivegreen;
+  text-decoration: none;
+  display: inline-block;  
+  padding: 10px;
+  transition: color 0.5s;
+}
+
+.navbar-container ul li .underline {
+  height: 3px;
+  background-color: transparent;
+  width: 0%;
+  transition: width 0.2s, background-color 0.5s;
+  margin: 0 auto;
+}
+
+.navbar-container ul li.active-link .underline {
+  width: 100%;
+  background-color: #e5ccc9;
+}
+
+.navbar-container ul li:hover .underline {
+  background-color: #e5ccc9;
+  width: 100%;
+}
+
+.navbar-container ul li:active a {
+  transition: none;
+  color: rgba(255,255,255,0.76);
+}
+
+.navbar-container ul li:active .underline {
+  transition: none;
+  background-color: rgba(255,255,255,0.76);
+}   
+	</style>
+<body>
+  <div class="navbar-container">
+    <ul>
+      <li class="nav-link">
+        <a href="/dashboard">Home</a>
+        <div class="underline"></div>
+      </li>
+      <li class="nav-link">
+        <a href="/tasks">Challenges</a>
+        <div class="underline"></div>
+      </li>
+      <li class="nav-link">
+        <a href="/feedback">Feedback</a>
+        <div class="underline"></div>
+      </li>
+      <li class="nav-link">
+        <a href="/logout">Logout</a>
+        <div class="underline"></div>
+      </li>
+    </ul>
+  </div>
+  <div class="aks-page-description">
+  <div class="aks-container">
+    <h1>Self-care Videos</h1>
+    <p>Here are some Self-Care videos which you can help you feel better!</p>
+  </div>
+</div>
+
+<section class="aks-container">
+  <h2>Meditation to deal with anxiety</h2>
+
+  <!-- GRID -->
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); grid-gap: 20px;">
+
+    <!-- Video 1 -->
+    <div style="background-color: whitesmoke; padding: 15px;">
+      <h3 style="border-bottom: 1px solid; margin: 0 0 8px 0; font-size: 18px; font-weight: 600;">Self Care</h3>
+      <div style="position: relative; width: 100%; padding-top: 56.25%;">
+        <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/IYq0h3KgDpY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      </div>
+     
+    </div>
+
+    <!-- Video 2 -->
+    <div style="background-color: whitesmoke; padding: 15px;">
+      <h3 style="border-bottom: 1px solid; margin: 0 0 8px 0; font-size: 18px; font-weight: 600;">Difficult Times </h3>
+      <div style="position: relative; width: 100%; padding-top: 56.25%;">
+        <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/Mqqxi8mt4t0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      </div>
+     
+    </div>
+
+    <!-- Video 3 -->
+    <div style="background-color: whitesmoke; padding: 15px;">
+      <h3 style="border-bottom: 1px solid; margin: 0 0 8px 0; font-size: 18px; font-weight: 600;">Morning Routine</h3>
+      <div style="position: relative; width: 100%; padding-top: 56.25%;">
+        <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/h0S7PxRN_gc"frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      </div>
+      
+    </div>
+
+    <!-- Video 4 -->
+    <div style="background-color: whitesmoke; padding: 15px;;">
+      <h3 style="border-bottom: 1px solid; margin: 0 0 8px 0; font-size: 18px; font-weight: 600;">SelfCare action plan</h3>
+      <div style="position: relative; width: 100%; padding-top: 56.25%;">
+        <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/w0iVTQS8ftg" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      </div>
+      
+    </div>
+
+  <!-- END OF GRID -->
+  </div>
+</section>
+</body>
+</html>

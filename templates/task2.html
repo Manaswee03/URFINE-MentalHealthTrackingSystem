@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <link href="https://fonts.googleapis.com/css2?family=Playball&display=swap" rel="stylesheet">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,500&display=swap" rel="stylesheet">
+	<style>
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap");
+
+:root {
+  --yellow: #C0C0C0;
+  --dark:#696969;
+
+  --deg: -86deg;
+  --trans: all 0.4s ease 0s;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  display: flex;
+  justify-content: center;
+  font-family: "Lato", Arial, Helvetica, serif;
+  background: linear-gradient(90deg, #131417, var(--light) 35% 65%, #131417);
+  font-size: 1em;
+}
+
+body *,
+body *:before,
+body *:after {
+  box-sizing: border-box;
+}
+
+.content {
+  width: 100vmin;
+}
+
+h2 {
+  text-align: center;
+}
+
+.team {
+  padding: 2em 0 2em 2.5em;
+  margin: 0;
+}
+
+.member {
+  margin: 1.5em 0 0.5em;
+  padding: 0.73em;
+  background: linear-gradient(
+    83deg,
+    var(--yellow) 0 97%,
+    #fff0 calc(97% + 1px) 100%
+  );
+  position: relative;
+  list-style: none;
+  display: inline-block;
+  transform: scale(0.85);
+  transition: var(--trans);
+
+}
+
+.member:nth-of-type(even) {
+  text-align: right;
+  background: linear-gradient(
+    -83deg,
+    var(--yellow) 0 97%,
+    #fff0 calc(97% + 1px) 100%
+  );
+}
+
+.thumb {
+  width: 13vmin;
+  height: 13vmin;
+  float: left;
+  margin-right: 1.25em;
+  background: linear-gradient(
+    var(--deg),
+    var(--dark) 0 70%,
+    var(--yellow) 0% 100%
+  );
+  transform: rotate(-4deg);
+  transition: var(--trans);
+  border-radius: 0.25em;
+  overflow: hidden;
+  margin-left: -3em;
+  padding: 0.5em;
+}
+
+.member:nth-of-type(even) .thumb {
+  --deg: 86deg;
+  float: right;
+  margin-left: 2em;
+  margin-right: -3em;
+  transform: rotate(4deg);
+}
+
+.thumb img {
+  width: 100%;
+  height: 100%;
+  border-radius: 0.25em;
+  filter: grayscale(1);
+  background: var(--dark);
+}
+
+.member:hover {
+  transform: scale(1);
+  transition: var(--trans);
+  filter: drop-shadow(0px 20px 10px #0008);
+}
+
+.member:hover .thumb {
+  padding: 0.1em;
+  transition: var(--trans);
+  transform: rotate(-1deg);
+  --deg: -89deg;
+}
+
+.member:nth-of-type(even):hover .thumb {
+  --deg: 91deg;
+}
+
+.member:hover .thumb img {
+  filter: none;
+  transition: var(--trans);
+}
+
+.description {
+  padding-top: 1vmin;
+}
+
+.description p {
+  padding: 0 2em;
+  margin-bottom: 1em;
+}
+
+h3 {
+  background: linear-gradient(182deg, #fff0 60%, var(--drk) 0 100%);
+  display: inline;
+  transform: rotate(-2deg);
+  position: absolute;
+  margin: 0;
+  margin-top: -2.25em;
+  left: 9vmin;
+  padding: 0.5em 0.75em;
+  color: var(--dark);
+  border-radius: 0.25em;
+  font-size: 1.35em;
+  transform-origin: left bottom;
+}
+
+.member:nth-of-type(even) h3 {
+  left: inherit;
+  right: 9vmin;
+  transform: rotate(2deg);
+  transform-origin: right bottom;
+  background: linear-gradient(-182deg, #fff0 60%, var(--dak) 0 100%);
+}
+
+.member:hover h3 {
+  transition: var(--trans);
+  transform: rotate(0deg);
+  background: linear-gradient(180deg, #fff0 68%, var(--dark) 0 100%);
+}
+
+.co-funder:after {
+  content: "CO-FUNDER";
+  font-size: 0.75em;
+  position: absolute;
+  top: -1.5em;
+  background: var(--yellow);
+  right: 4em;
+  transform: rotate(3deg);
+  padding: 0.35em 0.75em 0.5em;
+  border-radius: 0.25em;
+  color: var(--dak);
+  font-weight: bold;
+}
+
+.co-funder:nth-of-type(even):after {
+  right: inherit;
+  left: 4em;
+  transform: rotate(-3deg);
+}
+
+.description p a {
+  display: inline-block;
+  margin: 0.5em 0 0 0;
+  background: var(--dark);
+  color: var(--yellow);
+  padding: 0.1em 0.5em 0.35em;
+  border-radius: 0.5em;
+  text-decoration: none;
+  transition: var(--trans);
+  width: 600px;
+
+
+
+}
+.description p a:hover {
+  transition: var(--trans);
+  color: var(--dark);
+  background: var(--yellow);
+  font-weight: bold;
+}
+
+.description p a img {
+  float: left;
+  width: 22px;
+  filter: invert(1);
+  border-radius: 0.15em;
+  padding: 2px;
+  background: #fff;
+  margin-right: 2px;
+}
+
+ .f{
+    font-family: 'Playball', cursive;
+    color: #843f5b;
+    font-size: 50px;
+    margin-top: 40px;
+    text-align: center;
+  }   
+
+  .navbar-container {
+  text-align: center; 
+  font-family: 'Lora', serif; 
+}
+
+.navbar-container ul {
+  margin: 0;
+  padding: 0;
+  text-align: right;
+  display: inline-block;
+  
+}
+
+.navbar-container ul li {
+  display: inline-block;
+  font-size: 25px;
+  font-family: 'Lora', serif;
+  color: black;
+}
+
+.navbar-container ul li a {
+  color: darkolivegreen;
+  text-decoration: none;
+  display: inline-block;  
+  padding: 10px;
+  transition: color 0.5s;
+}
+
+.navbar-container ul li .underline {
+  height: 3px;
+  background-color: transparent;
+  width: 0%;
+  transition: width 0.2s, background-color 0.5s;
+  margin: 0 auto;
+}
+
+.navbar-container ul li.active-link .underline {
+  width: 100%;
+  background-color: #e5ccc9;
+}
+
+.navbar-container ul li:hover .underline {
+  background-color: #e5ccc9;
+  width: 100%;
+}
+
+.navbar-container ul li:active a {
+  transition: none;
+  color: rgba(255,255,255,0.76);
+}
+
+.navbar-container ul li:active .underline {
+  transition: none;
+  background-color: rgba(255,255,255,0.76);
+}   
+
+</style>
+<body onload="loadState()">
+
+<div class="content"mn >
+  <div class="navbar-container">
+    <ul>
+      <li class="nav-link">
+        <a href="/dashboard">Home</a>
+        <div class="underline"></div>
+      </li>
+      <li class="nav-link active-link">
+        <a href="/#">Challenges</a>
+        <div class="underline"></div>
+      </li>
+      <li class="nav-link">
+        <a href="/feedback">Feedback</a>
+        <div class="underline"></div>
+      </li>
+      <li class="nav-link">
+        <a href="/logout">Logout</a>
+        <div class="underline"></div>
+      </li>
+    </ul>
+  </div>
+  <header><div class="f"><b>Are you up for the challenge?</b></div></header>
+
+  <ul class="team">
+    <li class="member">
+      <div class="thumb" ><img src="https://img.freepik.com/free-vector/cute-rabbit-with-duck-working-laptop-cartoon-illustration_56104-471.jpg?w=2000"></div>
+      <div class="description" style="background-color:#E9EDC9">
+        <h3>Exercise </h3>
+        <p>Exercise can release endorphins in the body, which are known to improve mood and reduce stress levels.<br>
+          <a href="/exercise_task">Click here for some helpful videos</a><br><br>
+         
+      </div>
+    </li><br>
+    <li class="member ">
+      <div class="thumb"><img src="https://img.freepik.com/premium-vector/cute-panda-listening-music-with-smartphone-cartoon-vector-icon-illustration-animal-nature_643365-102.jpg?w=2000"></div>
+      <div class="description" style="background-color:#EAC7C7">
+        <h3>Music</h3>
+        <p>Engaging in music, can help us to express our emotions and work through difficult feelings.<br><a href="/music_task">Click here to go to a playlist</a><br><br>
+        
+      </div>
+    </li><br>
+    <li class="member">
+      <div class="thumb"><img src="https://img.freepik.com/free-vector/cute-koala-with-cub-cartoon-icon-illustration_138676-2839.jpg"></div>
+      <div class="description" style="background-color:#FDFDBD">
+        <h3>Practice self-care</h3>
+        <p>It's important to take care of ourselves both physically and emotionally. This might involve taking a relaxing bath, cooking ourselves a healthy meal<br><a href="/selfcare">Click here for some helpful videos</a><br><br>
+         <br><br>
+      </div>
+    </li><br>
+    <li class="member">
+      <div class="thumb"><img src="https://m.media-amazon.com/images/I/71itmKw7o9L.png"></div>
+      <div class="description" style="background-color:#AEBDCA">
+        <h3>Reading books</h3>
+        <p> Reading fiction can allow you to temporarily escape your own world and become swept up in the imagined experiences of the characters.<br>
+          <a href="https://www.self.com/gallery/read-these-books-when-things-get-tough">Here is a list of books you can read</a><br><br>
+         <br><br>
+      </div>
+    </li><br>
+    <li class="member">
+      <div class="thumb"><img src="https://img.freepik.com/free-vector/cute-panda-eating-popcorn-cartoon-icon-illustration-animal-food-icon-concept-isolated-flat-cartoon-style_138676-2562.jpg?w=2000"></div>
+      <div class="description" style="background-color:#DEBACE">
+        <h3>Practice mindfulness</h3>
+        <p> Mindfulness meditation involves paying attention to the present moment without judgment. By focusing on your breathing and your surroundings, you can reduce stress and anxiety and increase feelings of calmness and well-being.<br><a href="/meditation">Click here for some helpful videos</a><br><br>
+       <br><br>
+      </div>
+    </li><br>
+   
+  </ul>
+
+</div>
+
+  </body>
+  <script>
+      function saveState() {
+        localStorage.setItem("card1", document.getElementById("checkbox1").checked);
+        localStorage.setItem("card2", document.getElementById("checkbox2").checked);
+        localStorage.setItem("card3", document.getElementById("checkbox3").checked);
+        localStorage.setItem("card4", document.getElementById("checkbox4").checked);
+        localStorage.setItem("card5", document.getElementById("checkbox5").checked);
+        localStorage.setItem("card6", document.getElementById("checkbox6").checked);
+        localStorage.setItem("card7", document.getElementById("checkbox7").checked);
+
+      }
+
+      function loadState() {
+        document.getElementById("checkbox1").checked = JSON.parse(localStorage.getItem("card1") || false);
+        document.getElementById("checkbox2").checked = JSON.parse(localStorage.getItem("card2") || false);
+        document.getElementById("checkbox3").checked = JSON.parse(localStorage.getItem("card3") || false);
+        document.getElementById("checkbox4").checked = JSON.parse(localStorage.getItem("card4") || false);
+        document.getElementById("checkbox5").checked = JSON.parse(localStorage.getItem("card5") || false);
+        document.getElementById("checkbox6").checked = JSON.parse(localStorage.getItem("card6") || false);
+        document.getElementById("checkbox7").checked = JSON.parse(localStorage.getItem("card7") || false);
+
+      }
+    </script>
+</html>

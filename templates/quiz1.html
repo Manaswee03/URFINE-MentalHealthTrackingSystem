@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <style>
+@keyframes slidein {
+	 0% {
+		 top: -400px;
+		 opacity: 0;
+	}
+	 100% {
+		 opacity: 1;
+		 top: 0px;
+	}
+}
+ @keyframes slideout {
+	 0% {
+		 top: 0;
+		 opacity: 1;
+	}
+	 100% {
+		 top: -400px;
+		 opacity: 0;
+	}
+}
+ body {
+	 background: #eee;
+	 font-family: "Tahoma";
+	 -moz-user-select: none;
+	 -webkit-user-select: none;
+	 -ms-user-select: none;
+	 user-select: none;
+	   background-image: url("/static/images/quizbg.png");
+	   opacity :0.95;
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+ body #scene {
+	 display: flex;
+	 align-items: center;
+	 justify-content: left;
+	 width: 1000px;
+	 height: 650px;
+	 position: absolute;
+	 top: 0;
+	 bottom: 0;
+	 left: 0;
+	 right: 0;
+	 margin: auto;
+	 background-color: #fff;
+	 box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+	 overflow: hidden;
+}
+ body #scene #left-zone {
+	 background: #fff;
+	 height: 75%;
+	 flex-grow: 0;
+	 display: flex;
+	 width: 350px;
+	 align-items: center;
+	 justify-content: left;
+}
+ body #scene #left-zone .list {
+	 display: flex;
+	 list-style: none;
+	 align-content: stretch;
+	 flex-direction: column;
+	 flex-grow: 1;
+	 margin: 0;
+	 padding: 0;
+}
+ body #scene #left-zone .list li.item input[type="radio"] {
+	 display: none;
+}
+ body #scene #left-zone .list li.item input[type="radio"] ~ label {
+	 display: block;
+	 opacity: 0.5;
+	 height: 50px;
+	 text-align: center;
+	 line-height: 50px;
+}
+ body #scene #left-zone .list li.item input[type="radio"] ~ label:first-letter {
+	 text-transform: uppercase;
+}
+ body #scene #left-zone .list li.item input[type="radio"] ~ label:hover {
+	 opacity: 0.75;
+	 cursor: pointer;
+}
+ body #scene #left-zone .list li.item input[type="radio"] ~ label.label_strawberry:before {
+	 content: " ";
+	 display: block;
+	 position: absolute;
+	 width: 50px;
+	 height: 50px;
+	 margin-left: 15px;
+	 background-position: center;
+	 background-size: 75% 75%;
+	 background-repeat: no-repeat;
+}
+ body #scene #left-zone .list li.item input[type="radio"] ~ label.label_banana:before {
+	 content: " ";
+	 display: block;
+	 position: absolute;
+	 width: 50px;
+	 height: 50px;
+	 margin-left: 15px;
+	 
+	 background-position: center;
+	 background-size: 75% 75%;
+	 background-repeat: no-repeat;
+}
+ body #scene #left-zone .list li.item input[type="radio"] ~ label.label_apple:before {
+	 content: " ";
+	 display: block;
+	 position: absolute;
+	 width: 50px;
+	 height: 50px;
+	 margin-left: 15px;
+	 background-position: center;
+	 background-size: 75% 75%;
+	 background-repeat: no-repeat;
+}
+ body #scene #left-zone .list li.item input[type="radio"] ~ label.label_orange:before {
+	 content: " ";
+	 display: block;
+	 position: absolute;
+	 width: 50px;
+	 height: 50px;
+	 margin-left: 15px;
+	 background-position: center;
+	 background-size: 75% 75%;
+	 background-repeat: no-repeat;
+}
+ body #scene #left-zone .list li.item input[type="radio"] ~ .content {
+	 position: absolute;
+	 left: 150px;
+	 top: -400px;
+	 width: 1000px;
+	 height: 400px;
+	 animation-duration: 0.75s;
+	 animation-name: slideout;
+	 animation-timing-function: ease-out;
+	 display: flex;
+	 align-items: center;
+	 justify-content: center;
+	 flex-direction: column;
+}
+ body #scene #left-zone .list li.item input[type="radio"] ~ .content.content_strawberry .picto {
+	 height: 100px;
+	 width: 100px;
+	 background-position: center;
+	 background-size: cover;
+	 background-repeat: no-repeat;
+}
+ body #scene #left-zone .list li.item input[type="radio"] ~ .content.content_strawberry h1 {
+	 color: #d64541;
+}
+ body #scene #left-zone .list li.item input[type="radio"] ~ .content.content_banana .picto {
+	 height: 100px;
+	 width: 100px;
+	 background-position: center;
+	 background-size: cover;
+	 background-repeat: no-repeat;
+}
+ body #scene #left-zone .list li.item input[type="radio"] ~ .content.content_banana h1 {
+	 color: #f5d76e;
+}
+ body #scene #left-zone .list li.item input[type="radio"] ~ .content.content_apple .picto {
+	 height: 100px;
+	 width: 100px;
+	 background-position: center;
+	 background-size: cover;
+	 background-repeat: no-repeat;
+}
+ body #scene #left-zone .list li.item input[type="radio"] ~ .content.content_apple h1 {
+	 color: #00b16a;
+}
+ body #scene #left-zone .list li.item input[type="radio"] ~ .content.content_orange .picto {
+	 height: 100px;
+	 width: 100px;
+	 background-position: center;
+	 background-size: cover;
+	 background-repeat: no-repeat;
+}
+ body #scene #left-zone .list li.item input[type="radio"] ~ .content.content_orange h1 {
+	 color: #f27935;
+}
+ body #scene #left-zone .list li.item input[type="radio"] ~ .content h1:first-letter {
+	 text-transform: uppercase;
+}
+ body #scene #left-zone .list li.item input[type="radio"] ~ .content p {
+	 max-width: 50%;
+	 text-align: center;
+}
+ body #scene #left-zone .list li.item input[type="radio"]:checked ~ label {
+	 opacity: 1;
+	 animation: all 1s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+ body #scene #left-zone .list li.item input[type="radio"]:checked ~ label.label_strawberry {
+	 color: #d64541;
+	 border-right: solid 4px #d64541;
+}
+ body #scene #left-zone .list li.item input[type="radio"]:checked ~ label.label_banana {
+	 color: #f5d76e;
+	 border-right: solid 4px #f5d76e;
+}
+ body #scene #left-zone .list li.item input[type="radio"]:checked ~ label.label_apple {
+	 color: #00b16a;
+	 border-right: solid 4px #00b16a;
+}
+ body #scene #left-zone .list li.item input[type="radio"]:checked ~ label.label_orange {
+	 color: #f27935;
+	 border-right: solid 4px #f27935;
+}
+ body #scene #left-zone .list li.item input[type="radio"]:checked ~ .content {
+	 animation-duration: 0.75s;
+	 animation-name: slidein;
+	 animation-fill-mode: forwards;
+	 animation-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+ body #scene #middle-border {
+	 background-color: #eee;
+	 height: 75%;
+	 flex-grow: 1;
+	 max-width: 2px;
+	 z-index: 0;
+}
+ body #scene #right-zone {
+	 background: #fff;
+	 height: 100%;
+	 flex-grow: 3;
+}
+label,input{
+    display: inline-block;
+    vertical-align: middle;
+}
+.checkboxes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  vertical-align: middle;
+  word-wrap: break-word;
+}
+
+
+ .bttn2 {
+   font-size: 18px;
+   letter-spacing: 2px;
+   text-transform: uppercase;
+   display: inline-block;
+   text-align: center;
+   width: 200px;
+   font-weight: bold;
+   padding: 14px 0px;
+   border: 3px solid #40B5AD;
+   border-radius: 8px;
+   cursor:pointer;
+   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.1);
+   margin-left: 70px;
+   background-color: #ADD8E6;
+   color: #088F8F;
+
+}
+.bttn2:hover{
+ opacity: 1;
+}
+.registerbtn {
+  background-color: #ADD8E6;
+  letter-spacing: 2px;
+  text-align: center;
+   width: 200px;
+  border: 3px solid #40B5AD;
+   border-radius: 8px;
+    font-weight: bold;
+   padding: 14px 0px;
+  font-size: 18px;
+  cursor: pointer;
+  color: #088F8F;
+   margin-left: 70px;
+}
+
+.registerbtn:hover {
+  opacity: 1;
+  background-color: #40B5AD;
+  color: white;
+}
+
+ </style>
+</head>
+ <body>
+<body>
+	<form action="/result" method="post">
+  <div id="scene">
+    <div id="left-zone">
+      <ul class="list">
+        <li class="item">
+          <input type="radio" id="11" name="basic_carousel"  checked="checked"/>
+          <label class="label_strawberry" for="11">	Question 1</label>
+          <div class="content content_strawberry"><span class="picto"></span>
+            <h1>Question 1</h1>
+             <p>Over the last two weeks, have you felt down, depressed or hopeless?</p><br>
+			 <label for="checkbox1" class="checkboxes"><input type="checkbox" id="checkbox1" name="n1" value="sadness" class="single-checkbox"/> Extremely.</label><br>
+             <label for="checkbox1" class="checkboxes"><input type="checkbox" id="checkbox1" name="n1" value="peace" class="single-checkbox"/> Slightly.</label><br>
+              <label for="checkbox1" class="checkboxes"><input type="checkbox" id="checkbox1" name="n1" value="happiness" class="single-checkbox"/> Not at All.</label>
+   <br><br>
+
+          </div>
+        </li>
+        <li class="item">
+          <input type="radio" id="12" name="basic_carousel"  />
+          <label class="label_apple" for="12">Question 2</label>
+          <div class="content content_apple"><span class="picto"></span>
+            <h1>Question 2</h1>
+              <p>Do you often worry about various things even when there's no particular reason for doing so?</p><br>
+            <label for="checkbox2" class="checkboxes"><input type="checkbox" id="checkbox2" name="n2" value="worry" class="checkboxes"/> Yes.</label><br>
+             <label for="checkbox2" class="checkboxes"><input type="checkbox" id="checkbox2" name="n2" value="tensed" class="checkboxes"/> Sometimes.</label><br>
+              <label for="checkbox2" class="checkboxes"><input type="checkbox" id="checkbox2" name="n2" value="indifferent" class="checkboxes"/> No.</label>
+   <br><br>
+          </div>
+        </li>
+      <li class="item">
+          <input type="radio" id="13" name="basic_carousel"  />
+          <label class="label_orange" for="13">	Question 3</label>
+          <div class="content content_orange"><span class="picto"></span>
+            <h1>Question 3</h1>
+           <p>Have you ever had one or more panic attacks?</p><br>
+            <label for="checkbox3" class="checkboxes"><input type="checkbox" id="checkbox3" name="n3" value="stress" class="checkboxes"/> Just once.</label><br>
+             <label for="checkbox3" class="checkboxes"><input type="checkbox" id="checkbox3" name="n3" value="anxiety" class="checkboxes"/> More than once.</label><br>
+              <label for="checkbox3" class="checkboxes"><input type="checkbox" id="checkbox3" name="n3" value="calm" class="checkboxes"/> No.</label>
+   <br><br>
+          </div>
+        </li>
+        <li class="item">
+          <input type="radio" id="14" name="basic_carousel"  />
+          <label class="label_banana" for="14">	Question 4</label>
+          <div class="content content_banana"><span class="picto"></span>
+            <h1>Question 4</h1>
+              <p>Do you often worry about how you look, your weight, or your figure?:</p><br>
+            <label for="checkbox1" class="checkboxes"><input type="checkbox" id="checkbox1" name="n4" value="hate" class="checkboxes"/> Yes.</label><br>
+             <label for="checkbox1" class="checkboxes"><input type="checkbox" id="checkbox1" name="n4" value="sadness" class="checkboxes"/> Sometimes.</label><br>
+              <label for="checkbox1" class="checkboxes"><input type="checkbox" id="checkbox1" name="n4" value="neutral" class="checkboxes"/> No.</label>
+   <br><br>
+          </div>
+        </li>
+        <li class="item">
+          <input type="radio" id="15" name="basic_carousel"  />
+          <label class="label_strawberry" for="15">	Question 5</label>
+          <div class="content content_strawberry"><span class="picto"></span>
+            <h1>Question 5</h1>
+            <p>Are you experiencing tiredness, sleep problems, or a lack of energy?</p><br>
+            <label for="checkbox1" class="checkboxes"><input type="checkbox" id="checkbox1" name="n5" value="stressed" class="checkboxes"/> Regularly</label><br>
+             <label for="checkbox1" class="checkboxes"><input type="checkbox" id="checkbox1" name="n5" value="tired" class="checkboxes"/> Sometimes</label><br>
+              <label for="checkbox1" class="checkboxes"><input type="checkbox" id="checkbox1" name="n5" value="neutral" class="checkboxes"/> Not at all</label>
+   <br><br>
+          </div>
+        </li>
+        <li class="item">
+          <input type="radio" id="16" name="basic_carousel"  />
+          <label class="label_apple" for="16">Question 6</label>
+          <div class="content content_apple"><span class="picto"></span>
+            <h1>Question 6</h1>
+            <p>Have you experienced a loss of interest in normal activities such as hobbies or sports?</p><br>
+            <label for="checkbox1" class="checkboxes"><input type="checkbox" id="checkbox1" name="n6" value="boredom" class="checkboxes"/> Yes</label><br>
+             <label for="checkbox1" class="checkboxes"><input type="checkbox" id="checkbox1" name="n6" value="enthusiasm" class="checkboxes"/> No</label><br>
+         
+   <br><br>
+          </div>
+        </li>
+        <li class="item">
+          <input type="radio" id="17" name="basic_carousel"  />
+          <label class="label_orange" for="17">		Question 7</label>
+          <div class="content content_orange"><span class="picto"></span>
+            <h1>Question 7</h1>
+              <p>Are you reliant on substances, people, or circumstances to bring you happiness or relief?</p><br>
+            <label for="checkbox1" class="checkboxes"><input type="checkbox" id="checkbox1" name="n7" value="doubtful" class="checkboxes"/> Sometimes</label><br>
+             <label for="checkbox1" class="checkboxes"><input type="checkbox" id="checkbox1" name="n7" value="dependent" class="checkboxes"/> Yes, always</label><br>
+              <label for="checkbox1" class="checkboxes"><input type="checkbox" id="checkbox1" name="n7" value="independent" class="checkboxes"/> Not at all</label>
+   <br><br>
+          </div>
+        </li>
+        <li class="item">
+          <input type="radio" id="18" name="basic_carousel"  />
+          <label class="label_banana" for="18">		Question 8</label>
+          <div class="content content_banana"><span class="picto"></span>
+            <h1>Question 8</h1><br>
+              <p>How do you feel in this moment?</p><br><br>
+            <label for="checkbox1" class="checkboxes"><input type="checkbox" id="checkbox1" name="n8" value="sadness" class="checkboxes"/> Bad🙁</label><br>
+             <label for="checkbox1" class="checkboxes"><input type="checkbox" id="checkbox1" name="n8" value="neutral" class="checkboxes"/> Moderate😐</label><br>
+              <label for="checkbox1" class="checkboxes"><input type="checkbox" id="checkbox1" name="n8" value="happiness" class="checkboxes"/>  Good😄</label>
+   <br><br>
+          </div>
+		  </li>
+		  <li class="item">
+			<input type="radio" id="19" name="basic_carousel"  />
+			<label class="label_apple" for="19">Question 9</label>
+			<div class="content content_apple"><span class="picto"></span>
+			  <h1>Question 9</h1>
+			  <p>How confident have you been feeling in your capabilities recently</p><br>
+			  <label for="checkbox1" class="checkboxes"><input type="checkbox" id="checkbox1" name="n9" value="Confidence" class="checkboxes"/>Pretty Confident</label><br>
+			  <label for="checkbox1" class="checkboxes"><input type="checkbox" id="checkbox1" name="n9" value="neutral" class="checkboxes"/>Neutral</label><br>
+			  <label for="checkbox1" class="checkboxes"><input type="checkbox" id="checkbox1" name="n9" value="lost" class="checkboxes"/>Lack of Confidence</label><br>
+	 <br><br>
+			</div>
+		  </li>
+		  <li class="item">
+			<input type="radio" id="20" name="basic_carousel"  />
+			<label class="label_apple" for="20">Question 10</label>
+			<div class="content content_apple"><span class="picto"></span>
+			  <h1>Question 10</h1>
+			  <p>When was the last time you were really happy?</p><br>
+			  <label for="checkbox1" class="checkboxes"><input type="checkbox" id="checkbox1" name="n10" value="vibrant" class="checkboxes"/>Few days ago</label><br>
+		 	  <label for="checkbox1" class="checkboxes"><input type="checkbox" id="checkbox1" name="n10" value="happiness" class="checkboxes"/>Few Weeks ago</label><br>
+			  <label for="checkbox1" class="checkboxes"><input type="checkbox" id="checkbox1" name="n10" value="sad" class="checkboxes"/>Months ago</label><br>
+			  <label for="checkbox1" class="checkboxes"><input type="checkbox" id="checkbox1" name="n10" value="depressed" class="checkboxes"/>I don't remember</label><br>
+			  <br><br>
+			</div>
+		  </li>
+        </li><br>
+          <button type="submit" class="registerbtn" value="Submit">SUBMIT</button>
+         </form>
+      </ul>
+    </div>
+    <div id="middle-border"></div>
+    <div id="right-zone"></div>
+  </div>
+</body>
+</html>

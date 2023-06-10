@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <style>
+          /*
+Basic
+*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+:root {
+  --color-main: #f3950d;
+  --main-accent: #ffebcc;
+  --bg: #f5eedc;
+  --bg-2: #dce5ff;
+  --main: #292c6d;
+  --shadow: rgba(17, 17, 26, 0.1) 2px 0px 16px;
+}
+* {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  font-family: "Poppins", sans-serif;
+  list-style-type: none;
+  box-sizing: border-box;
+}
+body {
+  background-color: var(--bg);
+  overflow-x: hidden;
+}
+img {
+  width: 100%;
+  height: auto;
+}
+#menu-toggle {
+  display: none;
+}
+#menu-toggle:checked ~ .sidebar {
+  left: -345px;
+}
+#menu-toggle:checked ~ .main-content {
+  margin-left: 0;
+  width: 100vw;
+}
+.overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 10;
+  display: none;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+/* helper */
+.text-danger {
+  color: red;
+}
+.text-success {
+  color: #2ec3a3;
+}
+.text-main {
+  color: var(--color-main);
+}
+/*
+Sidebar
+*/
+.sidebar {
+  width: 345px;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  padding: 1rem 1.2rem;
+  transition: left 300ms;
+}
+.sidebar-container {
+  height: 100%;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  padding: 1.2rem;
+  overflow-y: auto;
+}
+.sidebar-container::-webkit-scrollbar {
+  width: 5px;
+}
+.sidebar-container::-webkit-scrollbar-track {
+  box-shadow: var(--shadow);
+}
+.sidebar-container::-webkit-scrollbar-thumb {
+  background-color: var(--main-accent);
+  outline: 1px solid #ccc;
+  border-radius: 2px;
+}
+.brand {
+  padding-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.brand h3 {
+  color: #444;
+  font-size: 3rem;
+}
+.brand h3 span {
+  color: var(--color-main);
+  font-size: 2.5rem;
+  display: inline-block;
+  margin-right: 0.5rem;
+}
+.sidebar-avatar {
+  display: grid;
+  grid-template-columns: 70px auto;
+  align-items: center;
+  border: 2px solid var(--main-accent);
+  padding: 0.1rem 0.7rem;
+  border-radius: 7px;
+  margin: 2rem 0rem;
+}
+.sidebar-avatar img {
+  width: 80px;
+  border-radius: 10px;
+  margin: 5px 0;
+}
+.avatar-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 20px;
+}
+.sidebar-menu li {
+  margin-bottom: 2rem;
+}
+.sidebar-menu a {
+  color: var(--main-text);
+  display: block;
+  padding: 0.7rem 0;
+}
+.sidebar-menu a.active {
+  background-color: var(--main-accent);
+  border-radius: 7px;
+  padding: 0.8rem;
+}
+.sidebar-menu a span:first-child {
+  display: inline-block;
+  margin-right: 0.8rem;
+  font-size: 1.5rem;
+  color: var(--color-main);
+}
+.sidebar-card {
+  background-color: var(--main-accent);
+  padding: 1rem;
+  margin-top: 2rem;
+  box-shadow: var(--shadow);
+  text-align: center;
+  border-radius: 7px;
+}
+.side-card-icon span {
+  font-size: 8rem;
+  color: var(--color-main);
+  display: inline-block;
+}
+.side-card-icon {
+  margin-bottom: 0.8rem;
+}
+.side-card-icon + div {
+  margin-bottom: 1rem;
+}
+.side-card-icon + div p {
+  font-size: 0.8rem;
+  color: #555;
+}
+.btn {
+  padding: 0.7rem 1rem;
+  border: none;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+}
+.btn span {
+  font-size: 1.2rem;
+  display: inline-block;
+  margin-right: 0.7rem;
+}
+.btn-block {
+  display: block;
+  width: 100%;
+}
+.btn-main {
+  background-color: var(--color-main);
+  color: #fff;
+}
+/* main */
+.main-content {
+  margin-left: 345px;
+  width: calc(100vw - 345px);
+  padding: 1rem 2rem 1.2rem 1.2rem;
+  transition: margin-left 300ms;
+}
+/* Header */
+header {
+  display: flex;
+  padding-top: 0.5rem;
+  justify-content: space-between;
+}
+.header-wrapper {
+  display: flex;
+}
+.header-wrapper label {
+  display: inline-block;
+  color: var(--color-main);
+  margin-right: 2rem;
+  font-size: 1.8rem;
+}
+.header-wrapper label span:hover {
+  cursor: pointer;
+}
+.header-title h1 {
+  color: var(--main-text);
+  font-weight: 600;
+}
+.header-title p {
+  color: #666;
+  font-size: 0.9rem;
+}
+.header-title p span {
+  color: red;
+  font-size: 1.2rem;
+  display: inline-block;
+  margin-left: 0.5rem;
+}
+.header-action button {
+  padding: 0.85rem 2rem;
+  font-size: 1rem;
+}
+
+main {
+  padding: 2.5rem 0;
+}
+.analytics {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 2.5rem;
+  margin-bottom: 3rem;
+}
+.analytic {
+  box-shadow: var(--shadow);
+  padding: 1.5rem;
+  border-radius: 10px;
+  display: flex;
+  padding-left: 2rem;
+}
+.analytic-info h4 {
+  font-weight: 400;
+  color: #555;
+  font-size: 0.98rem;
+}
+.analytic-info h1 {
+  color: var(--main-text);
+  font-weight: 600;
+}
+.analytic-info h1 small {
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+.analytic:first-child .analytic-icon {
+  background-color: #dce5ff;
+  color: #6883db;
+}
+.analytic:nth-child(2) .analytic-icon {
+  background-color: #ebf7f5;
+  color: red;
+}
+.analytic:nth-child(3) .analytic-icon {
+  background-color: #ebf7f5;
+  color: #2ec3a3;
+}
+.analytic:nth-child(4) .analytic-icon {
+  background-color: var(--main-accent);
+  color: var(--color-main);
+}
+.analytic-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  margin-right: 0.8rem;
+}
+.section-head {
+  font-size: 1.4rem;
+  color: var(--main);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+.block-grid {
+  display: grid;
+  grid-gap: 3rem;
+  grid-template-columns: 30% auto;
+}
+.rev-content {
+  background-color: #fff;
+  box-shadow: var(--shadow);
+  border-radius: 15px;
+  padding: 1rem 2rem;
+  text-align: center;
+}
+.rev-content img {
+  width: 180px;
+  margin: 1.5rem 0;
+  border-radius: 50%;
+}
+.rev-info {
+  margin-bottom: 1rem;
+}
+.rev-info h3,
+.rev-sum h4 {
+  font-weight: 600;
+  color: var(--main);
+}
+.rev-info h1,
+.rev-sum h2 {
+  font-weight: 400;
+  margin-top: 0.4rem;
+  color: #555;
+}
+.rev-info h1 small {
+  font-size: 1rem;
+}
+.rev-sum {
+  background-color: var(--main-accent);
+  border: 1px solid var(--color-main);
+  padding: 1rem;
+  border-radius: 10px;
+}
+.graph-content {
+  border-radius: 15px;
+  box-shadow: var(--shadow);
+  padding: 1rem;
+  background-color: #fff;
+}
+.graph-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.icon-wrapper {
+  display: flex;
+  align-items: center;
+}
+.icon {
+  height: 40px;
+  width: 40px;
+  border-radius: 7px;
+  background-color: #eee;
+  display: grid;
+  place-items: center;
+  font-size: 1.2rem;
+  margin-right: 0.8rem;
+}
+.graph-head select {
+  outline: none;
+  background-color: #eee;
+  height: 35px;
+  border-radius: 10px;
+  padding: 0.5rem 1rem;
+  border: none;
+}
+.overlay label {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+@media only screen and (max-width: 1224px) {
+  .sidebar {
+    left: -345px;
+    z-index: 30;
+  }
+  .main-content {
+    width: 100vw;
+    margin-left: 0;
+  }
+  #menu-toggle:checked ~ .sidebar {
+    left: 0;
+  }
+  #menu-toggle:checked ~ .overlay {
+    display: block;
+    text-align: right;
+  }
+}
+@media only screen and (max-width: 860px) {
+  .analytics {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .block-grid {
+    grid-template-columns: 100%;
+  }
+  .revenue-card {
+    order: 2;
+  }
+}
+@media only screen and (max-width: 580px) {
+  .analytics {
+    grid-template-columns: 100%;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .header,
+  header-wrapper {
+    align-items: center;
+  }
+  .header-title h1 {
+    font-size: 1.2em;
+  }
+  .header-title p {
+    display: none;
+  }
+}
+
+        </style>
+    </head>
+    <body>
+        <script>
+            Chart.defaults.global.defaultFontFamily = "Poppins";
+let ctx = document.querySelector("#revenueChart");
+ctx.height = 53;
+
+let revChart = new Chart(ctx, {
+  type: "line",
+  data: {
+    labels: [
+      "Sept 1",
+      "Sept 3",
+      "Sept 6",
+      "Sept 9",
+      "Sept 12",
+      "Sept 15",
+      "Sept 18",
+      "Sept 21",
+      "Sept 24",
+      "Sept 27",
+      "Sept 30"
+    ],
+    datasets: [
+      {
+        label: "Views",
+        borderColor: "green",
+        backgroundColor: "rgba(235, 247, 245, 0.5)",
+        data: [0, 30, 60, 25, 60, 25, 50, 10, 50, 90, 120]
+      },
+      {
+        label: "Watch time",
+        borderColor: "blue",
+        backgroundColor: "rgba(233, 238, 253, 0.5)",
+        data: [0, 60, 25, 100, 20, 75, 30, 55, 20, 60, 20]
+      }
+    ]
+  },
+  options: {
+    responsive: true,
+    tooltips: {
+      intersect: false,
+      node: "index"
+    }
+  }
+});
+
+        </script>
+
+<input type="checkbox" name="" id="menu-toggle">
+<div class="overlay"><label for="menu-toggle">
+  </label></div>
+<div class="sidebar">
+  <div class="sidebar-container">
+    <div class="brand">
+      <h3>
+        <span class="lab la-staylinked"></span>
+        UrFine
+      </h3>
+    </div>
+    <div class="sidebar-avatar">
+      <div>
+        <img src="data:image/png;base64,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" alt="avatar">
+      </div>
+      <div class="avatar-info">
+        <div class="avatar-text">
+          <h4>{{g.user}}</h4>
+        </div>
+        <span class="las la-angle-double-down"></span>
+      </div>
+    </div>
+    <div class="sidebar-menu">
+      <ul>
+        <li><a href="#" class="active"><span><i class="fa fa-bar-chart" aria-hidden="true"></i></span><span>Analytics</span></a></li>
+        <li><a href="/dashboard"><span><i class="fa fa-desktop" aria-hidden="true"></i></span></i><span>Dashboard</span></a></li>
+        <li><a href="/tasks"><span><i class="fa fa-tasks" aria-hidden="true"></i></span><span>Tasks</span></a></li>
+        <li><a href="/activity"><span><i class="fa fa-puzzle-piece" aria-hidden="true"></i></span><span>Quizzes</span></a></li>
+        <li><a href="/feedback"><span><i class="fa fa-paper-plane" aria-hidden="true"></i></span><span>Feedback</span></a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="main-content">
+  <header>
+    <div class="header-wrapper">
+      <label for="menu-toggle">
+        <span class="las la-bars"></span>
+      </label>
+      <div class="header-title">
+        <h1>Analytics</h1>
+        <p>Your weekely insights are given as,</p>
+      </div>
+    </div>
+    <div class="header-action">
+      <button id="logout" class="btn btn-main">
+        Logout
+      </button>
+      <script type="text/javascript">
+        document.getElementById("logout").onclick = function () {
+        location.href = "/dashboard";
+      };
+     </script>
+    </div>
+  </header>
+  <main>
+    <section>
+      <h3 class="section-head">Overview</h3>
+      <div class="analytics">
+        <div class="analytic">
+          <div class="analytic-icon"><span><i class="fa fa-calendar" aria-hidden="true"></i></span></div>
+          <div class="analytic-info">
+            <h4>Number of Days</h4>
+            <h1>7</h1>
+          </div>
+        </div>
+        <div class="analytic">
+          <div class="analytic-icon"><span><i class="fa fa-hourglass" aria-hidden="true"></i></span></div>
+          <div class="analytic-info">
+            <h4>Average Quiz time</h4>
+            <h1>{{time}} <small class="text-danger">mins</small></h1>
+          </div>
+        </div>
+        <div class="analytic">
+          <div class="analytic-icon"><span><i class="fa fa-user-plus" aria-hidden="true"></i></span></div>
+          <div class="analytic-info">
+            <h4>Subscribers</h4>
+            <h1>1.3k <small class="text-success">12%</small></h1>
+          </div>
+        </div>
+        <div class="analytic">
+          <div class="analytic-icon"><span><i class="fa fa-heart" aria-hidden="true"></i></span></div>
+          <div class="analytic-info">
+            <h4>Total likes</h4>
+            <h1>3.4M </h1>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="block-grid">
+        <div class="revenue-card">
+          <h3 class="section-head">Overall Emotion</h3>
+          <div class="rev-content">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbTKBEx4_dP66Yy7liXPAFGSEduPIs-OzKU1yHzezg0s3xswV-_CV2M1WomPpW-oyxMEI&usqp=CAU" alt="profile">
+            <div class="rev-info">
+              <h3>Your overall emotion for the current week is</h3>
+            </div>
+            <div class="rev-sum">
+              <h4>{{final_emotion}} with a score of {{score}}%</h4>
+            </div>
+          </div>
+        </div>
+        <div class="graph-card">
+          <h3 class="section-head">Graph</h3>
+          <div class="graph-content">
+            <div class="graph-head">
+            <div class="graph-board">
+         
+              <img src="data:image/png;base64,{{ image }}" alt="My Graph">
+  
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+    </body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <style>
+        body, html {
+	 background: #d8bfd8 ;
+}
+
+ h1 {
+	 color: #b39eb5;
+	 text-shadow: -1px -2px 3px rgba(17, 17, 17, 0.3);
+	 text-align: center;
+	 font-family: "Monsterrat", sans-serif;
+	 font-weight: 900;
+	 text-transform: uppercase;
+	 font-size: 60px;
+	 margin-bottom: -5px;
+}
+h2 {
+	 color: #eee;
+	 text-shadow: -1px -2px 3px rgba(17, 17, 17, 0.3);
+	 text-align: center;
+	 font-family: "Monsterrat", sans-serif;
+	 font-weight: 500;
+	 text-transform: uppercase;
+	 font-size: 40px;
+     margin-top: 10%;
+}
+ h1 underline {
+	 border-top: 5px solid rgba(26, 188, 156, 0.3);
+	 border-bottom: 5px solid rgba(26, 188, 156, 0.3);
+}
+ h3 {
+	 font-family:"Monsterrat", sans-serif;
+     text-shadow: -1px -2px 3px rgba(17, 17, 17, 0.3);
+	 font-weight: 500;
+	 color: #eee;
+     text-align: center;
+     
+}
+.btn {
+  background-color:#b48395 ; /* Green */
+  border: none;
+  color: white;
+  padding: 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 25px;
+  width: 150px;
+  margin-left: 45%;
+  cursor: pointer;
+}
+ 
+        </style>
+    </head>
+    <body>
+
+        <div>
+           <h2>Hey {{g.user}} your overall emotion is </h2><br>
+          <h1>
+            <!-- The <h1> tag is the reason why the text is big! -->
+              <underline>{{emotion}}, with a score of {{score}} %</underline>
+            <!-- The underline makes a border on the top and on the bottom of the text -->
+          </h1><br><br>
+          <h3>
+            Your final analysis will be provided to you on the 7th day.<br><br>
+            Refresh your mind by practising the various listed activities.
+          </h3>  
+          </div><br>
+          <form action="/mark_quiz" method="POST">
+            <input type="hidden" name="final_emotion" value="{{emotion}}">
+            <input type="hidden" name="score" value="{{score}}">
+            <input type="hidden" name="day" value="{{day}}">
+            <input type="hidden" name="time" value="{{time}}">
+          <input type="submit" class="btn" id="back" value="Back"></button>
+          </form>
+          <script type="text/javascript">
+            document.getElementById("back").onclick = function () {
+            location.href = "/dashboard";
+          };
+         </script>
+                 <script type="text/javascript">
+                  document.querySelector('form').addEventListener('submit', function() {
+                      this.querySelector('input[type="submit"]').disabled = true;
+                      // Disable the submit button to prevent multiple submissions
+                  });
+              </script>
+    </body>
+</html>

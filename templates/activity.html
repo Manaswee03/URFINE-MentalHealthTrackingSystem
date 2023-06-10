@@ -1,0 +1,507 @@
+<html>
+ <head>
+  <meta charset="utf-8">
+  
+  <link href="https://fonts.googleapis.com/css2?family=Playball&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,500&display=swap" rel="stylesheet">
+  <style>
+
+.navbar-container {
+  text-align: center; 
+  font-family: 'Lora', serif; 
+}
+
+.navbar-container ul {
+  margin: 0;
+  padding: 0;
+  text-align: right;
+  display: inline-block;
+  
+}
+
+.navbar-container ul li {
+  display: inline-block;
+  font-size: 25px;
+  font-family: 'Lora', serif;
+  color: black;
+}
+
+.navbar-container ul li a {
+  color: darkolivegreen;
+  text-decoration: none;
+  display: inline-block;  
+  padding: 10px;
+  transition: color 0.5s;
+}
+
+.navbar-container ul li .underline {
+  height: 3px;
+  background-color: transparent;
+  width: 0%;
+  transition: width 0.2s, background-color 0.5s;
+  margin: 0 auto;
+}
+
+.navbar-container ul li.active-link .underline {
+  width: 100%;
+  background-color: #e5ccc9;
+}
+
+.navbar-container ul li:hover .underline {
+  background-color: #e5ccc9;
+  width: 100%;
+}
+
+.navbar-container ul li:active a {
+  transition: none;
+  color: rgba(255,255,255,0.76);
+}
+
+.navbar-container ul li:active .underline {
+  transition: none;
+  background-color: rgba(255,255,255,0.76);
+} 
+    
+:root {
+  --surface-color: #fff;
+  --curve: 40;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+  background-color: #fef8f8;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 3rem;
+  margin: 4rem 5vw;
+  padding: 10px;
+  list-style-type: none;
+}
+
+.card {
+  position: relative;
+  display: block;
+  height: 100%;  
+  border-radius: calc(var(--curve) * 1px);
+  overflow: hidden;
+  text-decoration: none;
+}
+
+.card__image {      
+  width: 100%;
+  height: auto;
+}
+
+.card__overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;      
+  border-radius: calc(var(--curve) * 1px);    
+  background-color: var(--surface-color);      
+  transform: translateY(100%);
+  transition: .2s ease-in-out;
+}
+
+.card:hover .card__overlay {
+  transform: translateY(0);
+}
+
+.card__header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 2em;
+  padding: 2em;
+  border-radius: calc(var(--curve) * 1px) 0 0 0;    
+  background-color: var(--surface-color);
+  transform: translateY(-100%);
+  transition: .2s ease-in-out;
+}
+
+.card__arc {
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  bottom: 100%;
+  right: 0;      
+  z-index: 1;
+}
+
+.card__arc path {
+  fill: var(--surface-color);
+  d: path("M 40 80 c 22 0 40 -22 40 -40 v 40 Z");
+}       
+
+.card:hover .card__header {
+  transform: translateY(0);
+}
+
+.card__thumb {
+  flex-shrink: 0;
+  width: 50px;
+  height: 50px;      
+  border-radius: 50%;      
+}
+
+.card__title {
+  font-size: 1em;
+  margin: 0 0 .3em;
+  color: #6A515E;
+}
+
+.card__tagline {
+  display: block;
+  margin: 1em 0;
+  font-family: "MockFlowFont";  
+  font-size: .8em; 
+  color: #D7BDCA;  
+}
+
+.card__status {
+  font-size: 1.5em;
+  color: #D7BDCA;
+}
+
+
+
+.card__description {
+  padding: 0 2em ;
+  margin: 0;
+  color: #D7BDCA;
+  font-family: "MockFlowFont";   
+  display: webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  font-size: 25px;
+} 
+
+.result{
+  margin-top: 5%;
+  color: #702963;
+  font-family: "MockFlowFont";   
+  font-size: 25px;
+  margin-left: 11%;
+  display: none;
+}
+
+.result1{
+  margin-top: 5%;
+  color: #702963;
+  font-family: "MockFlowFont";   
+  font-size: 25px;
+  margin-left: 11%;
+}
+
+	 .f{
+    font-family: 'Playball', cursive;
+    color: #843f5b;
+    font-size: 70px;
+    margin-top: 40px;
+    text-align: center;
+  }   
+
+  h1{
+    font-size: 40px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin-left: 6.5%;
+  }
+   
+  .disabled {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.btn {
+    border: none;
+    padding: 8px 6px;
+    border-radius: 5px;
+    background: #9b83e2;
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+    transition: 0.4s;
+    margin-left:13%;
+  }
+
+  </style>
+ </head>
+ <body>
+
+  <div class="navbar-container">
+    <ul>
+      <li class="nav-link">
+        <a href="/dashboard">Home</a>
+        <div class="underline"></div>
+      </li>
+      <li class="nav-link active-link">
+        <a href="/activity">Quizzes</a>
+        <div class="underline"></div>
+      </li>
+      <li class="nav-link">
+        <a href="/feedback">Feedback</a>
+        <div class="underline"></div>
+      </li>
+      <li class="nav-link">
+        <a href="/logout">Logout</a>
+        <div class="underline"></div>
+      </li>
+    </ul>
+  </div>
+	<header><div class="f"><b>Are you up for the daily quizzes?</b></div></header>
+<ul class="cards">
+    <div id="card50123">
+    <li>
+    <a href="" class="card">
+      <img src="/static/images/a1.png" class="card__image" alt="" />
+      <div class="card__overlay">
+        <div class="card__header">
+          <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>                     
+          <img class="card__thumb" src="/static/images/a111.png" alt="" />
+          <div class="card__header-text">       
+            <span class="card__status">DAY 1</span>
+          </div>
+        </div>
+        <p id="c1" class="card__description">Hi welcome to Day 1...Click on the below link to start your today's quiz.<br>
+            <form action="/day" method="POST"><br>
+              <input type="hidden" name="day" value="1">
+          <input type="submit" class="btn" onclick="enableCard(50223)" value="Start Quiz"></button><br> 
+        </form>
+        </p>  
+      </div>
+    </a>      
+  </li>
+</div>
+
+<div class="disabled" id="card50223">
+  <li>
+    <a href="" class="card">
+      <img src="/static/images/a2.png" class="card__image" alt="" />
+      <div class="card__overlay">        
+        <div class="card__header">
+          <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>                 
+          <img class="card__thumb" src="/static/images/a13.jpg" alt="" />
+          <div class="card__header-text">
+            <span class="card__status">DAY 2</span>
+          </div>
+        </div>
+        <p id="c2" class="card__description">Hi welcome to Day 2...Click on the below link to start your today's quiz.<br>
+            <form action="/day" method="POST"><br>
+              <input type="hidden" name="day" value="2">
+          <input type="submit" class="btn" onclick="enableCard(50323)" value="Start Quiz"></button><br>
+        </form>
+        </p>
+      </div>
+    </a>
+  </li>
+</div>
+
+
+<div class="disabled" id="card50323">
+  <li>
+    <a href="" class="card">
+      <img src="/static/images/a3.jpg" class="card__image" alt="" />
+      <div class="card__overlay">
+        <div class="card__header">
+          <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>                     
+          <img class="card__thumb" src="/static/images/a133.jpg" alt="" />
+          <div class="card__header-text">
+            <span class="card__status">DAY 3</span> 
+          </div>
+        </div>
+        <p id="c3" class="card__description">Hi welcome to Day 3...Click on the below link to start your today's quiz.
+          <form action="/day" method="POST">
+            <input type="hidden" name="day" value="3">
+            <input type="submit" class="btn" onclick="enableCard(50423)" value="Start Quiz"></button><br>
+          </form>
+        </p>
+        
+      </div>
+    </a>
+  </li>
+</div>
+
+<div class="disabled" id="card50423">
+  <li>
+    <a href="" class="card">
+      <img src="/static/images/a4.jpg" class="card__image" alt="" />
+      <div class="card__overlay">
+        <div class="card__header">
+          <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>                 
+          <img class="card__thumb" src="/static/images/a14.jpg" alt="" />
+          <div class="card__header-text">
+            <span class="card__status">DAY 4</span>
+          </div>          
+        </div>
+        <p id="c4" class="card__description">Hi welcome to Day 4...Click on the below link to start your today's quiz.<br>
+            <form action="/day" method="POST"><br>
+              <input type="hidden" name="day" value="4">
+          <input type="submit" class="btn" onclick="enableCard(50523)" value="Start Quiz"></button><br>
+        </form>
+        </p>
+      </div>
+    </a>
+  </li>    
+</div>
+
+<div class="disabled" id="card50523">
+<li>
+    <a href="" class="card">
+      <img src="/static/images/a55.jpg" class="card__image" alt="" />
+      <div class="card__overlay">
+        <div class="card__header">
+          <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>                 
+          <img class="card__thumb" src="/static/images/a15.jpg" alt="" />
+          <div class="card__header-text">
+            <span class="card__status">DAY 5</span>
+          </div>          
+        </div>
+        <p id="c5" class="card__description">Hi welcome to Day 5...Click on the below link to start your today's quiz.<br>
+            <form action="/day" method="POST"><br>
+              <input type="hidden" name="day" value="5">
+          <input type="submit" class="btn" onclick="enableCard(50623)" value="Start Quiz"></button><br>
+        </form>
+        </p>
+      </div>
+    </a>
+  </li>  
+</div>
+
+<div class="disabled" id="card50623">
+  <li>
+    <a href="" class="card">
+      <img src="/static/images/a6.jpg" class="card__image" alt="" />
+      <div class="card__overlay">
+        <div class="card__header">
+          <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>                 
+          <img class="card__thumb" src="/static/images/a16.png" alt="" />
+          <div class="card__header-text">
+            <span class="card__status">DAY 6</span>
+          </div>          
+        </div>
+        <p id="c6" class="card__description">Hi welcome to Day 6...Click on the below link to start your today's quiz.<br>
+            <form action="/day" method="POST"><br>
+              <input type="hidden" name="day" value="6">
+          <input type="submit" class="btn" onclick="enableCard(50723)" value="Start Quiz"></button><br>
+        </form>
+        </p>
+      </div>
+    </a>
+  </li>    
+</div>
+
+<div class="disabled" id="card50723">  
+    <li>
+        <a href="" class="card">
+          <img src="/static/images/a7.jpg" class="card__image" alt="" />
+          <div class="card__overlay">
+            <div class="card__header">
+              <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>                 
+              <img class="card__thumb" src="/static/images/a17.jpg" alt="" />
+              <div class="card__header-text">
+                <span class="card__status">DAY 7</span>
+              </div>          
+            </div>
+            <p id="c7" id="GFG" class="card__description">Hi welcome to Day 7...Click on the below link to start your today's quiz.<br>
+                <form action="/day" method="POST"><br>
+                  <input type="hidden" name="day" value="7">
+              <input type="submit" class="btn" onclick="enableCard(50823)" value="Start Quiz"></button><br>               
+            </form>
+            </p>
+          </div>
+        </a>
+      </li>    
+</div>     
+</ul> 
+<script>
+            window.onload = function(){
+                var card50123 = localStorage.getItem("card50123");
+                var card50223 = localStorage.getItem("card50223");
+                var card50323 = localStorage.getItem("card50323");
+                var card50423 = localStorage.getItem("card50423");
+                var card50523 = localStorage.getItem("card50523");
+                var card50623 = localStorage.getItem("card50623");
+                var card50723 = localStorage.getItem("card50723");
+                if(card50123 === "disabled"){
+                    document.getElementById("card50123").classList.add("disabled");
+                }
+                if(card50223 === "enabled"){
+                    document.getElementById("card50223").classList.remove("disabled");
+                }
+                if(card50323 === "enabled"){
+                    document.getElementById("card50323").classList.remove("disabled");
+                }
+                if(card50423 === "enabled"){
+                    document.getElementById("card50423").classList.remove("disabled");
+                }
+                if(card50523 === "enabled"){
+                    document.getElementById("card50523").classList.remove("disabled");
+                }
+                if(card50623 === "enabled"){
+                    document.getElementById("card50623").classList.remove("disabled");   
+                }
+                if(card50723 === "enabled"){
+                    document.getElementById("card50723").classList.remove("disabled");
+                }
+            }
+            function enableCard(cardNumber) {
+                if (cardNumber === 50223) {
+                    window.open("/daily_quiz");
+                    document.getElementById("card50123").classList.add("disabled");
+                    document.getElementById("card50223").classList.remove("disabled");
+                    localStorage.setItem("card50123", "disabled");
+                    localStorage.setItem("card50223", "enabled");
+                } else if (cardNumber === 50323) {
+                    window.open("/daily_quiz");
+                    document.getElementById("card50223").classList.add("disabled");
+                    document.getElementById("card50323").classList.remove("disabled");
+                    localStorage.setItem("card50223", "disabled");
+                    localStorage.setItem("card50323", "enabled");
+                } else if (cardNumber === 50423) {
+                    window.open("/daily_quiz");
+                    document.getElementById("card50323").classList.add("disabled");
+                    document.getElementById("card50423").classList.remove("disabled");
+                    localStorage.setItem("card50323", "disabled");
+                    localStorage.setItem("card50423", "enabled");
+                }
+                else if (cardNumber === 50523) {
+                    window.open("/daily_quiz");
+                    document.getElementById("card50423").classList.add("disabled");
+                    document.getElementById("card50523").classList.remove("disabled");
+                    localStorage.setItem("card50423", "disabled");
+                    localStorage.setItem("card50523", "enabled");
+                }else if (cardNumber === 50623) {
+                    window.open("/daily_quiz");
+                    document.getElementById("card50523").classList.add("disabled");
+                    document.getElementById("card50623").classList.remove("disabled");
+                    localStorage.setItem("card50523", "disabled");
+                    localStorage.setItem("card50623", "enabled");
+                }
+                else if (cardNumber === 50723) {
+                    window.open("/daily_quiz");
+                    document.getElementById("card50623").classList.add("disabled");
+                    document.getElementById("card50723").classList.remove("disabled");
+                    localStorage.setItem("card50623", "disabled");
+                    localStorage.setItem("card50723", "enabled");
+                }
+                else if (cardNumber === 50823) {
+                    window.open("/daily_quiz");
+                    document.getElementById("card50723").classList.add("disabled");
+                    localStorage.setItem("card50723", "disabled");
+                }
+            }
+        </script>
+ </body>
+</html>
